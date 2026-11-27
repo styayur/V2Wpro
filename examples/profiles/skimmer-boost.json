@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "id": "skimmer-boost",
+  "speed": 102,
+  "lateralAcceleration": 44,
+  "brakingDeceleration": 28,
+  "hullRadius": 3.2,
+  "clearance": 6.5,
+  "contactSeconds": 4
+}

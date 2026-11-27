@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import pkg from "../package.json" with { type: "json" };
 const [base, out] = process.argv.slice(2);
 if (!base || !out)
   throw Error("Usage: node tools/verify-deployment.js SITE_URL OUTPUT_DIR");
@@ -17,11 +18,13 @@ async function download(name) {
 }
 const manifestBytes = await download("build-manifest.json");
 const manifest = JSON.parse(manifestBytes);
-if (manifest.commit !== sha || manifest.version !== "0.2.0")
+if (manifest.commit !== sha || manifest.version !== pkg.version)
   throw Error("Pages has a different release");
 for (const name of [
   "app.js",
   "index.html",
+  "examples/contact.glb",
+  "examples/district.glb",
   "examples/canopy.json",
   "examples/lattice.json",
   "examples/caldera.json",

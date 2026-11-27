@@ -9,6 +9,7 @@ import {
   segmentClear,
 } from "../src/morph.js";
 import { aim, steer, direction, flightBounds } from "./flight.js";
+import { contactDeck, deckCycles } from "../src/contact-deck.js";
 import { setupPanel } from "./panel.js";
 const el = (id) => document.getElementById(id);
 const canvas = document.querySelector("canvas"),
@@ -30,13 +31,17 @@ async function boot() {
     if (!/^\d{1,10}$/.test(params.get("seed"))) throw Error("Invalid seed");
     data.seed = Number(params.get("seed"));
   }
+  if (data.version === "2.0") {
+    const saved = sessionStorage.getItem("rules:" + worldUrl.href);
+    if (saved) data.prototypes = JSON.parse(saved);
+  }
   const w = data.version === "2.0" ? data : validate(data);
   const spatial = w.version === "2.0";
-  const realization = spatial ? realize(w) : null;
+  const realization = spatial ? realize(w,{includeSolidity:true}) : null;
   const routes = spatial ? inspectRoutes(w, realization) : null;
   if (routes && (!routes.connected || routes.blockedEdges.length))
     throw Error("World contains unreachable nodes or a blocked flight route");
-  setupPanel(w, id, worldUrl);
+  setupPanel(w, id, worldUrl, realization);
   const bounds = spatial ? flightBounds(w, realization) : null;
   const nodes = new Map(
     w.topology.nodes?.map((node) => [node.id, node.position]),
@@ -83,6 +88,18 @@ async function boot() {
       }),
     ]),
   );
+  // Long contact modules can span many streaming cells. Keep the bounded
+  // finite deck resident while its smaller neighbouring structures stream.
+  let deckGeometry;
+  for (const item of realization?.items ?? []) {
+    const cycles = deckCycles(w,item);
+    if (!cycles) continue;
+    deckGeometry ??= contactDeck(64 * cycles,cycles);
+    const mesh = new T.Mesh(deckGeometry,materials[item.material]);
+    mesh.position.fromArray(item.position);
+    mesh.scale.fromArray(item.size);
+    scene.add(mesh);
+  }
   const models = new Map();
   for (const asset of w.assets) {
     const model = await new GLTFLoader().loadAsync(
@@ -172,6 +189,8 @@ async function boot() {
             group.add(obj);
             continue;
           }
+          const cycles = spatial && deckCycles(w, item);
+          if (cycles) continue;
           const key = item.shape + "/" + item.material;
           if (!batches.has(key)) batches.set(key, []);
           batches.get(key).push(item);

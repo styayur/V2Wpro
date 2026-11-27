@@ -1,10 +1,10 @@
-# V2Wpro · Morphogenesis
+# V2Wpro · Kinetogenesis
 
 **Video imagines. Algorithms expand. Engines realize.**
 
 一段拍到书架与红椅的镜头，可以给出一套空间生成规则：把横向搁板与竖向支撑组合成结构单元，重复排列，再把椅子设为岔路口的地标。v0.2.0 将这些解释与设计编译成可执行的 WorldIR。玩家可以在空间中自由转向，检查节点之间的路线，并通过种子改变同一规则下的排列。
 
-[在线试玩六个世界](https://styayur.github.io/V2Wpro/) · [完整发布包及录像](https://github.com/styayur/V2Wpro/releases/tag/v0.2.0) · [English](README.md)
+[在线试玩八个世界](https://styayur.github.io/V2Wpro/) · [完整发布包及录像](https://github.com/styayur/V2Wpro/releases/tag/v0.2.0) · [English](README.md)
 
 ## 快速开始
 

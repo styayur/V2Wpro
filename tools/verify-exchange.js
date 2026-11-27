@@ -16,6 +16,19 @@ const compiled = await build({
     import { analyzeWorldScene } from "./src/world/imports/sceneAnalyzer";
     import { defaultWorldImportOptions } from "./src/world/imports/worldManifest";
     import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+    import { analyzeWorldModule } from "./src/world/procedural/moduleCatalog";
+    import { createPassageRecipe } from "./src/world/procedural/passageGrammar";
+    export async function assemble(data,digest,seed) {
+      inspectWorldGlb(data);
+      const {scene} = await new GLTFLoader().parseAsync(data,"");
+      const module = analyzeWorldModule("arcade-span",digest,scene);
+      const recipe = createPassageRecipe(seed,[module]);
+      const result = recipe.generate(0,0);
+      try {
+        return {manifest:recipe.manifest,entry:module.entry.toArray(),exit:module.exit.toArray(),
+          placements:result.placements,collisionTriangles:result.collision.getAttribute("position").count/3};
+      } finally { result.dispose(); module.collision.dispose(); }
+    }
     export async function inspect(data) {
       inspectWorldGlb(data);
       const { scene } = await new GLTFLoader().parseAsync(data, "");
@@ -26,7 +39,7 @@ const compiled = await build({
     }` },
   write: false, bundle: true, format: "esm", platform: "node",
 });
-const { inspect } = await import("data:text/javascript;base64," + Buffer.from(compiled.outputFiles[0].contents).toString("base64"));
+const { inspect, assemble } = await import("data:text/javascript;base64," + Buffer.from(compiled.outputFiles[0].contents).toString("base64"));
 async function check(file, bytes) {
   try {
     return await inspect(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength));
@@ -77,6 +90,11 @@ if (files[0] === "--cases") {
   }
   writeFileSync(path.join(output, "evidence.json"), JSON.stringify(report, null, 2) + "\n");
   console.log(JSON.stringify(report, null, 2));
+} else if (files[0] === "--module") {
+  if (files.length !== 2) throw Error("Specify one static passage module");
+  const bytes = readFileSync(files[1]);
+  const data = bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset + bytes.byteLength);
+  for (const seed of [8131,8132]) console.log(JSON.stringify(await assemble(data,sha256(bytes),seed)));
 } else {
   for (const file of files) console.log(JSON.stringify({ file, ...await check(file, readFileSync(file)) }));
 }

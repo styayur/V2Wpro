@@ -25,6 +25,8 @@
               <optgroup label="Spatial worlds">
                 <option value="canopy">Canopy</option>
                 <option value="caldera">Caldera</option>
+                <option value="district">Relay District</option>
+                <option value="contact">Contact deck</option>
                 <option value="lattice">Lattice</option>
               </optgroup>
               <optgroup label="Corridor studies">
@@ -71,6 +73,16 @@
           <details>
             <summary>Inspect rules</summary>
             <pre id="rules"></pre>
+          </details>
+          <details id="exchange-panel" hidden>
+            <summary>Edit and export flight study</summary>
+            <label>Prototype rules <textarea id="edit-prototypes" rows="9" spellcheck="false"></textarea></label>
+            <div><button id="apply-rules">Preview changes</button>
+              <button id="reset-rules">Restore source rules</button></div>
+            <p id="movement-envelope"></p>
+            <button id="save-glb">Save GLB</button>
+            <button id="save-ir">Save WorldIR</button>
+            <output id="exchange-status" aria-live="polite"></output>
           </details>
           <p><a id="document">Open WorldIR ↗</a></p>
         </div>
