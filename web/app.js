@@ -99,7 +99,7 @@ async function boot(){
     stream();renderer.render(scene,camera)
     Object.assign(stats,{frames:stats.frames+1,distance:-camera.position.z,altitude:camera.position.y,fov:camera.fov,frameMs:ms,triangles:renderer.info.render.triangles,drawCalls:renderer.info.render.calls,geometries:renderer.info.memory.geometries})
     stats.dt.push(ms);if(stats.dt.length>180)stats.dt.shift()
-    el('hud').textContent=Math.round(stats.distance)+' m　·　'+stats.chunks.length+' chunks　·　'+stats.triangles+' tris'
+    el('hud').textContent=Math.round(stats.distance)+' m　·　'+stats.chunks.length+' chunks　·　'+stats.triangles+' tris　·　'+stats.drawCalls+' calls'
     requestAnimationFrame(render)
   }
   window.v2w={stats,seed:w.seed};requestAnimationFrame(render)

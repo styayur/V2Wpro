@@ -56,7 +56,10 @@ export async function evaluate(custom, remote, out='playtest'){
       if(w.streaming.count>w.streaming.radius+1)assert.ok(stats.unloaded>0)
       const {dt,...metrics}=stats,mean=dt.reduce((n,v)=>n+v,0)/dt.length
       report.worlds.push({id,seed:w.seed,hash,centreRouteOpen:true,errors,colorHistogramIntersection:colorSimilarity,...metrics,samples:dt.length,meanFrameMs:mean,fps:1000/mean,p95FrameMs:dt.sort((a,b)=>a-b)[Math.floor(dt.length*.95)]})
+      const video=page.video()
       await ctx.close()
+      await video.saveAs(path.join(out,'recordings',id+'.webm'))
+      await video.delete()
     }
     write(path.join(out,'report.json'),report);return report
   }finally{await browser?.close();server?.close()}

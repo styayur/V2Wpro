@@ -20,7 +20,8 @@ export async function buildSite(out='dist',custom){
   await build({entryPoints:[path.join(root,'web/app.js')],bundle:true,minify:true,legalComments:'eof',format:'esm',outfile:path.join(out,'app.js')})
   const notices=['three','ajv','fast-deep-equal','fast-uri','json-schema-traverse','require-from-string'].map(id=>{
     const dir=path.join(root,'node_modules',id)
-    const f=['LICENSE','LICENSE.md','LICENSE.txt'].find(f=>existsSync(path.join(dir,f)))
+    const f=['LICENSE','license','LICENSE.md','LICENSE.txt'].find(f=>existsSync(path.join(dir,f)))
+    if(!f) throw Error('Missing license text for '+id)
     return id+'\n'+readFileSync(path.join(dir,f),'utf8')
   })
   writeFileSync(path.join(out,'THIRD-PARTY.txt'),notices.join('\n\n'))
