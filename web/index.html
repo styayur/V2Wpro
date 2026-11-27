@@ -15,51 +15,64 @@
     <main>
       <section class="title">
         <div>
-          <small>PROCEDURAL WORLD STUDIES</small>
-          <h1 id="title">Architectural Flight</h1>
+          <small id="version">WORLD STUDIES</small>
+          <h1 id="title">World studies</h1>
         </div>
-        <label
-          >World
-          <select id="world">
-            <option value="arcade">Architectural Flight</option>
-            <option value="island">Floating Archipelago</option>
-            <option value="gate">Motion Playground</option>
-          </select></label
-        >
+        <form id="selection">
+          <label
+            >World
+            <select id="world">
+              <optgroup label="Spatial worlds">
+                <option value="canopy">Canopy</option>
+                <option value="caldera">Caldera</option>
+                <option value="lattice">Lattice</option>
+              </optgroup>
+              <optgroup label="Corridor studies">
+                <option value="arcade">Architectural Flight</option>
+                <option value="island">Floating Archipelago</option>
+                <option value="gate">Motion Playground</option>
+              </optgroup>
+            </select></label
+          ><label
+            >Seed
+            <input
+              id="seed"
+              type="number"
+              min="0"
+              max="4294967295"
+              step="1"
+              required /></label
+          ><button>Apply seed</button>
+        </form>
       </section>
       <div id="stage">
         <canvas tabindex="0" aria-label="Playable world"></canvas
         ><output id="hud">Loading world…</output>
       </div>
       <div id="controls">
-        <span
-          >W / S · travel　 A / D · strafe　 ↑ / ↓ · altitude　 Space ·
-          action</span
-        >
-        <div>
-          <button data-key="KeyW">Forward</button
-          ><button data-key="KeyA">Left</button
-          ><button data-key="KeyD">Right</button
-          ><button data-key="Space">Action</button
-          ><button id="reset">Restart</button>
-        </div>
+        <span id="instructions"></span>
+        <div id="buttons"></div>
       </div>
-      <section id="reference">
-        <video
-          controls
-          muted
-          playsinline
-          preload="metadata"
-          src="./examples/reference.mp4"
-        ></video>
+      <section id="reference" hidden>
+        <video controls muted playsinline preload="metadata"></video>
         <div>
-          <small>REFERENCE FILM</small>
-          <h2>Arcade motion study</h2>
-          <p>
-            Four seconds of hand-authored perspective animation informed the
-            arches, palette and forward flight.
-          </p>
-          <a href="./examples/arcade.json">Inspect WorldIR ↗</a>
+          <h2 id="filmTitle"></h2>
+          <p id="filmNotes"></p>
+        </div>
+      </section>
+      <section class="notes">
+        <div>
+          <h2>References</h2>
+          <div id="sources"></div>
+        </div>
+        <div>
+          <h2>Generation rules</h2>
+          <p id="summary"></p>
+          <details>
+            <summary>Inspect rules</summary>
+            <pre id="rules"></pre>
+          </details>
+          <p><a id="document">Open WorldIR ↗</a></p>
         </div>
       </section>
     </main>
