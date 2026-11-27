@@ -40,6 +40,7 @@
   },
   "assets": [],
   "evidence": [
+    {"kind":"decision","source":"dash.mp4#t=1,1.55; tools/dash-study.py","claim":"Map the authored acceleration envelope to a player-triggered 0.55 second dash at triple cruise speed.","confidence":1},
     {
       "kind": "decision",
       "source": "V2Wpro example design",

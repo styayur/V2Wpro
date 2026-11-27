@@ -1,0 +1,24 @@
+{
+  "sha256": "91d375a5fdec44d0689158bb6acef486f2bb522c6301acc82a3a48ad39fc328f",
+  "original": "reference.mp4",
+  "local": "source.mp4",
+  "sceneCuts": [],
+  "frames": [
+    {
+      "seconds": 0,
+      "file": "frame-001.png"
+    },
+    {
+      "seconds": 1,
+      "file": "frame-002.png"
+    },
+    {
+      "seconds": 2,
+      "file": "frame-003.png"
+    },
+    {
+      "seconds": 3,
+      "file": "frame-004.png"
+    }
+  ]
+}
