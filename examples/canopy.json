@@ -1,0 +1,617 @@
+{
+  "version": "2.0",
+  "name": "Canopy · Reading Rooms",
+  "seed": 1049,
+  "style": {
+    "sky": "#aec6b8",
+    "stone": "#798c7d",
+    "accent": "#a32935",
+    "light": 1.5
+  },
+  "motion": {
+    "action": "survey",
+    "speed": 8
+  },
+  "physics": {
+    "radius": 0.45
+  },
+  "streaming": {
+    "cellSize": 16,
+    "radius": 3
+  },
+  "budget": {
+    "instances": 800,
+    "operations": 4096
+  },
+  "assets": [],
+  "unknowns": [
+    "The clip never shows the adjoining rooms or the full floor plan."
+  ],
+  "topology": {
+    "spawn": "foyer",
+    "nodes": [
+      {
+        "id": "foyer",
+        "position": [
+          0,
+          2,
+          0
+        ],
+        "rule": "entry"
+      },
+      {
+        "id": "reading",
+        "position": [
+          0,
+          2,
+          -13
+        ],
+        "rule": "reading"
+      },
+      {
+        "id": "west",
+        "position": [
+          -12,
+          2,
+          -23
+        ],
+        "rule": "bay"
+      },
+      {
+        "id": "east",
+        "position": [
+          12,
+          2,
+          -23
+        ],
+        "rule": "bay"
+      },
+      {
+        "id": "stack",
+        "position": [
+          0,
+          2,
+          -36
+        ],
+        "rule": "endWall"
+      }
+    ],
+    "edges": [
+      [
+        "foyer",
+        "reading"
+      ],
+      [
+        "reading",
+        "west"
+      ],
+      [
+        "reading",
+        "east"
+      ],
+      [
+        "west",
+        "stack"
+      ],
+      [
+        "east",
+        "stack"
+      ]
+    ]
+  },
+  "prototypes": {
+    "rack": {
+      "op": "group",
+      "evidence": "shelf",
+      "children": [
+        {
+          "op": "transform",
+          "evidence": "shelf",
+          "offset": [
+            -3.2,
+            1,
+            0
+          ],
+          "child": {
+            "op": "repeat",
+            "evidence": "shelf",
+            "count": 2,
+            "step": [
+              6.4,
+              0,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "shelf",
+              "shape": "box",
+              "size": [
+                0.42,
+                7,
+                2
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "shelf",
+          "offset": [
+            0,
+            2.7,
+            0
+          ],
+          "child": {
+            "op": "repeat",
+            "evidence": "shelf",
+            "count": 2,
+            "step": [
+              0,
+              1.6,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "shelf",
+              "shape": "box",
+              "size": [
+                6.8,
+                0.32,
+                2
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          }
+        }
+      ]
+    },
+    "seat": {
+      "op": "group",
+      "evidence": "chair",
+      "children": [
+        {
+          "op": "transform",
+          "evidence": "chair",
+          "offset": [
+            0,
+            -0.55,
+            0
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "chair",
+            "shape": "box",
+            "size": [
+              2,
+              1.3,
+              1.75
+            ],
+            "material": "accent",
+            "solid": true
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "chair",
+          "offset": [
+            0,
+            0.35,
+            -0.75
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "chair",
+            "shape": "box",
+            "size": [
+              2,
+              2.4,
+              0.4
+            ],
+            "material": "accent",
+            "solid": true
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "chair",
+          "offset": [
+            -0.94,
+            -0.05,
+            0
+          ],
+          "child": {
+            "op": "repeat",
+            "evidence": "chair",
+            "count": 2,
+            "step": [
+              1.88,
+              0,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "chair",
+              "shape": "box",
+              "size": [
+                0.27,
+                0.7,
+                1.55
+              ],
+              "material": "accent",
+              "solid": true
+            }
+          }
+        }
+      ]
+    },
+    "bay": {
+      "op": "group",
+      "evidence": "gallery",
+      "children": [
+        {
+          "op": "use",
+          "evidence": "gallery",
+          "ref": "rack"
+        },
+        {
+          "op": "transform",
+          "evidence": "gallery",
+          "offset": [
+            0,
+            -2.1,
+            0
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "gallery",
+            "shape": "box",
+            "size": [
+              12.5,
+              0.65,
+              14
+            ],
+            "material": "stone",
+            "solid": true
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "wall",
+          "offset": [
+            -4.6,
+            -1.61,
+            4
+          ],
+          "child": {
+            "op": "repeat",
+            "evidence": "wall",
+            "count": 8,
+            "step": [
+              1.05,
+              0,
+              0
+            ],
+            "child": {
+              "op": "transform",
+              "evidence": "wall",
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "jitter": [
+                0.25,
+                0.02,
+                0.8
+              ],
+              "child": {
+                "op": "emit",
+                "evidence": "wall",
+                "shape": "rock",
+                "size": [
+                  0.8,
+                  0.16,
+                  0.65
+                ],
+                "material": "stone",
+                "solid": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    "reading": {
+      "op": "group",
+      "evidence": "furnish",
+      "children": [
+        {
+          "op": "use",
+          "evidence": "gallery",
+          "ref": "bay"
+        },
+        {
+          "op": "transform",
+          "evidence": "chair",
+          "offset": [
+            4,
+            -0.35,
+            2.5
+          ],
+          "child": {
+            "op": "use",
+            "evidence": "chair",
+            "ref": "seat"
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "shelf",
+          "offset": [
+            -5,
+            0,
+            2.8
+          ],
+          "child": {
+            "op": "use",
+            "evidence": "shelf",
+            "ref": "bookcase"
+          }
+        }
+      ]
+    },
+    "entry": {
+      "op": "group",
+      "evidence": "gallery",
+      "children": [
+        {
+          "op": "transform",
+          "evidence": "gallery",
+          "offset": [
+            0,
+            -2.1,
+            0
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "gallery",
+            "shape": "box",
+            "size": [
+              11,
+              0.65,
+              12
+            ],
+            "material": "stone",
+            "solid": true
+          }
+        }
+      ]
+    },
+    "bookcase": {
+      "op": "group",
+      "evidence": "shelf",
+      "children": [
+        {
+          "op": "transform",
+          "evidence": "shelf",
+          "offset": [
+            -2.05,
+            0.3,
+            0
+          ],
+          "child": {
+            "op": "repeat",
+            "evidence": "shelf",
+            "count": 2,
+            "step": [
+              4.1,
+              0,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "shelf",
+              "shape": "box",
+              "size": [
+                0.32,
+                4.4,
+                1.3
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "shelf",
+          "offset": [
+            0,
+            -1.7,
+            0
+          ],
+          "child": {
+            "op": "repeat",
+            "evidence": "shelf",
+            "count": 4,
+            "step": [
+              0,
+              1.35,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "shelf",
+              "shape": "box",
+              "size": [
+                4.4,
+                0.21,
+                1.3
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "shelf",
+          "offset": [
+            0,
+            0.3,
+            -0.58
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "shelf",
+            "shape": "box",
+            "size": [
+              4.1,
+              4.4,
+              0.16
+            ],
+            "material": "stone",
+            "solid": true
+          }
+        }
+      ]
+    },
+    "endWall": {
+      "op": "group",
+      "evidence": "furnish",
+      "children": [
+        {
+          "op": "use",
+          "evidence": "gallery",
+          "ref": "bay"
+        },
+        {
+          "op": "transform",
+          "evidence": "wall",
+          "offset": [
+            0,
+            1,
+            -6
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "wall",
+            "shape": "box",
+            "size": [
+              30,
+              9,
+              0.7
+            ],
+            "material": "stone",
+            "solid": true
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "shelf",
+          "offset": [
+            -10,
+            -0.25,
+            -4.7
+          ],
+          "child": {
+            "op": "repeat",
+            "evidence": "shelf",
+            "count": 5,
+            "step": [
+              5,
+              0,
+              0
+            ],
+            "child": {
+              "op": "use",
+              "evidence": "shelf",
+              "ref": "bookcase"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "reference": "canopy-source.mp4",
+    "v2wReview": {
+      "sources": [
+        {
+          "id": "clip",
+          "kind": "video",
+          "locator": "examples/canopy-source.mp4",
+          "sha256": "5ed2430d8c757b3ed9b70f41b66766799c4ffa18a74eccf37d2d47c652e87a08"
+        },
+        {
+          "id": "plan",
+          "kind": "brief",
+          "locator": "examples/reviews/canopy-brief.md"
+        }
+      ],
+      "bindings": {
+        "chair": "clip",
+        "shelf": "clip",
+        "wall": "clip",
+        "scan": "clip",
+        "gallery": "plan",
+        "wing": "plan",
+        "furnish": "plan"
+      }
+    }
+  },
+  "evidence": [
+    {
+      "id": "chair",
+      "kind": "observation",
+      "source": "examples/canopy-source.mp4#t=0,2",
+      "claim": "A crimson padded seat and high back stand out against the pale wall.",
+      "confidence": 0.98
+    },
+    {
+      "id": "shelf",
+      "kind": "observation",
+      "source": "examples/canopy-source.mp4#t=4,7.8",
+      "claim": "A dark upright case with several exposed horizontal shelves enters from the left.",
+      "confidence": 0.96
+    },
+    {
+      "id": "wall",
+      "kind": "observation",
+      "source": "examples/canopy-source.mp4#t=0,7.8",
+      "claim": "The pale green rear wall breaks into irregular light and dark patches near the floor.",
+      "confidence": 0.94
+    },
+    {
+      "id": "scan",
+      "kind": "inference",
+      "source": "examples/canopy-source.mp4#t=0,7.8",
+      "claim": "The lateral reveal makes the seat and shelving useful landmarks for a survey route.",
+      "confidence": 0.8
+    },
+    {
+      "id": "gallery",
+      "kind": "decision",
+      "source": "examples/reviews/canopy-brief.md",
+      "claim": "Raise the shelves into walk-through bays; keep the seat off the path and give each bay a floor.",
+      "confidence": 1
+    },
+    {
+      "id": "wing",
+      "kind": "extension",
+      "source": "examples/reviews/canopy-brief.md",
+      "claim": "Branch around the central reading bay and rejoin under the far shelf canopy.",
+      "confidence": 1
+    },
+    {
+      "id": "furnish",
+      "kind": "decision",
+      "source": "examples/reviews/canopy-brief.md",
+      "claim": "Restore the stacked shelf openings beside the near seat and close the rear view with a bank of shelves.",
+      "confidence": 1
+    }
+  ]
+}

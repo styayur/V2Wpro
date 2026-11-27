@@ -1,0 +1,406 @@
+{
+  "format": "v2w-review-1",
+  "sources": [
+    {
+      "id": "brief",
+      "kind": "brief",
+      "locator": "examples/reviews/caldera-brief.md"
+    }
+  ],
+  "features": [
+    {
+      "id": "strata",
+      "kind": "observation",
+      "source": "brief",
+      "claim": "The written section calls for a dark broken rim above an ochre basin.",
+      "confidence": 1
+    },
+    {
+      "id": "ember",
+      "kind": "inference",
+      "source": "brief",
+      "claim": "A thin bright seam can show which side of a shelf faces the basin.",
+      "confidence": 0.86
+    },
+    {
+      "id": "lip",
+      "kind": "decision",
+      "source": "brief",
+      "claim": "Keep shelf tops below each waypoint and leave open air between shelves.",
+      "confidence": 1
+    },
+    {
+      "id": "ascent",
+      "kind": "extension",
+      "source": "brief",
+      "claim": "Split the ascent into low and high arcs with a shared far rim.",
+      "confidence": 1
+    },
+    {
+      "id": "rim",
+      "kind": "decision",
+      "source": "brief",
+      "claim": "Scatter a ring of vents around a sunken basin and expose a few terraces above it.",
+      "confidence": 1
+    },
+    {
+      "id": "approach",
+      "kind": "decision",
+      "source": "brief",
+      "claim": "Start above the entrance sill so the pilot can read the caldera before choosing an ascent.",
+      "confidence": 1
+    }
+  ],
+  "design": {
+    "name": "Caldera · Split Ascent",
+    "seed": 2503,
+    "style": {
+      "sky": "#f0bc8b",
+      "stone": "#493c4a",
+      "accent": "#ee8742",
+      "light": 1.65
+    },
+    "motion": {
+      "action": "flight",
+      "speed": 11
+    },
+    "physics": {
+      "radius": 0.45
+    },
+    "streaming": {
+      "cellSize": 16,
+      "radius": 3
+    },
+    "budget": {
+      "instances": 800,
+      "operations": 4096
+    },
+    "assets": [],
+    "unknowns": [
+      "The written section leaves the number of vents and the diameter of the basin open."
+    ],
+    "topology": {
+      "spawn": "overlook",
+      "nodes": [
+        {
+          "id": "overlook",
+          "position": [
+            0,
+            11,
+            22
+          ],
+          "rule": "overlook"
+        },
+        {
+          "id": "sill",
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "rule": "basin"
+        },
+        {
+          "id": "low",
+          "position": [
+            -14,
+            4,
+            -13
+          ],
+          "rule": "ledge"
+        },
+        {
+          "id": "bench",
+          "position": [
+            -15,
+            6,
+            -27
+          ],
+          "rule": "ledge"
+        },
+        {
+          "id": "high",
+          "position": [
+            15,
+            10,
+            -18
+          ],
+          "rule": "summit"
+        },
+        {
+          "id": "crown",
+          "position": [
+            0,
+            11,
+            -38
+          ],
+          "rule": "summit"
+        }
+      ],
+      "edges": [
+        [
+          "overlook",
+          "sill"
+        ],
+        [
+          "sill",
+          "low"
+        ],
+        [
+          "low",
+          "bench"
+        ],
+        [
+          "bench",
+          "crown"
+        ],
+        [
+          "sill",
+          "high"
+        ],
+        [
+          "high",
+          "crown"
+        ]
+      ]
+    },
+    "prototypes": {
+      "ledge": {
+        "op": "group",
+        "evidence": "lip",
+        "children": [
+          {
+            "op": "transform",
+            "evidence": "strata",
+            "offset": [
+              0,
+              -8.5,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "strata",
+              "shape": "rock",
+              "size": [
+                12,
+                7,
+                12
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          },
+          {
+            "op": "transform",
+            "evidence": "ember",
+            "offset": [
+              0,
+              -6.2,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "ember",
+              "shape": "mound",
+              "size": [
+                12.8,
+                2.4,
+                12.8
+              ],
+              "material": "accent",
+              "solid": true
+            }
+          },
+          {
+            "op": "transform",
+            "evidence": "strata",
+            "offset": [
+              0,
+              -5.55,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "strata",
+              "shape": "mound",
+              "size": [
+                12,
+                1.8,
+                12
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          }
+        ]
+      },
+      "vent": {
+        "op": "group",
+        "evidence": "rim",
+        "children": [
+          {
+            "op": "transform",
+            "evidence": "strata",
+            "offset": [
+              0,
+              -3,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "strata",
+              "shape": "rock",
+              "size": [
+                7,
+                10,
+                6
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          },
+          {
+            "op": "transform",
+            "evidence": "ember",
+            "offset": [
+              0,
+              1.8,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "ember",
+              "shape": "mound",
+              "size": [
+                5,
+                1.3,
+                4
+              ],
+              "material": "accent",
+              "solid": true
+            }
+          }
+        ]
+      },
+      "basin": {
+        "op": "group",
+        "evidence": "rim",
+        "children": [
+          {
+            "op": "use",
+            "evidence": "lip",
+            "ref": "ledge"
+          },
+          {
+            "op": "transform",
+            "evidence": "rim",
+            "offset": [
+              0,
+              -13,
+              -19
+            ],
+            "child": {
+              "op": "group",
+              "evidence": "rim",
+              "children": [
+                {
+                  "op": "emit",
+                  "evidence": "strata",
+                  "shape": "mound",
+                  "size": [
+                    39,
+                    3,
+                    36
+                  ],
+                  "material": "accent",
+                  "solid": true
+                },
+                {
+                  "op": "radial",
+                  "evidence": "rim",
+                  "count": 23,
+                  "radius": 19,
+                  "child": {
+                    "op": "transform",
+                    "evidence": "rim",
+                    "offset": [
+                      0,
+                      4,
+                      0
+                    ],
+                    "jitter": [
+                      1,
+                      1.2,
+                      1
+                    ],
+                    "child": {
+                      "op": "emit",
+                      "evidence": "strata",
+                      "shape": "rock",
+                      "size": [
+                        8,
+                        6,
+                        8
+                      ],
+                      "material": "stone",
+                      "solid": true
+                    }
+                  }
+                },
+                {
+                  "op": "radial",
+                  "evidence": "ember",
+                  "count": 9,
+                  "radius": 10,
+                  "child": {
+                    "op": "emit",
+                    "evidence": "ember",
+                    "shape": "rock",
+                    "size": [
+                      3,
+                      4.5,
+                      4
+                    ],
+                    "material": "stone",
+                    "solid": true
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "summit": {
+        "op": "group",
+        "evidence": "ascent",
+        "children": [
+          {
+            "op": "use",
+            "evidence": "lip",
+            "ref": "ledge"
+          },
+          {
+            "op": "transform",
+            "evidence": "ascent",
+            "offset": [
+              7,
+              1,
+              -4
+            ],
+            "child": {
+              "op": "use",
+              "evidence": "rim",
+              "ref": "vent"
+            }
+          }
+        ]
+      },
+      "overlook": {
+        "op": "group",
+        "evidence": "approach",
+        "children": []
+      }
+    },
+    "extensions": {}
+  }
+}
