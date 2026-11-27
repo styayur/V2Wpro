@@ -1,6 +1,6 @@
 {
   "name": "v2wpro",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Compile reviewed video evidence into bounded, playable procedural worlds",
   "scripts": {
     "test": "node --test",

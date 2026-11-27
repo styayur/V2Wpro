@@ -1,12 +1,12 @@
 <img src="web/logo.svg" width="54" alt="V2Wpro logo">
 
-# V2Wpro · Morphogenesis
+# V2Wpro · Kinetogenesis
 
 **Video imagines. Algorithms expand. Engines realize.**
 
 A video reviewer can describe a room as a reusable rule: stack shelves between uprights, repeat the assembly, and put the player's junction beside the landmark chair. V2Wpro compiles those choices into a bounded WorldIR program. Every emitted object links back to the claims that produced it.
 
-[Play the six worlds](https://styayur.github.io/V2Wpro/) · [简体中文](README.zh-CN.md) · [v0.2.0 release and recordings](https://github.com/styayur/V2Wpro/releases/tag/v0.2.0)
+[Play the eight worlds](https://styayur.github.io/V2Wpro/) · [简体中文](README.zh-CN.md) · [v0.2.0 release and recordings](https://github.com/styayur/V2Wpro/releases/tag/v0.2.0)
 
 ## Quick start
 
