@@ -1,5 +1,10 @@
+import { inspectRoutes, realize } from "../src/morph.js";
+import { exportExchange } from "../src/exchange.js";
+import { inspectMovement } from "../src/movement.js";
+import profile from "../examples/profiles/skimmer-cruise.json" with { type: "json" };
+
 const el = (id) => document.getElementById(id);
-export function setupPanel(w, id, url) {
+export function setupPanel(w, id, url, scene) {
   el("version").textContent = "WORLDIR " + w.version;
   el("title").textContent = w.name;
   el("document").href = url;
@@ -16,6 +21,40 @@ export function setupPanel(w, id, url) {
     });
   };
   const spatial = w.version === "2.0";
+  if (spatial) {
+    el("exchange-panel").hidden = false;
+    const editor = el("edit-prototypes");
+    editor.value = JSON.stringify(w.prototypes,null,2);
+    const selected = w.extensions.movementProfile ?? profile;
+    const report = inspectMovement(w,scene,selected);
+    const blocked = report.edges.filter(edge => !edge.clear);
+    el("movement-envelope").textContent = selected.id + " at " + selected.speed + " m/s · turn radius " +
+      report.turnRadius.toFixed(1) + " m · braking " + report.brakingDistance.toFixed(1) +
+      " m · clearance conflicts: " + (blocked.map(edge => edge.from + " → " + edge.to).join(", ") || "none");
+    const key = "rules:" + url.href;
+    el("apply-rules").onclick = () => {
+      try {
+        const candidate = {...w,prototypes:JSON.parse(editor.value)};
+        const routes = inspectRoutes(candidate,realize(candidate));
+        if (!routes.connected || routes.blockedEdges.length) throw Error("Rules obstruct the WorldIR route");
+        exportExchange(candidate);
+        sessionStorage.setItem(key,JSON.stringify(candidate.prototypes));
+        location.reload();
+      } catch (err) { el("exchange-status").textContent = err.message; }
+    };
+    el("reset-rules").onclick = () => { sessionStorage.removeItem(key); location.reload(); };
+    function download(extension, encode) {
+      try {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(new Blob([encode()]));
+        link.download = id + "-" + w.seed + "." + extension;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(link.href),1000);
+      } catch (err) { el("exchange-status").textContent = err.message; }
+    }
+    el("save-glb").onclick = () => download("glb",() => exportExchange(w));
+    el("save-ir").onclick = () => download("json",() => JSON.stringify(w,null,2));
+  }
   el("rules").textContent = JSON.stringify(
     spatial ? w.prototypes : w.rules,
     null,

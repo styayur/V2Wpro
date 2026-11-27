@@ -27,7 +27,7 @@ export async function buildSite(out = "dist", custom) {
   });
   cpSync(path.join(root, "LICENSE"), path.join(out, "LICENSE"));
   const worlds = Object.fromEntries(
-    ["arcade", "island", "gate", "canopy", "caldera", "lattice"].map((id) => [
+    ["arcade", "island", "gate", "canopy", "caldera", "lattice", "contact", "district"].map((id) => [
       id,
       "./examples/" + id + ".json",
     ]),

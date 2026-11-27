@@ -44,3 +44,7 @@ For a new video, ingest local files and run `node cli.js analyze` to produce a t
 Run `npm test` with FFmpeg on PATH (or set FFMPEG to its executable), then `npx playwright install chromium`. `npm run evaluate` plays the legacy studies; `node tools/morph-evaluate.js` exercises the spatial worlds. The release contains screenshots, recordings, draw statistics, return-trip and memory observations. Install the agent workflow by copying skills/v2wpro into the target project's .agents/skills/ directory.
 
 Three.js is the shipped renderer. CPU realization and GPU streaming operate on a bounded finite scene. The source and original assets are MIT licensed. Preview and redistribution of third-party media follow the source-specific credits. [Credits](examples/CREDITS.md) · [MIT License](LICENSE) · [Historical WorldIR 1.0 specification](docs/worldir.md)
+
+## Finite flight research
+
+[Contact deck, Relay District and downstream flight qualification](docs/contact-study.md)

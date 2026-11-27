@@ -170,3 +170,6 @@ input {
     margin-top: 18px;
   }
 }
+
+#edit-prototypes { display:block; width:100%; box-sizing:border-box; font:inherit; font-family:monospace; }
+#exchange-status { display:block; }

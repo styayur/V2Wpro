@@ -14,7 +14,8 @@ const launch = world.topology.nodes.find(node => node.id === world.topology.spaw
 const high = Math.max(...scene.solids.map(s => s.center[1] + s.extent[1]));
 const length = Math.ceil(contactLength + 2 * brakingDistance);
 const cycles = 2 + world.seed % 2;
-const thickness = Math.min(6, 1 / (turnRadius * 0.45 * (2 * Math.PI * cycles / length) ** 2));
+const exitRadius = brakingDistance ** 2 / (2 * (profile.clearance - profile.hullRadius));
+const thickness = Math.min(6, 1 / (Math.max(turnRadius, exitRadius) * 0.45 * (2 * Math.PI * cycles / length) ** 2));
 const evidence = "continuousRoof";
 const deck = {op:"transform",evidence,offset:[0,high+thickness/2-launch.position[1],-length/2],
   child:{op:"emit",shape:"box",material:"stone",solid:true,evidence,size:[26,thickness,length]}};

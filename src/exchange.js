@@ -23,6 +23,7 @@ export function exportExchange(world) {
   }));
   const gltf = { asset: { version: "2.0", generator: "V2Wpro exchange" }, scene: 0,
     scenes: [{ name: world.name, nodes: [], extras: { seed: world.seed, topology: world.topology,
+      ...(world.extensions.flightEntry ? {flightEntry:world.extensions.flightEntry} : {}),
       assets: world.assets.map(({ uri, source, license }) => ({ assetPath: uri, source, license })),
       evidence: world.evidence, unknowns: world.unknowns } }],
     nodes: [], meshes: [], materials, buffers: [], bufferViews: [], accessors: [] };
