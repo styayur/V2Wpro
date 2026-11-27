@@ -76,8 +76,19 @@
       "id": "furnish",
       "kind": "decision",
       "source": "plan",
-      "claim": "Restore the stacked shelf openings beside the near seat and close the rear view with a bank of shelves.",
+      "claim": "Restore the stacked shelf openings beside the seat. Place five bookcases along the rear wall to close the view.",
       "confidence": 1
+    },
+    {
+      "id": "shelfBoards",
+      "kind": "observation",
+      "source": "clip",
+      "claim": "At 7.5 seconds the tall bookcase on the left has four horizontal boards: its top, two interior shelves and its base. Together they bound three openings.",
+      "confidence": 0.98,
+      "time": [
+        7.5,
+        7.5
+      ]
     }
   ],
   "design": {
@@ -517,7 +528,9 @@
             "child": {
               "op": "repeat",
               "evidence": "shelf",
-              "count": 4,
+              "count": {
+                "$param": "boardsPerCase"
+              },
               "step": [
                 0,
                 1.35,
@@ -601,7 +614,9 @@
             "child": {
               "op": "repeat",
               "evidence": "shelf",
-              "count": 5,
+              "count": {
+                "$param": "rearCases"
+              },
               "step": [
                 5,
                 0,
@@ -620,5 +635,17 @@
     "extensions": {
       "reference": "canopy-source.mp4"
     }
-  }
+  },
+  "parameters": [
+    {
+      "id": "rearCases",
+      "value": 5,
+      "feature": "furnish"
+    },
+    {
+      "id": "boardsPerCase",
+      "value": 4,
+      "feature": "shelfBoards"
+    }
+  ]
 }

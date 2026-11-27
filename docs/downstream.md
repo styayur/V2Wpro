@@ -21,12 +21,18 @@ Install the V2Wpro dependencies and use a separate, trusted Skimmer-Scraper chec
 node tools/verify-exchange.js ../Skimmer-Scraper canopy.glb caldera.glb lattice.glb
 ```
 
+To regenerate the attachment directory, run the command below with FFmpeg on PATH or set `FFMPEG` to its executable. It exports all three examples, checks them against the recipient, verifies reviewed source digests, and samples both reference clips through the project's FFmpeg ingest path. Caldera's authored source is a written brief. The directory contains the GLBs, the two source clips, timestamped frame manifests, and `evidence.json` linking measurements to SHA-256 digests of the worlds, reviews, sources and GLBs. Reusing the directory refreshes the named exports and reuses content-addressed clip frames.
+
+```sh
+node tools/verify-exchange.js ../Skimmer-Scraper --cases .v2w/v020-exchange
+```
+
 Measured against revision `93c0d092f58de4a90e420abcd0202149b5e817f3`, with the example seeds as authored:
 
 | Scene | Loaded nodes, including root | Rendered triangles | Collision triangles |
 | --- | ---: | ---: | ---: |
-| canopy | 50 | 588 | 588 |
-| caldera | 58 | 684 | 684 |
-| lattice | 69 | 8,980 | 660 |
+| canopy | 101 | 1,200 | 1,200 |
+| caldera | 53 | 624 | 624 |
+| lattice | 89 | 9,220 | 660 |
 
 The headless proof covers file acceptance, mesh instantiation, role recognition, and collision geometry construction. Browser activation, takeoff, gameplay and save/reload require a separate end-to-end run. Export limits reserve one recipient node for the scene root, cap rendered triangles at 1,250,000, and require collision geometry spanning at least 0.05 m. The whole exported scene must span at most 12,000 m on each axis. [Recipient limits and options](https://github.com/styayur/Skimmer-Scraper/blob/93c0d092f58de4a90e420abcd0202149b5e817f3/src/world/imports/worldManifest.ts)

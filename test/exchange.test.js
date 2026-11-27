@@ -14,6 +14,12 @@ for (const example of ["canopy","caldera","lattice"]) {
     const { scene: loaded } = await new GLTFLoader().parseAsync(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.length), "");
     assert.equal(loaded.children.length, scene.items.length);
     const surfaces = loaded.children.filter(n => n.userData.skimmerRole === "SURFACE");
+    const triangles = nodes => nodes.reduce((sum, node) => sum +
+      (node.geometry.index?.count ?? node.geometry.attributes.position.count) / 3, 0);
+    const measured = [1 + loaded.children.length, triangles(loaded.children), triangles(surfaces)];
+    const row = readFileSync("docs/downstream.md", "utf8").split("\n").find(line => line.startsWith("| " + example + " |"));
+    assert.deepEqual(row?.split("|").slice(2, 5).map(cell => Number(cell.replaceAll(",", "").trim())),
+      measured, "Update the measured table after rerunning the recipient checker");
     assert.deepEqual(surfaces.map(s => [s.position.toArray(), s.scale.toArray()]).sort(),
       scene.solids.map(s => [s.center, s.extent.map(n => 2*n)]).sort());
     assert.deepEqual(loaded.userData.assets, world.assets.map(({ uri, source, license }) => ({ assetPath: uri, source, license })));

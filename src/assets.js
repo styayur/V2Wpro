@@ -175,7 +175,8 @@ function readAsset(input) {
     const count = integer(a.count, 1, 1000000, "accessor count");
     components += width * count;
     requireValue(components <= 16000000, "Accessor component budget exceeded");
-    requireValue(stride >= width * component && (start + (doc.bufferViews[a.bufferView].byteOffset ?? 0)) % component === 0 &&
+    requireValue(stride >= width * component && start % component === 0 &&
+      (start + (doc.bufferViews[a.bufferView].byteOffset ?? 0)) % component === 0 &&
       start + (count - 1) * stride + width * component <= view.length, "Accessor exceeds view or misaligned");
   }
   return { doc, views, packed: ext === ".glb" ? bytes : undefined };
@@ -278,7 +279,7 @@ export function importAsset(input, directory, source, license) {
   mkdirSync(path.join(directory, "assets"), { recursive: true });
   requireValue(inside(realpathSync(directory), realpathSync(path.join(directory, "assets"))), "Destination escapes project");
   const output = asset.packed ?? JSON.stringify(asset.doc);
-  requireValue(Buffer.byteLength(output) <= fileLimit, "Packaged file exceeds limit");
+  requireValue(Buffer.byteLength(output) <= (asset.packed ? fileLimit : 8 * 1024 * 1024), "Packaged file exceeds limit");
   writeFileSync(path.join(directory, uri), output, { flag: "wx" });
   return { uri, source, license };
 }

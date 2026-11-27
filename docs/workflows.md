@@ -1,5 +1,7 @@
 # Development workflows
 
+This guide describes the 1.0 corridor workflow retained for compatibility. For reviewed rule programs use the [2.0 compiler](compiler.md), [spatial engine](morphogenesis.md) and [asset pipeline](assets-v2.md).
+
 ## Video to playable world
 
 Use Node 24 LTS, npm, and FFmpeg on PATH (or set FFMPEG to an executable path). Install development dependencies with `npm ci`. Once dependencies and Chromium are cached, local generation, preview and evaluation run offline. Prebuilt Pages files require only a static HTTP server.

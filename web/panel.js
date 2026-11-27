@@ -61,11 +61,16 @@ export function setupPanel(w, id, url) {
       record.source,
     ),
   );
-  if (film) {
+  const reference = w.extensions?.reference;
+  const localFilm =
+    typeof reference === "string" && /^[A-Za-z0-9_-]+\.mp4$/.test(reference)
+      ? "./examples/" + reference
+      : film && "./" + film.source;
+  if (localFilm) {
     el("reference").hidden = false;
-    el("reference").querySelector("video").src = "./" + film.source;
+    el("reference").querySelector("video").src = localFilm;
     el("filmTitle").textContent = "Reference film";
-    el("filmNotes").textContent = film.claim;
+    el("filmNotes").textContent = film?.claim ?? "";
   } else if (id === "arcade" || id === "gate") {
     el("reference").hidden = false;
     el("reference").querySelector("video").src =

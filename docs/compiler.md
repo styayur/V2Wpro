@@ -1,5 +1,7 @@
 # Compile a reviewed reference
 
+The archived 1.0 flight replay checks the digest of the decoded native YUV frame and the digest of its reviewed PNG before sampling the original swatches. This keeps the published 1.0 result exact across ARM and x64 FFmpeg RGB conversion paths.
+
 From the checkout, run the commands below with Node and FFmpeg available. For an installed CLI, substitute `v2w` for `node cli.js`. Use a fresh filename for each review, compiled world, variant and evidence export.
 
 ```sh
@@ -20,7 +22,7 @@ node cli.js report playtest/morph/report.json
 
 ## Review contract
 
-Use the complete reviews in `examples/reviews/{canopy,caldera,lattice}.json` as templates. The top-level keys are `format`, `sources`, `features` and `design`.
+Use the complete reviews in `examples/reviews/{canopy,caldera,lattice}.json` as templates. The top-level keys are `format`, `sources`, `features` and `design`, with optional `parameters`.
 
 - Set `format` to `v2w-review-1`.
 - Each source needs a unique ID, a kind (`brief`, `image` or `video`) and a locator. Supply a 64-digit hexadecimal SHA-256 when available. Compilation treats locators as citations. To compare a digest to local bytes, explicitly select the file with `verify`.
@@ -29,6 +31,14 @@ Use the complete reviews in `examples/reviews/{canopy,caldera,lattice}.json` as 
 - The compiler stores the original source table and the feature-to-source bindings in `extensions.v2wReview`. The evidence export includes both, plus the resolved claims, confidence, seed and unknowns. Keep this extension key available when authoring a design.
 
 `compile`, `validate`, `generate` and `variant` check rule expansion, declared budgets, reachability from spawn and swept-sphere clearance for every listed edge. `generate` writes the evaluated 2.0 items, solids and cell memberships to `.v2w/scene.json`. Legacy generation writes `.v2w/chunks.json`.
+
+## Evidence-derived scalar parameters
+
+To reuse a measured count or dimension, declare up to 128 bindings in the review's optional `parameters` array. Each declaration contains a unique ASCII ID, a finite numeric value and the ID of the feature that supports it. Cite the frame and measurement in that feature. If a value uses an assumed metric scale, record that inference separately from the observed pixel measurement.
+
+In canopy, the frame at 7.5 seconds shows four bookcase boards, including the top and base. The review declares `{"id":"boardsPerCase","value":4,"feature":"shelfBoards"}` and uses `{"$param":"boardsPerCase"}` for the bookcase repeat count. References may also occupy a radial radius or a single component of `size`, `step`, `offset`, `scale` or `jitter`. The reference object contains only `$param`. Each binding must be used, with at most 4,096 references across the design.
+
+The compiler resolves each number in a copy of `design.prototypes`, then checks the completed world, including integer counts, budgets and routes. The operator keeps its own evidence ID. The evidence export lists each parameter's `id`, `value`, `feature` and `uses`. Each use is a path from the WorldIR root, such as `/prototypes/shelves/count` or `/prototypes/tile/size/1`. These paths identify authored leaves, so a repeated placement points back to the same prototype field. An absent or empty parameter list keeps the previous serialized IR.
 
 ## Revision, variation and rollback
 

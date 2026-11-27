@@ -1,0 +1,125 @@
+{
+  "node": "v26.7.0",
+  "platform": "win32",
+  "arch": "x64",
+  "cpu": "AMD Ryzen 7 H 255 w/ Radeon 780M Graphics",
+  "warmup": 50,
+  "batches": 20,
+  "perBatch": 100,
+  "results": {
+    "text": {
+      "prototypes": 3,
+      "rules": {
+        "repeat": 1,
+        "use": 3,
+        "group": 1,
+        "transform": 2,
+        "emit": 1
+      },
+      "shapes": {
+        "box": 24
+      },
+      "items": 24,
+      "solids": 24,
+      "cells": 14,
+      "nodes": 3,
+      "edges": 2,
+      "routes": {
+        "reachable": [
+          "entry",
+          "middle",
+          "exit"
+        ],
+        "blockedEdges": [],
+        "connected": true
+      },
+      "sceneSha256": "4943e3839605f1420f96b58b6d1776c8aa0f3f5ec4baafc0f6dc7b70db191ddf",
+      "batchMsPerRealization": [
+        0.050428,
+        0.050509000000000005,
+        0.051986,
+        0.038942000000000004,
+        0.047426,
+        0.039417,
+        0.038468,
+        0.037153,
+        0.049559,
+        0.046596,
+        0.041402,
+        0.039802,
+        0.044649999999999995,
+        0.052392,
+        0.036034000000000004,
+        0.038314,
+        0.042927999999999994,
+        0.03746,
+        0.036309999999999995,
+        0.035494
+      ],
+      "medianMs": 0.040602
+    },
+    "frame": {
+      "prototypes": 3,
+      "rules": {
+        "repeat": 1,
+        "use": 3,
+        "group": 1,
+        "transform": 3,
+        "emit": 2
+      },
+      "shapes": {
+        "box": 24,
+        "arch": 12
+      },
+      "items": 36,
+      "solids": 24,
+      "cells": 14,
+      "nodes": 3,
+      "edges": 2,
+      "routes": {
+        "reachable": [
+          "entry",
+          "middle",
+          "exit"
+        ],
+        "blockedEdges": [],
+        "connected": true
+      },
+      "sceneSha256": "c62b7890feec4d12933b9b4567c18665ab619acdb0caf9449d14ddb7db198c5d",
+      "batchMsPerRealization": [
+        0.087567,
+        0.062062,
+        0.053045999999999996,
+        0.051205,
+        0.074413,
+        0.055873,
+        0.051894,
+        0.049884000000000005,
+        0.063942,
+        0.072241,
+        0.054216,
+        0.060240999999999996,
+        0.053952,
+        0.072605,
+        0.04906,
+        0.05152999999999999,
+        0.050853,
+        0.05493000000000001,
+        0.051628,
+        0.04997
+      ],
+      "medianMs": 0.054084
+    }
+  },
+  "sha256": {
+    "brief.txt": "1978cdbae78d42897e92f0625a573c6a2cee5a436e56f55c33f7c4c52f0661c6",
+    "text.json": "d9187a0e4ca82b2fcc537d0b4505b972fc27700f1404cbbd9194a844a59af6f5",
+    "frame.json": "87978b7312ce3ca2ba759f34f32ea52785596264802c39f8e6a7c48f7921f31b",
+    "frame.py": "85caf3b13dce2c166d71c82ff90bb515d83b43fbed350fb66619e730e14cbf62",
+    "../../examples/keyframe.png": "fb4d4a0892e384354bbd5ea7db149bab8b29fe0fefdc89cdf33f2a31b3d7eb27",
+    "../../examples/reference.mp4": "91d375a5fdec44d0689158bb6acef486f2bb522c6301acc82a3a48ad39fc328f",
+    "../../src/morph.js": "90dab7d2afd14e7bdc08d85336e13e81ee35c7c467964bce00ddd1401680cf99",
+    "../../src/validate.js": "44857414b11f057ca08b0938b8e107157e381a9db654d0c0a8d4f3aa3eed8dc8",
+    "../../schema/worldir-2.0.json": "4d4c79c35e9bea49973b0e456a4ca426670e108361fe15c5abd2ddd88ef97d7a"
+  }
+}

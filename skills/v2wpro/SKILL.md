@@ -17,7 +17,7 @@ For several clips, assign roles such as layout, palette or motion. State conflic
 
 Start from one of the checkout's full reviews in `examples/reviews/`. The canopy review ties a local clip to a branched survey route. Caldera and lattice exercise different topologies. Keep the source table, feature IDs, time intervals, confidence and unknowns alongside the authored design. For a shot with a declared digest, run `v2w verify REVIEW SOURCE_ID LOCAL_FILE`. For a brief-only prototype, use a brief source and label design decisions explicitly.
 
-Map each reusable assembly to a prototype. Bind every group, placement and emission to its supporting feature ID. Pick metric dimensions and budget both instance count and operator expansion. Check each graph edge at the player's radius. Use `v2w asset FILE SOURCE LICENSE` to package a licensed local model and include its returned metadata under design.assets. Keep that assets directory beside the review.
+Map each reusable assembly to a prototype. Bind every group, placement and emission to its supporting feature ID. For an observed count or dimension, declare a review parameter with its numeric value and supporting feature ID. Put `{"$param":"id"}` at each numeric prototype leaf that uses it, then inspect the parameter paths in the evidence export. Record assumed scale or authored counts in their own inference or decision features. Budget both instance count and operator expansion. Check each graph edge at the player's radius. Use `v2w asset FILE SOURCE LICENSE` to package a licensed local model and include its returned metadata under design.assets. Keep that assets directory beside the review.
 
 ```sh
 v2w compile review.json world.json

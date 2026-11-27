@@ -1,0 +1,31 @@
+{
+  "title": "Veo-3 animation example - Chernobyl decaying room",
+  "model": "Google Veo-3",
+  "uploader": "Global Donald",
+  "prompt": "An abandoned, decaying room with peeling green paint, a worn red armchair holding a doll’s head, a small white chair beside it, and debris scattered across the dirty floor. Do a 180° view, slow, with radiation sound (it's in chernobyl). You can make the video a bit darker, it must sound creepy, you can also add dust if you want.",
+  "promptSource": "Prompt field, Wikimedia Commons file description",
+  "sourceRevision": "https://commons.wikimedia.org/w/index.php?title=File:Veo-3_animation_example_-_Chernobyl_decaying_room.webm&oldid=1069385069",
+  "descriptionTextLicense": "CC-BY-SA-4.0",
+  "descriptionLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "promptChanges": "Transcribed from the file description; surrounding quotation marks omitted.",
+  "mediaLicense": "CC0-1.0",
+  "mediaLicenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Veo-3_animation_example_-_Chernobyl_decaying_room.webm",
+  "originalSha256": "1dc48847867eda5a3b9013248842f5ed7bfd0f05a236f694e9667a8291c878f2",
+  "distributedFile": "examples/canopy-source.mp4",
+  "distributedSha256": "5ed2430d8c757b3ed9b70f41b66766799c4ffa18a74eccf37d2d47c652e87a08",
+  "derivative": "Full shot, downscaled to 640 x 360, H.264, audio removed.",
+  "contactSheet": "evidence/morph-case/canopy-source.jpg",
+  "keyframeSeconds": [
+    0,
+    2,
+    4,
+    6
+  ],
+  "contactSheetOrder": "Row-major from upper left",
+  "countedFrame": {
+    "seconds": 7.5,
+    "file": "evidence/morph-case/canopy-shelf-7p5.jpg",
+    "feature": "shelfBoards"
+  }
+}

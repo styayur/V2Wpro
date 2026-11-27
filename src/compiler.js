@@ -57,9 +57,65 @@ function index(records, limit, label) {
   return result;
 }
 
+// Substitute on the cloned design. The WorldIR schema enforces the operator's
+// numeric type, interval and arity after each symbol has become a number.
+function resolveParameters(design, declarations, features) {
+  const parameters = new Map();
+  if (!Array.isArray(declarations) || declarations.length > 128)
+    throw Error("Expected up to 128 parameter declarations");
+  for (const declaration of declarations) {
+    keys(declaration, ["id", "value", "feature"], "parameter");
+    const { id, value, feature } = declaration;
+    requireValue(
+      typeof id === "string" && idPattern.test(id) && !parameters.has(id),
+      "Invalid or duplicate parameter ID",
+    );
+    requireValue(
+      Number.isFinite(value) && features.has(feature),
+      "Invalid parameter value or feature: " + id,
+    );
+    parameters.set(id, { id, value, feature, uses: [] });
+  }
+
+  const path = [];
+  let uses = 0;
+  function visit(value) {
+    if (value === null || typeof value !== "object") return value;
+    if (Object.hasOwn(value, "$param")) {
+      keys(value, ["$param"], "parameter reference");
+      requireValue(
+        path[0] === "prototypes" &&
+          path.length >= 3 &&
+          path.every((key) => key.length <= 64),
+        "Parameter reference outside a prototype scalar",
+      );
+      const parameter = parameters.get(value.$param);
+      requireValue(parameter, "Unknown parameter reference");
+      requireValue(++uses <= 4096, "Parameter use limit exceeded");
+      // Valid WorldIR prototype IDs and operator fields contain no slash or tilde.
+      parameter.uses.push("/" + path.join("/"));
+      return parameter.value;
+    }
+    for (const key of Object.keys(value)) {
+      path.push(key);
+      value[key] = visit(value[key]);
+      path.pop();
+    }
+    return value;
+  }
+  visit(design);
+  for (const parameter of parameters.values())
+    requireValue(parameter.uses.length, "Unused parameter: " + parameter.id);
+  return Array.from(parameters.values());
+}
+
 export function compile(review) {
   boundDocument(review);
-  keys(review, ["format", "sources", "features", "design"], "review");
+  keys(
+    review,
+    ["format", "sources", "features", "parameters", "design"],
+    "review",
+  );
   requireValue(review.format === "v2w-review-1", "Expected v2w-review-1");
   const sources = index(review.sources, 128, "source");
   for (const source of sources.values()) {
@@ -78,7 +134,8 @@ export function compile(review) {
   }
   const evidence = [];
   const bindings = {};
-  for (const f of index(review.features, 512, "feature").values()) {
+  const features = index(review.features, 512, "feature");
+  for (const f of features.values()) {
     keys(f, ["id", "kind", "source", "claim", "confidence", "time"], "feature");
     const src = sources.get(f.source);
     requireValue(
@@ -123,9 +180,15 @@ export function compile(review) {
     object(design.extensions) && !Object.hasOwn(design.extensions, "v2wReview"),
     "Expected extensions with v2wReview available for provenance",
   );
+  const parameters = resolveParameters(
+    design,
+    Object.hasOwn(review, "parameters") ? review.parameters : [],
+    features,
+  );
   design.extensions.v2wReview = {
     sources: structuredClone(review.sources),
     bindings,
+    ...(parameters.length ? { parameters } : {}),
   };
   return checkWorld({ version: "2.0", ...design, evidence });
 }

@@ -1,4 +1,7 @@
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { ingest, read, write } from "../src/media.js";
 import { analyze } from "../src/provider.js";
@@ -11,11 +14,24 @@ export function compileFlight(video, analysis, design, out, root = ".v2w") {
     throw Error("Review refers to another reference");
   const frame = media.frames.find((f) => f.seconds === analysis.frame);
   if (!frame) throw Error("Reviewed timestamp missing");
-  const file = path.join(
+  let file = path.join(
     root,
     task.inputs.find((i) => i.sha256 === media.sha256).directory,
     frame.file,
   );
+  // Verify the decoded frame before looking up the archived color transform.
+  // Native YUV bytes are stable across ARM and x64; swscale's RGB rounding differs.
+  if (analysis.nativeFrameSha256 !== undefined) {
+    const yuv = execFileSync(process.env.FFMPEG || "ffmpeg", [
+      "-v", "error", "-ss", String(frame.seconds), "-protocol_whitelist", "file",
+      "-i", path.join(path.dirname(file), media.local), "-frames:v", "1",
+      "-pix_fmt", "yuv420p", "-f", "rawvideo", "pipe:1"
+    ], { timeout: 60000, maxBuffer: 8 * 1024 * 1024 });
+    file = fileURLToPath(new URL("../examples/keyframe.png", import.meta.url));
+    const hash = bytes => createHash("sha256").update(bytes).digest("hex");
+    if (hash(yuv) !== analysis.nativeFrameSha256 || hash(readFileSync(file)) !== analysis.reviewedPngSha256)
+      throw Error("Legacy native frame or reviewed color frame differs from the recording");
+  }
   const w = { ...structuredClone(design), prototype: analysis.grammar };
   w.evidence = w.evidence.filter(
     (e) => !["observation", "inference"].includes(e.kind),

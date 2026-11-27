@@ -298,7 +298,8 @@ async function boot() {
     };
   }
   function render(now) {
-    const ms = now - last;
+    // The first rAF timestamp can precede initialization in the same frame.
+    const ms = Math.max(0, now - last);
     last = now;
     const dt = Math.min(0.08, ms / 1000);
     boost = Math.max(0, boost - dt);

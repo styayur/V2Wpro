@@ -87,6 +87,126 @@ test("compile joins timestamps and digests and preserves the reviewed design", (
   assert.deepEqual(input, before);
 });
 
+function parameterReview() {
+  const input = review();
+  input.features.push({
+    ...input.features[0],
+    id: "measurement",
+    claim: "Two tiles span the opening",
+  });
+  input.parameters = [{ id: "span", value: 2, feature: "measurement" }];
+  const tile = input.design.prototypes.tile;
+  tile.size[0] = { $param: "span" };
+  input.design.prototypes.tile = {
+    op: "group",
+    evidence: "tone",
+    children: [
+      {
+        op: "repeat",
+        evidence: "tone",
+        count: { $param: "span" },
+        step: [0, 0, 2],
+        child: tile,
+      },
+    ],
+  };
+  return input;
+}
+
+test("substitutes reviewed numbers in nested prototype leaves and exports each use", () => {
+  const input = parameterReview(),
+    before = structuredClone(input);
+  const world = compile(input),
+    repeat = world.prototypes.tile.children[0];
+  assert.equal(repeat.count, 2);
+  assert.deepEqual(repeat.child.size, [2, 1, 1]);
+  assert.deepEqual(evidenceReport(world).parameters, [
+    {
+      id: "span",
+      value: 2,
+      feature: "measurement",
+      uses: [
+        "/prototypes/tile/children/0/count",
+        "/prototypes/tile/children/0/child/size/0",
+      ],
+    },
+  ]);
+  const revised = revise(input, {
+    parameters: [{ id: "span", value: 3, feature: "measurement" }],
+  });
+  assert.equal(compile(revised).prototypes.tile.children[0].count, 3);
+  assert.deepEqual(input, before);
+});
+
+test("unparameterized review serialization matches the original compiler", () => {
+  const input = review();
+  const expected = {
+    version: "2.0",
+    ...structuredClone(input.design),
+    evidence: [
+      {
+        id: "tone",
+        kind: "observation",
+        source: "shot.mp4#t=0,1.5",
+        claim: "Blue floor",
+        confidence: 0.9,
+      },
+    ],
+  };
+  expected.extensions.v2wReview = {
+    sources: input.sources,
+    bindings: { tone: "clip" },
+  };
+  for (const r of [input, { ...input, parameters: [] }])
+    assert.equal(
+      JSON.stringify(compile(r), null, 2),
+      JSON.stringify(expected, null, 2),
+    );
+});
+
+test("rejects missing, unused, oversized, malformed and misplaced parameter bindings", () => {
+  for (const mutate of [
+    (r) => delete r.parameters,
+    (r) => (r.parameters = null),
+    (r) => (r.parameters[0].feature = "missing"),
+    (r) => (r.parameters[0].id = "invalid id"),
+    (r) => (r.parameters[0].value = Infinity),
+    (r) => (r.parameters[0].value = "2+1"),
+    (r) => (r.parameters[0].value = 1.5), // count requires an integer
+    (r) => (r.parameters[0].value = 100), // valid scalar, over this world's budget
+    (r) => r.parameters.push({ ...r.parameters[0] }),
+    (r) => r.parameters.push({ ...r.parameters[0], id: "unused" }),
+    (r) =>
+      (r.parameters = Array.from({ length: 129 }, (_, i) => ({
+        id: "n" + i,
+        value: 1,
+        feature: "tone",
+      }))),
+    (r) => (r.design.physics.radius = { $param: "span" }),
+    (r) => (r.design.extensions.arbitrary = [{ nested: { $param: "span" } }]),
+    (r) =>
+      (r.design.prototypes.tile.children[0].count = {
+        $param: "span",
+        plus: 1,
+      }),
+    (r) =>
+      (r.design.prototypes.tile.children[0].child.material = {
+        $param: "span",
+      }),
+    (r) =>
+      (r.design.prototypes.tile.children[0].child.size = { $param: "span" }),
+  ]) {
+    const input = parameterReview();
+    mutate(input);
+    assert.throws(() => compile(input));
+  }
+  const oversized = parameterReview();
+  oversized.design.prototypes.tile.children = Array.from({ length: 4097 }, () =>
+    structuredClone(oversized.design.prototypes.tile.children[0].child),
+  );
+  assert.throws(() => compile(oversized), /Parameter use limit/);
+});
+
 test("rejects dangling IDs, malformed references, invalid patches and obstructed spawn", () => {
   for (const mutate of [
     (r) => r.sources.push(r.sources[0]),

@@ -238,10 +238,11 @@ async function runWorld(browser, base, id, out, custom, durationMs) {
       path: path.join(out, id + ".png"),
       style: "#hud{visibility:hidden}",
     });
-    const pilot = custom ? null : await keyboardFlight(page);
-    const actionResult = await actionCheck(page, action);
     const positions = new Map(topology.nodes.map((n) => [n.id, n.position]));
     const spawn = positions.get(topology.spawn);
+    assert.deepEqual((await snapshot(page)).position, spawn, "Spawn drifted without pilot input");
+    const pilot = custom ? null : await keyboardFlight(page);
+    const actionResult = await actionCheck(page, action);
     const walk = walkGraph(topology);
     for (const node of walk) await fly(page, positions.get(node), speed);
     const target = await excursion(page);
