@@ -1,7 +1,13 @@
 import Ajv from "ajv";
+import { realize, boundDocument } from "./morph.js";
 import schema from "../schema/worldir-1.0.json" with { type: "json" };
 const check = new Ajv({ allErrors: true }).compile(schema);
 export function validate(w) {
+  if (w?.version === "2.0") {
+    realize(w);
+    return w;
+  }
+  boundDocument(w);
   if (!check(w)) throw Error(new Ajv().errorsText(check.errors));
   if (w.rules.clearance / 2 + w.physics.radius > w.topology.halfWidth)
     throw Error("Lane exceeds bounds");
