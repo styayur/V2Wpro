@@ -9,6 +9,7 @@ import {
   segmentClear,
 } from "../src/morph.js";
 import { aim, steer, direction, flightBounds } from "./flight.js";
+import { contactDeck, deckCycles } from "../src/contact-deck.js";
 import { setupPanel } from "./panel.js";
 const el = (id) => document.getElementById(id);
 const canvas = document.querySelector("canvas"),
@@ -172,14 +173,18 @@ async function boot() {
             group.add(obj);
             continue;
           }
-          const key = item.shape + "/" + item.material;
+          const cycles = spatial && deckCycles(w, item);
+          if (cycles) {
+            shapes.contactDeck ??= contactDeck(64 * cycles, cycles);
+          }
+          const key = (cycles ? "contactDeck" : item.shape) + "/" + item.material;
           if (!batches.has(key)) batches.set(key, []);
           batches.get(key).push(item);
         }
         for (const items of batches.values()) {
           const first = items[0],
             mesh = new T.InstancedMesh(
-              shapes[first.shape],
+              shapes[spatial && deckCycles(w, first) ? "contactDeck" : first.shape],
               materials[first.material],
               items.length,
             );
