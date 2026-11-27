@@ -155,7 +155,7 @@ export function cellKeys(w, position) {
   return keys;
 }
 
-export function realize(w) {
+export function realize(w, { includeSolidity = false } = {}) {
   boundDocument(w);
   if (!validator(w))
     throw Error(
@@ -230,6 +230,7 @@ export function realize(w) {
         const idx = items.length;
         items.push({
           shape: rule.shape,
+          ...(includeSolidity ? {solid:rule.solid} : {}),
           position: p,
           size,
           material: rule.material,

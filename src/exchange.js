@@ -5,17 +5,11 @@ import { inspectRoutes, realize } from "./morph.js";
 // Bake an independently readable, static local-world GLB. Collision meshes use
 // the WorldIR solid extents because the recipient collides with triangles.
 export function exportExchange(world) {
-  const scene = realize(world);
+  const scene = realize(world,{includeSolidity:true});
   if (scene.items.length >= 2500) throw Error("Exchange exceeds 2499 mesh nodes");
   const routes = inspectRoutes(world, scene);
   if (!routes.connected || routes.blockedEdges.length) throw Error("Exchange requires clear physical routes");
   if (!scene.solids.length) throw Error("Recipient requires collision geometry");
-  const solidCounts = new Map();
-  const boundsKey = (center, size) => JSON.stringify([center, size]);
-  for (const {center, extent} of scene.solids) {
-    const key = boundsKey(center, extent.map(v => v * 2));
-    solidCounts.set(key, (solidCounts.get(key) ?? 0) + 1);
-  }
   const materials = ["stone", "accent"].map(slot => ({
     name: slot, pbrMetallicRoughness: {
       baseColorFactor: [...new Color(world.style[slot]).toArray(), 1], metallicFactor: 0, roughnessFactor: 1
@@ -60,10 +54,7 @@ export function exportExchange(world) {
   const solidLow = [Infinity, Infinity, Infinity], solidHigh = [-Infinity, -Infinity, -Infinity];
   const low = [Infinity,Infinity,Infinity], high = [-Infinity,-Infinity,-Infinity];
   for (const item of scene.items) {
-    const boundsId = boundsKey(item.position, item.size);
-    const remaining = solidCounts.get(boundsId) ?? 0;
-    const solid = remaining > 0;
-    if (solid) solidCounts.set(boundsId, remaining - 1);
+    const solid = item.solid;
     const cycles = solid && deckCycles(world, item);
     const shape = cycles ? "deck-skin" : solid || item.shape === "asset" ? "box" : item.shape;
     const { primitive, triangles } = geometry(shape, cycles);

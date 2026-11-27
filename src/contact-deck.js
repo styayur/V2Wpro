@@ -26,7 +26,7 @@ export function contactDeck(segments, cycles) {
 
 export function deckCycles(world, item) {
   const spec = world.extensions?.contactDeck;
-  if (spec?.version !== 1 || item.shape !== "box" || item.evidence !== spec.evidence) return 0;
+  if (!item.solid || spec?.version !== 1 || item.shape !== "box" || item.evidence !== spec.evidence) return 0;
   if (!Number.isInteger(spec.cycles) || spec.cycles < 1 || spec.cycles > 8)
     throw Error("Contact deck cycles must be an integer from 1 to 8");
   return spec.cycles;
