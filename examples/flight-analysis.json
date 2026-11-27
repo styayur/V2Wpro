@@ -1,0 +1,35 @@
+{
+  "source": "91d375a5fdec44d0689158bb6acef486f2bb522c6301acc82a3a48ad39fc328f",
+  "author": "Codex visual review of the decoded 1 s frame; motion interpreted from sequence and original storyboard",
+  "method": "agent-assisted, no external API",
+  "grammar": "arcade",
+  "frame": 1,
+  "observations": [
+    {
+      "feature": "sky",
+      "sample": [
+        100,
+        12
+      ],
+      "claim": "Pale cool sky fills the upper field."
+    },
+    {
+      "feature": "stone",
+      "sample": [
+        139,
+        150
+      ],
+      "claim": "Dark uprights bound a clear passage."
+    },
+    {
+      "feature": "accent",
+      "sample": [
+        47,
+        10
+      ],
+      "claim": "Orange arcs repeat towards a central vanishing point."
+    }
+  ],
+  "interpretation": "A repeated portal grammar can preserve the forward-motion cue across a longer route.",
+  "design": "Metric lane dimensions, bridge decks, collision radius and finite chunk streaming are authored choices."
+}

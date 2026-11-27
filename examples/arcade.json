@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "name": "Architectural Flight",
+  "theme": "Oxide arcades above a coastal causeway",
+  "coordinates": "right-handed Y-up meters; forward -Z",
+  "seed": 1201,
+  "prototype": "arcade",
+  "style": {
+    "sky": "#b5ccc7",
+    "stone": "#334a53",
+    "accent": "#ca603b",
+    "light": 1.45
+  },
+  "rules": {
+    "length": 36,
+    "rows": 3,
+    "clearance": 8,
+    "variation": 7
+  },
+  "topology": {
+    "type": "linear-corridor",
+    "halfWidth": 18
+  },
+  "streaming": {
+    "count": 12,
+    "radius": 1
+  },
+  "budget": {
+    "instances": 40,
+    "pixelRatio": 1
+  },
+  "motion": {
+    "camera": "first-person",
+    "speed": 12,
+    "action": "flight"
+  },
+  "physics": {
+    "radius": 0.4,
+    "collision": "sphere-aabb"
+  },
+  "assets": [],
+  "evidence": [
+    {
+      "kind": "decision",
+      "source": "V2Wpro example design",
+      "claim": "Keep an eight metre centre lane for traversal.",
+      "confidence": 1
+    },
+    {
+      "kind": "extension",
+      "source": "V2Wpro corridor grammar",
+      "claim": "Vary lateral mass per row and repeat cells in signed depth.",
+      "confidence": 1
+    },
+    {
+      "kind": "observation",
+      "source": "sha256:91d375a5fdec44d0689158bb6acef486f2bb522c6301acc82a3a48ad39fc328f#t=1",
+      "claim": "Pale cool sky fills the upper field.",
+      "confidence": 0.99
+    },
+    {
+      "kind": "observation",
+      "source": "sha256:91d375a5fdec44d0689158bb6acef486f2bb522c6301acc82a3a48ad39fc328f#t=1",
+      "claim": "Dark uprights bound a clear passage.",
+      "confidence": 0.99
+    },
+    {
+      "kind": "observation",
+      "source": "sha256:91d375a5fdec44d0689158bb6acef486f2bb522c6301acc82a3a48ad39fc328f#t=1",
+      "claim": "Orange arcs repeat towards a central vanishing point.",
+      "confidence": 0.99
+    },
+    {
+      "kind": "inference",
+      "source": "sha256:91d375a5fdec44d0689158bb6acef486f2bb522c6301acc82a3a48ad39fc328f#t=1",
+      "claim": "A repeated portal grammar can preserve the forward-motion cue across a longer route.",
+      "confidence": 0.85
+    }
+  ],
+  "unknowns": [
+    "Absolute scale and structural materials cannot be determined from the clip."
+  ],
+  "extensions": {}
+}

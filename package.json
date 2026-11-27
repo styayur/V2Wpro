@@ -1,0 +1,36 @@
+{
+  "name": "v2wpro",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test": "node --test",
+    "build": "node tools/build.js",
+    "evaluate": "node cli.js evaluate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/styayur/V2Wpro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/styayur/V2Wpro/issues"
+  },
+  "homepage": "https://github.com/styayur/V2Wpro#readme",
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "playwright": "^1.65.1"
+  },
+  "bin": {
+    "v2w": "./cli.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

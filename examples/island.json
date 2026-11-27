@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "name": "Floating Archipelago",
+  "theme": "Basalt islands beneath an olive sky",
+  "coordinates": "right-handed Y-up meters; forward -Z",
+  "seed": 713,
+  "prototype": "island",
+  "style": {
+    "sky": "#c3d8b7",
+    "stone": "#4a5360",
+    "accent": "#88b471",
+    "light": 1.45
+  },
+  "rules": {
+    "length": 36,
+    "rows": 3,
+    "clearance": 8,
+    "variation": 7
+  },
+  "topology": {
+    "type": "linear-corridor",
+    "halfWidth": 18
+  },
+  "streaming": {
+    "count": 12,
+    "radius": 1
+  },
+  "budget": {
+    "instances": 40,
+    "pixelRatio": 1
+  },
+  "motion": {
+    "camera": "first-person",
+    "speed": 12,
+    "action": "survey"
+  },
+  "physics": {
+    "radius": 0.4,
+    "collision": "sphere-aabb"
+  },
+  "assets": [
+    {
+      "uri": "assets/beacon.glb",
+      "source": "tools/blender.py pillar",
+      "license": "MIT"
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "decision",
+      "source": "V2Wpro example design",
+      "claim": "Keep an eight metre centre lane for traversal.",
+      "confidence": 1
+    },
+    {
+      "kind": "extension",
+      "source": "V2Wpro corridor grammar",
+      "claim": "Vary lateral mass per row and repeat cells in signed depth.",
+      "confidence": 1
+    }
+  ],
+  "unknowns": [],
+  "extensions": {}
+}
