@@ -99,6 +99,16 @@ export function exportExchange(world) {
         extras:{skimmerRole:"SURFACE",collisionOnly:true,evidence:item.evidence}});
     }
   }
+  const sockets = world.extensions.passageSockets;
+  if (sockets?.version === 1) {
+    for (const name of ["entry","exit"]) {
+      const point = sockets[name];
+      if (!Array.isArray(point) || point.length !== 3 ||
+          !point.every(v => Number.isFinite(v) && Math.abs(v) <= 12000)) throw Error("Invalid passage socket");
+      gltf.scenes[0].nodes.push(gltf.nodes.length);
+      gltf.nodes.push({name,translation:point,extras:{skimmerSocket:name}});
+    }
+  }
   if (gltf.nodes.length >= 2500) throw Error("Exchange exceeds 2499 mesh nodes");
   if (Math.max(...solidHigh.map((n,i) => n - solidLow[i])) < 0.05) throw Error("Collision scene too small for recipient");
   if (triangleCount > 1250000 || high.some((n,i) => n - low[i] > 12000)) throw Error("Exchange exceeds recipient geometry limits");

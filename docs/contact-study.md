@@ -36,3 +36,13 @@ The original game build and both rule revisions were flown with an emulated stan
 
 [Consumer qualification and raw reports](https://github.com/styayur/Skimmer-Scraper/issues/84) · [Producer tracking](https://github.com/styayur/V2Wpro/issues/2)
 
+
+## Passage module compatibility
+
+The 36 m arcade span is also a standalone module. Its entry and exit use the stock Skimmer passage socket markers. To assemble it with the recipient's module catalog and seeded passage grammar, use two independent checkouts with their own lockfiles installed.
+
+```sh
+node tools/verify-exchange.js ../Skimmer-Scraper --module examples/arcade-span.glb
+```
+
+This finite assembly exercises the recipient's swept opening and placement budgets. The historical built-in city catalog remains available for old city seeds.

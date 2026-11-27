@@ -1,0 +1,173 @@
+{
+  "version": "2.0",
+  "name": "Relay District · Arcade span",
+  "seed": 8131,
+  "style": {
+    "sky": "#cab2a9",
+    "stone": "#738e8c",
+    "accent": "#bb6675",
+    "light": 1.7
+  },
+  "motion": {
+    "action": "flight",
+    "speed": 42
+  },
+  "physics": {
+    "radius": 3.2
+  },
+  "streaming": {
+    "cellSize": 128,
+    "radius": 3
+  },
+  "budget": {
+    "instances": 512,
+    "operations": 4096
+  },
+  "assets": [],
+  "unknowns": [],
+  "topology": {
+    "spawn": "entry",
+    "nodes": [
+      {
+        "id": "entry",
+        "position": [
+          0,
+          8,
+          0
+        ],
+        "rule": "span"
+      },
+      {
+        "id": "exit",
+        "position": [
+          0,
+          8,
+          -36
+        ],
+        "rule": "signal"
+      }
+    ],
+    "edges": [
+      [
+        "entry",
+        "exit"
+      ]
+    ]
+  },
+  "prototypes": {
+    "span": {
+      "op": "group",
+      "evidence": "district",
+      "children": [
+        {
+          "op": "transform",
+          "evidence": "district",
+          "offset": [
+            -18,
+            18,
+            -18
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "district",
+            "shape": "box",
+            "size": [
+              4,
+              52,
+              9
+            ],
+            "material": "stone",
+            "solid": true
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "district",
+          "offset": [
+            18,
+            18,
+            -18
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "district",
+            "shape": "box",
+            "size": [
+              4,
+              52,
+              9
+            ],
+            "material": "stone",
+            "solid": true
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "district",
+          "offset": [
+            0,
+            46,
+            -18
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "district",
+            "shape": "box",
+            "size": [
+              40,
+              4,
+              9
+            ],
+            "material": "accent",
+            "solid": true
+          }
+        }
+      ]
+    },
+    "signal": {
+      "op": "transform",
+      "evidence": "district",
+      "offset": [
+        8,
+        0,
+        0
+      ],
+      "child": {
+        "op": "emit",
+        "evidence": "district",
+        "shape": "box",
+        "size": [
+          1,
+          3,
+          1
+        ],
+        "material": "accent",
+        "solid": false
+      }
+    }
+  },
+  "evidence": [
+    {
+      "id": "district",
+      "kind": "decision",
+      "source": "docs/contact-study.md",
+      "confidence": 1,
+      "claim": "Extract one original elevated arcade bay from the finite district. Socket separation is 36 metres."
+    }
+  ],
+  "extensions": {
+    "passageSockets": {
+      "version": 1,
+      "entry": [
+        0,
+        0,
+        0
+      ],
+      "exit": [
+        0,
+        0,
+        -36
+      ]
+    }
+  }
+}
