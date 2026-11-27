@@ -2,12 +2,18 @@ import { build } from "esbuild";
 import {
   cpSync,
   mkdirSync,
+  mkdtempSync,
+  realpathSync,
+  rmSync,
   existsSync,
   readFileSync,
   writeFileSync,
 } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { tmpdir } from "node:os";
+import { importAsset } from "../src/assets.js";
+import { read } from "../src/media.js";
 import { validate } from "../src/validate.js";
 export const root = fileURLToPath(new URL("../", import.meta.url));
 export async function buildSite(out = "dist", custom) {
@@ -19,16 +25,41 @@ export async function buildSite(out = "dist", custom) {
   cpSync(path.join(root, "examples"), path.join(out, "examples"), {
     recursive: true,
   });
-  cpSync(path.join(root, 'LICENSE'), path.join(out, 'LICENSE'));
+  cpSync(path.join(root, "LICENSE"), path.join(out, "LICENSE"));
+  const worlds = Object.fromEntries(
+    ["arcade", "island", "gate", "canopy", "caldera", "lattice"].map((id) => [
+      id,
+      "./examples/" + id + ".json",
+    ]),
+  );
   if (custom) {
-    const w = validate(JSON.parse(readFileSync(custom, "utf8")));
-    for (const { uri } of w.assets) {
-      const target = path.join(out, "examples", uri);
-      mkdirSync(path.dirname(target), { recursive: true });
-      cpSync(path.resolve(path.dirname(custom), uri), target);
+    worlds.custom = "./custom/world.json";
+    mkdirSync(path.join(out, "custom"), { recursive: true });
+    const w = validate(read(custom));
+    const base = realpathSync(path.dirname(path.resolve(custom)));
+    for (const { uri, source, license } of w.assets) {
+      const model = realpathSync(path.resolve(base, uri));
+      const relative = path.relative(base, model);
+      if (
+        !relative ||
+        relative === ".." ||
+        relative.startsWith(".." + path.sep) ||
+        path.isAbsolute(relative)
+      )
+        throw Error("Custom asset resolves outside the world directory");
+      const staging = mkdtempSync(path.join(tmpdir(), "v2w-preview-"));
+      try {
+        const packed = importAsset(model, staging, source, license);
+        const target = path.join(out, "custom", uri);
+        mkdirSync(path.dirname(target), { recursive: true });
+        cpSync(path.join(staging, packed.uri), target);
+      } finally {
+        rmSync(staging, { recursive: true, force: true });
+      }
     }
-    cpSync(custom, path.join(out, "examples/custom.json"));
+    writeFileSync(path.join(out, worlds.custom), JSON.stringify(w));
   }
+  writeFileSync(path.join(out, "worlds.json"), JSON.stringify(worlds));
   await build({
     entryPoints: [path.join(root, "web/app.js")],
     bundle: true,

@@ -1,0 +1,201 @@
+{
+  "version": "2.0",
+  "name": "Post passage",
+  "seed": 1201,
+  "style": {
+    "sky": "#b5ccc7",
+    "stone": "#334a53",
+    "accent": "#ca603b",
+    "light": 1.45
+  },
+  "motion": {
+    "speed": 3.0,
+    "action": "flight"
+  },
+  "physics": {
+    "radius": 0.4
+  },
+  "streaming": {
+    "cellSize": 12,
+    "radius": 1
+  },
+  "budget": {
+    "instances": 40,
+    "operations": 128
+  },
+  "assets": [],
+  "evidence": [
+    {
+      "id": "posts",
+      "kind": "decision",
+      "source": "experiments/morphogenesis/brief.txt",
+      "claim": "Place paired dark posts to either side of the flight path.",
+      "confidence": 1
+    },
+    {
+      "id": "spacing",
+      "kind": "extension",
+      "source": "experiments/morphogenesis/brief.txt",
+      "claim": "Use four rows at six metre intervals per station to extend the passage.",
+      "confidence": 1
+    },
+    {
+      "id": "curve",
+      "kind": "observation",
+      "source": "examples/keyframe.png (examples/reference.mp4 at 1 s)",
+      "claim": "Orange curves join the tops of paired dark posts.",
+      "confidence": 0.98
+    },
+    {
+      "id": "span",
+      "kind": "inference",
+      "source": "examples/keyframe.png (examples/reference.mp4 at 1 s)",
+      "claim": "Represent each curve as an accent arch spanning the post centres.",
+      "confidence": 0.9
+    },
+    {
+      "id": "passageTiming",
+      "kind": "observation",
+      "source": "examples/reference.mp4, scanline y=140",
+      "claim": "Dark post entries at frames 23 and 71 are 2 seconds apart.",
+      "confidence": 1
+    },
+    {
+      "id": "flightPace",
+      "kind": "decision",
+      "source": "experiments/morphogenesis/temporal-report.json",
+      "claim": "Traverse one authored 6 metre row spacing per measured post interval.",
+      "confidence": 1
+    }
+  ],
+  "unknowns": [
+    "Absolute scale and post material are unspecified."
+  ],
+  "topology": {
+    "spawn": "entry",
+    "nodes": [
+      {
+        "id": "entry",
+        "position": [
+          0,
+          2,
+          0
+        ],
+        "rule": "station"
+      },
+      {
+        "id": "middle",
+        "position": [
+          0,
+          2,
+          -24
+        ],
+        "rule": "station"
+      },
+      {
+        "id": "exit",
+        "position": [
+          0,
+          2,
+          -48
+        ],
+        "rule": "station"
+      }
+    ],
+    "edges": [
+      [
+        "entry",
+        "middle"
+      ],
+      [
+        "middle",
+        "exit"
+      ]
+    ]
+  },
+  "prototypes": {
+    "station": {
+      "op": "repeat",
+      "evidence": "spacing",
+      "count": 4,
+      "step": [
+        0,
+        0,
+        -6
+      ],
+      "child": {
+        "op": "use",
+        "evidence": "spacing",
+        "ref": "row"
+      }
+    },
+    "row": {
+      "op": "group",
+      "evidence": "posts",
+      "children": [
+        {
+          "op": "transform",
+          "evidence": "posts",
+          "offset": [
+            -5,
+            0,
+            0
+          ],
+          "child": {
+            "op": "use",
+            "evidence": "posts",
+            "ref": "post"
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "posts",
+          "offset": [
+            5,
+            0,
+            0
+          ],
+          "child": {
+            "op": "use",
+            "evidence": "posts",
+            "ref": "post"
+          }
+        },
+        {
+          "op": "transform",
+          "evidence": "span",
+          "offset": [
+            0,
+            2,
+            0
+          ],
+          "child": {
+            "op": "emit",
+            "evidence": "span",
+            "shape": "arch",
+            "size": [
+              10,
+              10,
+              0.6
+            ],
+            "material": "accent",
+            "solid": false
+          }
+        }
+      ]
+    },
+    "post": {
+      "op": "emit",
+      "evidence": "posts",
+      "shape": "box",
+      "size": [
+        0.6,
+        4,
+        0.6
+      ],
+      "material": "stone",
+      "solid": true
+    }
+  },
+  "extensions": {}
+}

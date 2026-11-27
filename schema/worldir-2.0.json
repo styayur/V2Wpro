@@ -1,0 +1,565 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorldIR 2.0",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": "2.0"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "style": {
+      "type": "object",
+      "properties": {
+        "sky": {
+          "type": "string",
+          "pattern": "^#[A-Fa-f0-9]{6}$"
+        },
+        "stone": {
+          "type": "string",
+          "pattern": "^#[A-Fa-f0-9]{6}$"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[A-Fa-f0-9]{6}$"
+        },
+        "light": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 8
+        }
+      },
+      "required": [
+        "sky",
+        "stone",
+        "accent",
+        "light"
+      ],
+      "additionalProperties": false
+    },
+    "motion": {
+      "type": "object",
+      "properties": {
+        "speed": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 100
+        },
+        "action": {
+          "enum": [
+            "flight",
+            "survey",
+            "dash"
+          ]
+        }
+      },
+      "required": [
+        "speed",
+        "action"
+      ],
+      "additionalProperties": false
+    },
+    "physics": {
+      "type": "object",
+      "properties": {
+        "radius": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 10
+        }
+      },
+      "required": [
+        "radius"
+      ],
+      "additionalProperties": false
+    },
+    "streaming": {
+      "type": "object",
+      "properties": {
+        "cellSize": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 256
+        },
+        "radius": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
+      },
+      "required": [
+        "cellSize",
+        "radius"
+      ],
+      "additionalProperties": false
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "instances": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4096
+        },
+        "operations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65536
+        }
+      },
+      "required": [
+        "instances",
+        "operations"
+      ],
+      "additionalProperties": false
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^assets/[a-zA-Z0-9_-]+\\.(glb|gltf)$"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "uri",
+          "source",
+          "license"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "kind": {
+            "enum": [
+              "observation",
+              "inference",
+              "decision",
+              "extension"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "source",
+          "claim",
+          "confidence"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 512
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2048
+      },
+      "minItems": 0,
+      "maxItems": 128
+    },
+    "topology": {
+      "type": "object",
+      "properties": {
+        "spawn": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+              },
+              "position": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number",
+                  "minimum": -16384,
+                  "maximum": 16384
+                }
+              },
+              "rule": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+              }
+            },
+            "required": [
+              "id",
+              "position",
+              "rule"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 128
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 0,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "spawn",
+        "nodes",
+        "edges"
+      ],
+      "additionalProperties": false
+    },
+    "prototypes": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 128,
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/operator"
+      }
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "version",
+    "name",
+    "seed",
+    "style",
+    "motion",
+    "physics",
+    "streaming",
+    "budget",
+    "assets",
+    "evidence",
+    "unknowns",
+    "topology",
+    "prototypes",
+    "extensions"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "operator": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "group"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/operator"
+              },
+              "minItems": 0,
+              "maxItems": 128
+            }
+          },
+          "required": [
+            "op",
+            "evidence",
+            "children"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "repeat"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 128
+            },
+            "step": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number",
+                "minimum": -16384,
+                "maximum": 16384
+              }
+            },
+            "child": {
+              "$ref": "#/definitions/operator"
+            }
+          },
+          "required": [
+            "op",
+            "evidence",
+            "count",
+            "step",
+            "child"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "radial"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 128
+            },
+            "radius": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 4096
+            },
+            "child": {
+              "$ref": "#/definitions/operator"
+            }
+          },
+          "required": [
+            "op",
+            "evidence",
+            "count",
+            "radius",
+            "child"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "transform"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "offset": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number",
+                "minimum": -16384,
+                "maximum": 16384
+              }
+            },
+            "scale": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 4096
+              }
+            },
+            "jitter": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 4096
+              }
+            },
+            "child": {
+              "$ref": "#/definitions/operator"
+            }
+          },
+          "required": [
+            "op",
+            "evidence",
+            "child"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "use"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            }
+          },
+          "required": [
+            "op",
+            "evidence",
+            "ref"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "emit"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "shape": {
+              "enum": [
+                "box",
+                "rock",
+                "mound",
+                "ring",
+                "arch",
+                "asset"
+              ]
+            },
+            "size": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 4096
+              }
+            },
+            "material": {
+              "enum": [
+                "stone",
+                "accent"
+              ]
+            },
+            "solid": {
+              "type": "boolean"
+            },
+            "asset": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^assets/[a-zA-Z0-9_-]+\\.(glb|gltf)$"
+            }
+          },
+          "required": [
+            "op",
+            "evidence",
+            "shape",
+            "size",
+            "material",
+            "solid"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "asset": { "uri": "assets/beacon.glb", "source": "Original V2Wpro Blender pillar, tools/blender.py", "license": "MIT" },
+  "evidence": { "id": "beaconMeasure", "kind": "decision", "source": "examples/assets/beacon.glb and tools/analyze-asset.js", "claim": "Use the measured 1 by 2 by 1 metre pillar and its two axial face centers as stacking connectors.", "confidence": 1 },
+  "connectors": [
+    { "id": "base", "position": [0,-1,0], "normal": [0,-1,0] },
+    { "id": "cap", "position": [0,1,0], "normal": [0,1,0] }
+  ],
+  "proxy": { "shape": "box", "center": [0,0,0], "size": [1,2,1] },
+  "prototypes": {
+    "beacon": { "op": "emit", "evidence": "beaconMeasure", "shape": "asset", "asset": "assets/beacon.glb", "size": [1,2,1], "material": "accent", "solid": true },
+    "beaconPair": { "op": "repeat", "evidence": "beaconMeasure", "count": 2, "step": [0,2,0], "child": { "op": "use", "ref": "beacon", "evidence": "beaconMeasure" } },
+    "beaconTall": { "op": "transform", "evidence": "beaconMeasure", "scale": [1,1.5,1], "child": { "op": "use", "ref": "beacon", "evidence": "beaconMeasure" } },
+    "beaconProxy": { "op": "emit", "evidence": "beaconMeasure", "shape": "box", "size": [1,2,1], "material": "accent", "solid": true }
+  }
+}

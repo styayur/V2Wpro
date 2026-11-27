@@ -120,3 +120,53 @@ p {
   max-width: 48ch;
   line-height: 1.5;
 }
+.notes {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: clamp(1rem, 4vw, 4rem);
+  padding: 1.4rem 0 3rem;
+}
+.notes details {
+  border-top: 1px solid #bdc8bd;
+  padding: 0.65rem 0;
+  overflow-wrap: anywhere;
+}
+summary {
+  cursor: pointer;
+}
+pre {
+  max-height: 24rem;
+  overflow: auto;
+  font-size: 0.85rem;
+}
+.notes > div {
+  min-width: 0;
+}
+#selection,
+#buttons {
+  display: flex;
+  gap: 0.4rem;
+  align-items: end;
+  flex-wrap: wrap;
+}
+#selection label {
+  display: grid;
+  gap: 0.3rem;
+}
+input {
+  width: 8rem;
+  padding: 8px;
+  border: 1px solid #abb9ae;
+  border-radius: 3px;
+}
+[data-key] {
+  text-transform: capitalize;
+}
+@media (max-width: 650px) {
+  .notes {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    margin-top: 18px;
+  }
+}

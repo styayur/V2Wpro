@@ -1,0 +1,88 @@
+{
+  "browser": "159.0.8154.6",
+  "viewport": [
+    960,
+    720
+  ],
+  "camera": "spawn",
+  "worlds": [
+    {
+      "id": "canopy",
+      "review": "evidence/morph-case/canopy-before.review.json",
+      "reviewSha256": "58499fe76d7289254e9931614bb946c22a2a4e3655379c20873d3ec3b72cc777",
+      "seed": 1049,
+      "routes": {
+        "reachable": [
+          "foyer",
+          "reading",
+          "west",
+          "east",
+          "stack"
+        ],
+        "blockedEdges": [],
+        "connected": true
+      },
+      "triangles": 748,
+      "drawCalls": 20,
+      "position": [
+        0,
+        2,
+        0
+      ],
+      "renderer": "ANGLE (AMD, AMD Radeon 780M Graphics (0x00001900) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "id": "caldera",
+      "review": "evidence/morph-case/caldera-before.review.json",
+      "reviewSha256": "55bc04b828ab3ed11408ac81d5141a69e69311066cc681c41b66b6327b3621f8",
+      "seed": 2503,
+      "routes": {
+        "reachable": [
+          "sill",
+          "low",
+          "high",
+          "bench",
+          "crown"
+        ],
+        "blockedEdges": [],
+        "connected": true
+      },
+      "triangles": 1820,
+      "drawCalls": 21,
+      "position": [
+        0,
+        2,
+        0
+      ],
+      "renderer": "ANGLE (AMD, AMD Radeon 780M Graphics (0x00001900) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "id": "lattice",
+      "review": "evidence/morph-case/lattice-before.review.json",
+      "reviewSha256": "a073c10848b2262b36c438f897b95f2ae02134590bfc4b9bae8dbd16e889d340",
+      "seed": 8131,
+      "routes": {
+        "reachable": [
+          "launch",
+          "split",
+          "leftIn",
+          "rightIn",
+          "leftOut",
+          "rightOut",
+          "join",
+          "finish"
+        ],
+        "blockedEdges": [],
+        "connected": true
+      },
+      "triangles": 6216,
+      "drawCalls": 17,
+      "position": [
+        0,
+        5,
+        0
+      ],
+      "renderer": "ANGLE (AMD, AMD Radeon 780M Graphics (0x00001900) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    }
+  ]
+}

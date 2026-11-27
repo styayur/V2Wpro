@@ -1,0 +1,353 @@
+{
+  "format": "v2w-review-1",
+  "sources": [
+    {
+      "id": "clip",
+      "kind": "video",
+      "locator": "examples/dash.mp4",
+      "sha256": "3c0393708d53129c918d0bda015e44b7110f8bec3388f6b49eb3b1d71ba394c5"
+    },
+    {
+      "id": "brief",
+      "kind": "brief",
+      "locator": "examples/reviews/lattice-brief.md"
+    }
+  ],
+  "features": [
+    {
+      "id": "hoops",
+      "kind": "observation",
+      "source": "clip",
+      "claim": "Warm concentric outlines share a centre against a dark blue field.",
+      "confidence": 0.99,
+      "time": [
+        0,
+        0.95
+      ]
+    },
+    {
+      "id": "pulse",
+      "kind": "inference",
+      "source": "clip",
+      "claim": "The increase in apparent ring size suggests a forward burst.",
+      "confidence": 0.92,
+      "time": [
+        1,
+        1.55
+      ]
+    },
+    {
+      "id": "rails",
+      "kind": "decision",
+      "source": "brief",
+      "claim": "Suspend an open square truss around each hoop and leave its bore clear.",
+      "confidence": 1
+    },
+    {
+      "id": "switch",
+      "kind": "extension",
+      "source": "brief",
+      "claim": "Fork a central sprint into side lanes that reconnect at a second exchange.",
+      "confidence": 1
+    }
+  ],
+  "design": {
+    "name": "Lattice · Relay Exchange",
+    "seed": 8131,
+    "style": {
+      "sky": "#242c4e",
+      "stone": "#6484aa",
+      "accent": "#ffb66e",
+      "light": 1.8
+    },
+    "motion": {
+      "action": "dash",
+      "speed": 14
+    },
+    "physics": {
+      "radius": 0.45
+    },
+    "streaming": {
+      "cellSize": 16,
+      "radius": 3
+    },
+    "budget": {
+      "instances": 800,
+      "operations": 4096
+    },
+    "assets": [],
+    "unknowns": [
+      "The ring study contains no lateral route or supporting truss."
+    ],
+    "topology": {
+      "spawn": "launch",
+      "nodes": [
+        {
+          "id": "launch",
+          "position": [
+            0,
+            5,
+            0
+          ],
+          "rule": "launch"
+        },
+        {
+          "id": "split",
+          "position": [
+            0,
+            5,
+            -13
+          ],
+          "rule": "exchange"
+        },
+        {
+          "id": "leftIn",
+          "position": [
+            -13,
+            5,
+            -26
+          ],
+          "rule": "lane"
+        },
+        {
+          "id": "leftOut",
+          "position": [
+            -13,
+            5,
+            -40
+          ],
+          "rule": "gate"
+        },
+        {
+          "id": "rightIn",
+          "position": [
+            13,
+            5,
+            -26
+          ],
+          "rule": "lane"
+        },
+        {
+          "id": "rightOut",
+          "position": [
+            13,
+            5,
+            -40
+          ],
+          "rule": "gate"
+        },
+        {
+          "id": "join",
+          "position": [
+            0,
+            5,
+            -54
+          ],
+          "rule": "exchange"
+        },
+        {
+          "id": "finish",
+          "position": [
+            0,
+            5,
+            -67
+          ],
+          "rule": "lane"
+        }
+      ],
+      "edges": [
+        [
+          "launch",
+          "split"
+        ],
+        [
+          "split",
+          "leftIn"
+        ],
+        [
+          "split",
+          "rightIn"
+        ],
+        [
+          "leftIn",
+          "leftOut"
+        ],
+        [
+          "rightIn",
+          "rightOut"
+        ],
+        [
+          "leftOut",
+          "join"
+        ],
+        [
+          "rightOut",
+          "join"
+        ],
+        [
+          "join",
+          "finish"
+        ]
+      ]
+    },
+    "prototypes": {
+      "gate": {
+        "op": "group",
+        "evidence": "rails",
+        "children": [
+          {
+            "op": "emit",
+            "evidence": "hoops",
+            "shape": "ring",
+            "size": [
+              7.8,
+              7.8,
+              0.65
+            ],
+            "material": "accent",
+            "solid": false
+          },
+          {
+            "op": "transform",
+            "evidence": "rails",
+            "offset": [
+              -4.9,
+              0,
+              0
+            ],
+            "child": {
+              "op": "repeat",
+              "evidence": "rails",
+              "count": 2,
+              "step": [
+                9.8,
+                0,
+                0
+              ],
+              "child": {
+                "op": "emit",
+                "evidence": "rails",
+                "shape": "box",
+                "size": [
+                  0.6,
+                  10.4,
+                  0.8
+                ],
+                "material": "stone",
+                "solid": true
+              }
+            }
+          },
+          {
+            "op": "transform",
+            "evidence": "rails",
+            "offset": [
+              0,
+              -4.9,
+              0
+            ],
+            "child": {
+              "op": "repeat",
+              "evidence": "rails",
+              "count": 2,
+              "step": [
+                0,
+                9.8,
+                0
+              ],
+              "child": {
+                "op": "emit",
+                "evidence": "rails",
+                "shape": "box",
+                "size": [
+                  10.4,
+                  0.6,
+                  0.8
+                ],
+                "material": "stone",
+                "solid": true
+              }
+            }
+          }
+        ]
+      },
+      "lane": {
+        "op": "repeat",
+        "evidence": "pulse",
+        "count": 3,
+        "step": [
+          0,
+          0,
+          -4
+        ],
+        "child": {
+          "op": "use",
+          "evidence": "hoops",
+          "ref": "gate"
+        }
+      },
+      "exchange": {
+        "op": "group",
+        "evidence": "switch",
+        "children": [
+          {
+            "op": "use",
+            "evidence": "hoops",
+            "ref": "gate"
+          },
+          {
+            "op": "transform",
+            "evidence": "switch",
+            "offset": [
+              0,
+              -5.4,
+              -1
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "rails",
+              "shape": "box",
+              "size": [
+                22,
+                0.8,
+                5
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          }
+        ]
+      },
+      "launch": {
+        "op": "group",
+        "evidence": "rails",
+        "children": [
+          {
+            "op": "transform",
+            "evidence": "rails",
+            "offset": [
+              0,
+              -4.9,
+              0
+            ],
+            "child": {
+              "op": "emit",
+              "evidence": "rails",
+              "shape": "box",
+              "size": [
+                11,
+                0.6,
+                12
+              ],
+              "material": "stone",
+              "solid": true
+            }
+          }
+        ]
+      }
+    },
+    "extensions": {
+      "reference": "dash.mp4"
+    }
+  }
+}

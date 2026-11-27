@@ -4,6 +4,8 @@
   "method": "agent-assisted, no external API",
   "grammar": "arcade",
   "frame": 1,
+  "nativeFrameSha256": "e899b24742c3f7d172905b3cfabd0bf549088a9fcc16b4b175672fd34fb80a25",
+  "reviewedPngSha256": "fb4d4a0892e384354bbd5ea7db149bab8b29fe0fefdc89cdf33f2a31b3d7eb27",
   "observations": [
     {
       "feature": "sky",

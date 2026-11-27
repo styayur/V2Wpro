@@ -1,26 +1,33 @@
-# V2Wpro · 视频驱动的程序化世界
+# V2Wpro · Morphogenesis
 
 **Video imagines. Algorithms expand. Engines realize.**
 
-从本地视频或关键帧出发，记录可观察的空间与运动特征，把设计决策写入 WorldIR，用确定性规则扩展场景，最后在 Three.js 中试玩。参考流程使用本地文件，无须商业 API 密钥。
+一段拍到书架与红椅的镜头，可以给出一套空间生成规则：把横向搁板与竖向支撑组合成结构单元，重复排列，再把椅子设为岔路口的地标。v0.2.0 将这些解释与设计编译成可执行的 WorldIR。玩家可以在空间中自由转向，检查节点之间的路线，并通过种子改变同一规则下的排列。
 
-[在线试玩](https://styayur.github.io/V2Wpro/) · [English](README.md) · [下载 v0.1.0](https://github.com/styayur/V2Wpro/releases/tag/v0.1.0)
+[在线试玩六个世界](https://styayur.github.io/V2Wpro/) · [完整发布包及录像](https://github.com/styayur/V2Wpro/releases/tag/v0.2.0) · [English](README.md)
 
 ## 快速开始
 
-安装 Node 24 LTS，克隆本仓库后执行：
+安装 Node 24 并克隆仓库，在根目录运行：
 
 ```sh
 npm ci
 node cli.js preview
 ```
 
-打开终端显示的网址。W/S 前后移动，A/D 横移，上下方向键调整高度，空格触发场景动作。建筑飞行从原创四秒动画中提取拱廊、色彩和前进运动线索。浮岛探索和冲刺游乐场使用独立编写的规则示范地形变体和运动机制。
+打开终端给出的网址，选择场景，按页面上的操作说明飞行。Canopy 从参考片中的家具和搁架提取结构；Caldera 从文字简报生成不同高度的地形与分支；Lattice 将自制环形加速动画中的动作应用到分流、汇合的路线。页面可切换种子、查看规则与来源。三个 v0.1.0 世界也在同一入口，其几何指纹保持一致。
 
-处理视频需要 FFmpeg，可通过 FFMPEG 环境变量指定可执行文件。运行 `node cli.js ingest examples/reference.mp4` 和 `node cli.js analyze` 可创建带时间戳的审阅任务。模型或人工负责解释帧间变化。用 `node tools/replay.js` 复现已审阅的转换，再执行 `node cli.js preview .v2w/replayed.json`。保留源片摘要、取色位置、推断、设计参数和扩展规则，方便追溯。
+## 从证据重建世界
 
-通过 `npm link` 安装 v2w 命令后，可在新目录运行 `v2w init gate`、`v2w validate`、`v2w generate`、`v2w preview`。首次安装依赖及测试浏览器需要联网，此后基础示例可离线运行。执行 `npx playwright install chromium`、`npm test`、`npm run evaluate` 获取测试结果、截图和录像。
+```sh
+node cli.js verify examples/reviews/canopy.json clip examples/canopy-source.mp4
+node cli.js compile examples/reviews/canopy.json .v2w/reading-rooms.json
+node cli.js generate .v2w/reading-rooms.json
+node cli.js preview .v2w/reading-rooms.json
+```
 
-将 skills/v2wpro 复制到项目的 .agents/skills/ 下即可使用 Agent Skill。Three.js 适配器已实现，Godot、Unity 和商业供应商连接器留待扩展。Blender 可选。
+新视频、图像或关键帧可用 `node cli.js ingest 文件路径` 导入，`node cli.js analyze` 为选定资料生成审阅任务。Coding Agent 或人工解释时序、材料和空间关系，分别记录观察、推断、设计决策及程序化扩展。CLI 校验证据引用、生成开销和玩家球体沿路线的实际净空。审阅完成后，重建、局部修订与生成变体均可离线执行。
 
-[工作流及扩展开发](docs/workflows.md) · [WorldIR 规范](docs/worldir.md) · [实测报告](evidence/README.md) · [素材来源](examples/CREDITS.md)
+把 skills/v2wpro 复制到目标项目的 .agents/skills/ 下即可安装 Agent Skill。处理新素材时需要 FFmpeg，基础体验无需 Blender 或商业 API。离线站点压缩包解压后可运行 `python -m http.server 8000`，再在浏览器打开 localhost:8000。
+
+[编译与迁移指南](docs/compiler.md) · [WorldIR 2.0 规范](docs/morphogenesis.md) · [视频案例与反馈迭代](docs/case-study.md) · [对照实验](docs/experiment.md) · [三维资产处理](docs/assets-v2.md) · [下游交换验证](docs/downstream.md) · [素材许可](examples/CREDITS.md)

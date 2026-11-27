@@ -1,8 +1,8 @@
 import http from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, realpath } from "node:fs/promises";
 import path from "node:path";
 export async function serve(dir, port = 0) {
-  const base = path.resolve(dir),
+  const base = await realpath(dir),
     types = {
       ".html": "text/html",
       ".js": "text/javascript",
@@ -23,8 +23,9 @@ export async function serve(dir, port = 0) {
             url.pathname === "/" ? "/index.html" : url.pathname,
           ),
       );
-      if (!f.startsWith(base + path.sep)) throw Error();
-      const data = await readFile(f);
+      const target = await realpath(f);
+      if (!target.startsWith(base + path.sep)) throw Error();
+      const data = await readFile(target);
       res.writeHead(200, {
         "Content-Type": types[path.extname(f)] || "application/octet-stream",
       });

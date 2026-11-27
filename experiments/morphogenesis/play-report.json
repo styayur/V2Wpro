@@ -1,0 +1,99 @@
+{
+  "chromium": "159.0.8154.6",
+  "forwardMs": 2000,
+  "actionMs": 640,
+  "results": {
+    "frame": {
+      "speed": 12,
+      "items": 36,
+      "solids": 24,
+      "routes": {
+        "reachable": [
+          "entry",
+          "middle",
+          "exit"
+        ],
+        "blockedEdges": [],
+        "connected": true
+      },
+      "start": {
+        "position": [
+          0,
+          2,
+          0
+        ],
+        "actions": 0,
+        "hits": 0,
+        "frames": 3
+      },
+      "forward": {
+        "position": [
+          0,
+          2,
+          -24.000000000000018
+        ],
+        "actions": 0,
+        "hits": 0,
+        "frames": 128
+      },
+      "afterAction": {
+        "position": [
+          0,
+          8.528000000000006,
+          -24.000000000000018
+        ],
+        "actions": 1,
+        "hits": 0,
+        "frames": 168
+      },
+      "forwardMeters": 24.000000000000018,
+      "actionRiseMeters": 6.528000000000006
+    },
+    "video": {
+      "speed": 3,
+      "items": 36,
+      "solids": 24,
+      "routes": {
+        "reachable": [
+          "entry",
+          "middle",
+          "exit"
+        ],
+        "blockedEdges": [],
+        "connected": true
+      },
+      "start": {
+        "position": [
+          0,
+          2,
+          0
+        ],
+        "actions": 0,
+        "hits": 0,
+        "frames": 4
+      },
+      "forward": {
+        "position": [
+          0,
+          2,
+          -6.000000000000004
+        ],
+        "actions": 0,
+        "hits": 0,
+        "frames": 129
+      },
+      "afterAction": {
+        "position": [
+          0,
+          3.6320000000000014,
+          -6.000000000000004
+        ],
+        "actions": 1,
+        "hits": 0,
+        "frames": 169
+      },
+      "forwardMeters": 6.000000000000004,
+      "actionRiseMeters": 1.6320000000000014
+    }
+  }
+}
