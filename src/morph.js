@@ -20,7 +20,8 @@ export function boundDocument(root) {
     if (typeof value === "string") characters += value.length;
     if (value && typeof value === "object") {
       for (const key of Object.keys(value)) {
-        if (forbidden.has(key)) throw Error("Reserved document key");
+        const legacySelector = depth === 0 && key === "prototype" && root.version === "1.0";
+        if (forbidden.has(key) && !legacySelector) throw Error("Reserved document key");
         if (stack.length + entries >= 90000)
           throw Error("Document exceeds structural limit");
         characters += key.length;
@@ -139,6 +140,12 @@ function cell(w, point) {
 }
 
 export function cellKeys(w, position) {
+  if (!Number.isInteger(w.streaming.radius) || w.streaming.radius < 0 || w.streaming.radius > 3 ||
+      !Number.isFinite(w.streaming.cellSize) || w.streaming.cellSize < 2 ||
+      !Array.isArray(position) || position.length !== 3 ||
+      position.some(v => !Number.isFinite(v) || Math.abs(v) > 2 * WORLD_LIMIT)) {
+    throw Error("Invalid streaming neighborhood");
+  }
   const [x, y, z] = cell(w, position),
     r = w.streaming.radius,
     keys = [];
