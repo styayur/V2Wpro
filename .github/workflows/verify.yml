@@ -54,6 +54,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: node tools/licenses.js && npm audit --audit-level=high
+      - run: node tools/contract-manifest.js --check
       - run: npx playwright install --with-deps chromium
       - run: npm run evaluate
       - run: node tools/morph-evaluate.js --out playtest/morph

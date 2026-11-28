@@ -26,6 +26,8 @@ export async function buildSite(out = "dist", custom) {
     recursive: true,
   });
   cpSync(path.join(root, "LICENSE"), path.join(out, "LICENSE"));
+  for (const folder of ["schema","contracts"])
+    cpSync(path.join(root,folder),path.join(out,folder),{recursive:true});
   const worlds = Object.fromEntries(
     ["arcade", "island", "gate", "canopy", "caldera", "lattice", "contact", "district", "s-curve-study", "topogenesis"].map((id) => [
       id,

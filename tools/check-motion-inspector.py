@@ -29,7 +29,7 @@ with ExitStack() as stack:
     client = stack.enter_context(sync_playwright())
     browser = client.chromium.launch(args=["--enable-unsafe-swiftshader"])
     for label, width, height in [("desktop", 1360, 940), ("mobile", 390, 844)]:
-        page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
+        page = browser.new_page(locale="en-US", viewport={"width": width, "height": height}, device_scale_factor=1)
         errors = []
         page.on("pageerror", lambda e: errors.append(str(e)))
         page.goto(url+"/?world=topogenesis", wait_until="networkidle")
@@ -69,5 +69,18 @@ with ExitStack() as stack:
         assert not errors, errors
         rows.append(receipt)
         page.close()
+    page = browser.new_page(locale="zh-CN", viewport={"width":390,"height":844})
+    page.goto(url+"/?world=topogenesis")
+    page.locator("#motion-inspector").wait_for(state="visible", timeout=60000)
+    assert page.locator("html").get_attribute("lang") == "zh-CN"
+    assert page.locator("#inspector-title").inner_text() == "运动检查器"
+    assert "净空" in page.locator("#station-values").inner_text()
+    page.get_by_role("link", name="教程").click()
+    assert page.locator("#zh").is_visible() and not page.locator("#en").is_visible()
+    page.get_by_role("link", name="English").click()
+    assert page.locator("#en").is_visible() and not page.locator("#zh").is_visible()
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    rows.append({"locale":"zh-CN","inspector":True,"offlineGuide":["zh-CN","en"]})
+    page.close()
     browser.close()
 (args.output/"inspector.json").write_text(json.dumps(rows,indent=2)+"\n",encoding="utf-8")

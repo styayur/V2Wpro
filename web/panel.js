@@ -4,6 +4,7 @@ import { inspectMovement } from "../src/movement.js";
 import profile from "../examples/profiles/skimmer-cruise.json" with { type: "json" };
 import { refreshKineticPorts } from "../src/kinetic-world.js";
 import { readDiagnostic } from "../src/flight-diagnostic.js";
+import { label as localizedLabel, local } from "./locale.js";
 
 const partnerWorlds=new Map([
   ["a707d463ce3279c9517d51b3dccde296c461eea2131b214315923b58b4f383d0","relay-district"],
@@ -34,7 +35,7 @@ export function setupPanel(w, id, url, scene) {
     const editor = el("edit-prototypes");
     const kinetic=w.extensions.kineticRecipe;
     editor.value = JSON.stringify(kinetic ?? w.prototypes,null,2);
-    if (kinetic) el("rules-label").textContent="Kinetic region recipe";
+    if (kinetic) el("rules-label").textContent=local("Kinetic region recipe","区域运动配方");
     const selected = w.extensions.movementProfile ?? profile;
     const report = inspectMovement(w,scene,selected);
     const blocked = report.edges.filter(edge => !edge.clear);
@@ -92,9 +93,9 @@ export function setupPanel(w, id, url, scene) {
         if (file.size>8*1024*1024) throw Error("Flight report exceeds 8 MiB.");
         const {digest,bytes}=await assetIdentity();
         const r=readDiagnostic(JSON.parse(await file.text()),digest,bytes);
-        result.textContent=r.outcome+" · "+r.longestContinuousMeters.toFixed(1)+" m continuous glide · "+
-          (r.minimumGlideClearance===null ? "no glide samples":r.minimumGlideClearance.toFixed(2)+" m minimum glide clearance")+
-          " · "+r.impacts+" impacts"+(r.truncated ? " · first two minutes recorded" : "")+
+        result.textContent=r.outcome+" · "+r.longestContinuousMeters.toFixed(1)+local(" m continuous glide · "," m 连续滑行 · ")+
+          (r.minimumGlideClearance===null ? local("no glide samples","无滑行采样"):r.minimumGlideClearance.toFixed(2)+local(" m minimum glide clearance"," m 最小滑行净空"))+
+          " · "+r.impacts+local(" impacts"," 次撞击")+(r.truncated ? local(" · first two minutes recorded"," · 已记录前两分钟") : "")+
           (r.consumer ? " · "+r.consumer.slice(0,12) : "");
       } catch(err) {result.textContent=err.message;}
     };
@@ -166,9 +167,9 @@ export function setupPanel(w, id, url, scene) {
         : "The reference animation informed the dash through repeated rings.";
   }
   el("instructions").textContent =
-    "W/S travel · A/D strafe · ↑/↓ altitude · Space " +
-    w.motion.action +
-    (spatial ? " · Drag to look or use ←/→ to turn and I/K to pitch" : "");
+    local("W/S travel · A/D strafe · ↑/↓ altitude · Space ","W/S 前后 · A/D 横移 · ↑/↓ 高度 · 空格 ")+
+    localizedLabel(w.motion.action)+
+    (spatial ? local(" · Drag to look or use ←/→ to turn and I/K to pitch"," · 拖动环视，或用 ←/→ 转向、I/K 俯仰") : "");
   const buttons = [
     ["KeyW", "Forward"],
     ["KeyS", "Back"],
@@ -181,11 +182,11 @@ export function setupPanel(w, id, url, scene) {
   for (const [key, label] of buttons) {
     const button = document.createElement("button");
     button.dataset.key = key;
-    button.textContent = label;
+    button.textContent = localizedLabel(label);
     el("buttons").append(button);
   }
   const reset = document.createElement("button");
   reset.id = "reset";
-  reset.textContent = "Restart";
+  reset.textContent = local("Restart","重新开始");
   el("buttons").append(reset);
 }

@@ -13,6 +13,8 @@ import { contactDeck, deckCycles } from "../src/contact-deck.js";
 import { setupPanel } from "./panel.js";
 import { compileKineticWorld, refreshKineticPorts } from "../src/kinetic-world.js";
 import { setupMotionInspector } from "./motion-inspector.js";
+import { local, localizeControls } from "./locale.js";
+localizeControls();
 const el = (id) => document.getElementById(id);
 const canvas = document.querySelector("canvas"),
   keys = new Set(),
@@ -256,7 +258,7 @@ async function boot() {
     stream();
   }
   const capture = document.createElement("button");
-  capture.textContent = "Save frame";
+  capture.textContent = local("Save frame","保存画面");
   capture.onclick = () => {
     renderer.render(scene, inspector?.camera ?? camera);
     canvas.toBlob((blob) => {
@@ -444,8 +446,8 @@ async function boot() {
     });
     stats.dt.push(ms);
     if (stats.dt.length > 180) stats.dt.shift();
-    el("hud").textContent = inspector?.overview ? inspector.report.edges.length+" directed edges · "+
-      inspector.report.collisionTriangles.toLocaleString()+" collision triangles" :
+    el("hud").textContent = inspector?.overview ? inspector.report.edges.length+local(" directed edges · "," 条有向边 · ")+
+      inspector.report.collisionTriangles.toLocaleString()+local(" collision triangles"," 个碰撞三角面") :
       Math.round(stats.distance) +
       " m　·　" +
       stats.chunks.length +
