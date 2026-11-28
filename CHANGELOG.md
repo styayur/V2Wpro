@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.0 — Topogenesis
+
+Adds directed kinetic routes, six adaptive parametric structures, separately sampled colliders, speed envelopes and three checked departures. Switchyard joins two elevated corridors through shared sockets. The browser inspector compares local flight diagnostics against the exact exported GLB. The revision 2 module library is also consumed by Skimmer's streamed Kinetic City.
+
+The frozen 20-seed downstream matrix records impacts and early contact loss alongside clean releases. The original and revised assets, fixed inputs and compiler measurements remain reproducible. [Design, measurements and limitations](docs/topogenesis.md) · [Engine receipts](evidence/topogenesis/engine-feedback.json)
+
 ## v0.3.0 — Kinetogenesis
 
 Adds metric movement profiles, independently sampled contact surfaces, departure curvature constraints, a finite architectural district, editable preview rules and browser GLB export. The downstream diagnostic reader verifies replay identity and summarizes measured flight. Reproduction commands and compatibility limits are in [the contact study](docs/contact-study.md).

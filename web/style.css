@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+.study-guide {max-width: 56rem; padding-bottom: 4rem;}
+.study-guide article {line-height: 1.65;}
+.study-guide h1 {font-size: clamp(2rem,5vw,3.5rem); line-height: 1.07;}
+.study-guide h2 {margin-top: 2rem;}
+.study-guide code {overflow-wrap: anywhere;}
 body {
   margin: 0;
   background: #f4f3ed;
@@ -172,4 +177,27 @@ input {
 }
 
 #edit-prototypes { display:block; width:100%; box-sizing:border-box; font:inherit; font-family:monospace; }
-#exchange-status { display:block; }
+#exchange-status { display:block; position:static; }
+#exchange-status:empty { display:none; }
+#motion-inspector { border-bottom:1px solid #bdc8bd; padding:20px 0; }
+#motion-inspector[hidden] { display:none; }
+.inspector-header,.layers,.plot-labels {display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.layers label,.station-label {display:flex;align-items:center;gap:6px;}
+.layers input {width:auto; accent-color:#37685b;}
+.inspector-body {display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);margin-top:20px;}
+.inspector-body h3 {font:600 16px Georgia,serif; margin:0 0 12px;}
+.inspector-body p {margin:8px 0 16px;max-width:unset;}
+#edge-state[data-blocked="true"] {color:#93452b;}
+#speed-plot {width:100%;height:72px;background:#e6eae0;touch-action:auto;}
+.plot-labels,#station-values,#mesh-cost,table {font:13px ui-monospace,monospace;font-variant-numeric:tabular-nums;}
+.plot-labels {padding:4px 0;}
+.station-label {margin:8px 0;}
+.station-label input {width:auto;flex:1;accent-color:#37685b;}
+#launches {width:100%;border-collapse:collapse;text-align:left;}
+#launches th,#launches td {padding:6px 8px 6px 0;border-bottom:1px solid #d0d6c8;}
+#launches [data-pass="false"] {color:#93452b;}
+#fly-skimmer {display:inline-block;padding:8px;}
+.report-file {display:block;margin-top:12px;}
+.report-file input {display:block;width:100%;max-width:32rem;}
+:focus-visible {outline:2px solid #37685b;outline-offset:3px;}
+@media(max-width:700px) {.inspector-body {grid-template-columns:1fr;}.layers {justify-content:flex-start;}}

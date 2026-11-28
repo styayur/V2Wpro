@@ -11,11 +11,15 @@ import {
 import { aim, steer, direction, flightBounds } from "./flight.js";
 import { contactDeck, deckCycles } from "../src/contact-deck.js";
 import { setupPanel } from "./panel.js";
+import { compileKineticWorld, refreshKineticPorts } from "../src/kinetic-world.js";
+import { setupMotionInspector } from "./motion-inspector.js";
+import { local, localizeControls } from "./locale.js";
+localizeControls();
 const el = (id) => document.getElementById(id);
 const canvas = document.querySelector("canvas"),
   keys = new Set(),
   params = new URLSearchParams(location.search);
-const id = params.get("world") || "canopy";
+const id = params.get("world") || "topogenesis";
 const fail = (err) => {
   el("hud").textContent = String(err);
   console.error(err);
@@ -35,7 +39,11 @@ async function boot() {
     const saved = sessionStorage.getItem("rules:" + worldUrl.href);
     if (saved) data.prototypes = JSON.parse(saved);
   }
-  const w = data.version === "2.0" ? data : validate(data);
+  if (data.extensions?.kineticRecipe) {
+    const saved=sessionStorage.getItem("kinetic:"+worldUrl.href);
+    if (saved) data.extensions.kineticRecipe=JSON.parse(saved);
+  }
+  const w = data.version === "2.0" ? refreshKineticPorts(data) : validate(data);
   const spatial = w.version === "2.0";
   const realization = spatial ? realize(w,{includeSolidity:true}) : null;
   const routes = spatial ? inspectRoutes(w, realization) : null;
@@ -88,6 +96,9 @@ async function boot() {
       }),
     ]),
   );
+  const compiled=compileKineticWorld(w,realization);
+  const inspector=compiled ? setupMotionInspector(compiled,scene,canvas,materials,camera) : null;
+  if (inspector) bounds.union(inspector.bounds.clone().expandByScalar(80));
   // Long contact modules can span many streaming cells. Keep the bounded
   // finite deck resident while its smaller neighbouring structures stream.
   let deckGeometry;
@@ -233,7 +244,9 @@ async function boot() {
   function reset() {
     camera.position.set(...spawn);
     camera.rotation.set(0, 0, 0, "YXZ");
-    if (facing)
+    if (compiled && w.extensions.flightEntry)
+      aim(camera,w.extensions.flightEntry.toward.map((n,i)=>n-spawn[i]));
+    else if (facing)
       aim(
         camera,
         facing.map((v, i) => v - spawn[i]),
@@ -245,9 +258,9 @@ async function boot() {
     stream();
   }
   const capture = document.createElement("button");
-  capture.textContent = "Save frame";
+  capture.textContent = local("Save frame","保存画面");
   capture.onclick = () => {
-    renderer.render(scene, camera);
+    renderer.render(scene, inspector?.camera ?? camera);
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);
@@ -260,8 +273,9 @@ async function boot() {
   };
   el("buttons").append(capture);
   reset();
-  el("reset").onclick = reset;
+  el("reset").onclick = () => {inspector?.useFlight();reset();};
   function press(key) {
+    if (inspector?.overview) inspector.useFlight();
     destination = null;
     if (key === "Space" && !keys.has(key) && cooldown <= 0) {
       boost = 0.55;
@@ -286,7 +300,7 @@ async function boot() {
   onkeydown = (e) => {
     if (
       allowed.includes(e.code) &&
-      !e.target.closest("select,input,summary,a") &&
+      !e.target.closest("select,input,textarea,summary,a") &&
       !(e.code === "Space" && e.target.closest("button"))
     ) {
       e.preventDefault();
@@ -307,10 +321,11 @@ async function boot() {
   if (spatial) {
     canvas.onpointerdown = (e) => {
       canvas.focus();
+      if (inspector?.overview) return;
       canvas.setPointerCapture(e.pointerId);
     };
     canvas.onpointermove = (e) => {
-      if (canvas.hasPointerCapture(e.pointerId)) {
+      if (!inspector?.overview && canvas.hasPointerCapture(e.pointerId)) {
         destination = null;
         steer(camera, -e.movementX * 0.004, -e.movementY * 0.004);
       }
@@ -367,7 +382,8 @@ async function boot() {
       );
     }
     if (spatial) {
-      if (
+      if (inspector ? (v.distanceToSquared(camera.position)<1e-16 ||
+        inspector.index.clearChord(camera.position.toArray(),v.toArray(),w.physics.radius)) :
         segmentClear(
           camera.position.toArray(),
           v.toArray(),
@@ -410,7 +426,9 @@ async function boot() {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     stream();
-    renderer.render(scene, camera);
+    const visibleCamera=inspector?.camera ?? camera;
+    if (visibleCamera!==camera) {visibleCamera.aspect=camera.aspect;visibleCamera.updateProjectionMatrix();}
+    renderer.render(scene, visibleCamera);
     Object.assign(stats, {
       frames: stats.frames + 1,
       position: camera.position.toArray(),
@@ -428,7 +446,8 @@ async function boot() {
     });
     stats.dt.push(ms);
     if (stats.dt.length > 180) stats.dt.shift();
-    el("hud").textContent =
+    el("hud").textContent = inspector?.overview ? inspector.report.edges.length+local(" directed edges · "," 条有向边 · ")+
+      inspector.report.collisionTriangles.toLocaleString()+local(" collision triangles"," 个碰撞三角面") :
       Math.round(stats.distance) +
       " m　·　" +
       stats.chunks.length +
@@ -447,7 +466,7 @@ async function boot() {
       reset,
       bounds: [bounds.min.toArray(), bounds.max.toArray()],
       cellSize: w.streaming.cellSize,
-      clearPath: (a, b) =>
+      clearPath: (a, b) => inspector ? inspector.index.clearChord(a,b,w.physics.radius) :
         segmentClear(a, b, w.physics.radius, realization.solids),
       topology: w.topology,
       action: w.motion.action,

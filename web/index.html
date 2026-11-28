@@ -10,7 +10,7 @@
   <body>
     <header>
       <a class="brand" href="./"><img src="./logo.svg" alt="" />V2Wpro</a
-      ><a href="https://github.com/styayur/V2Wpro">Source ↗</a>
+      ><nav><a href="./guide.html">Guide</a> · <a href="https://github.com/styayur/V2Wpro">Source ↗</a></nav>
     </header>
     <main>
       <section class="title">
@@ -23,6 +23,8 @@
             >World
             <select id="world">
               <optgroup label="Spatial worlds">
+                <option value="topogenesis">Switchyard</option>
+                <option value="s-curve-study">S-curve study</option>
                 <option value="canopy">Canopy</option>
                 <option value="caldera">Caldera</option>
                 <option value="district">Relay District</option>
@@ -55,6 +57,34 @@
         <span id="instructions"></span>
         <div id="buttons"></div>
       </div>
+      <section id="motion-inspector" hidden aria-labelledby="inspector-title">
+        <div class="inspector-header">
+          <h2 id="inspector-title">Motion Inspector</h2>
+          <div class="layers" aria-label="Viewport layers">
+            <label><input type="checkbox" id="layer-skin" checked> Render</label>
+            <label><input type="checkbox" id="layer-proxy"> Collision</label>
+            <label><input type="checkbox" id="layer-route" checked> Routes</label>
+            <label><input type="checkbox" id="layer-zone"> Zones</label>
+            <button type="button" id="overview">Fly from entry</button>
+          </div>
+        </div>
+        <div class="inspector-body">
+          <div>
+            <label>Directed route <select id="motion-edge"></select></label>
+            <p id="edge-state"></p>
+            <div class="plot-labels"><span>Speed envelope · m/s</span><span id="route-length"></span></div>
+            <div id="plot-host"></div>
+            <label class="station-label">Inspect distance <input id="motion-station" type="range" min="0" max="1000" value="0"></label>
+            <div id="station-values" aria-live="polite"></div>
+          </div>
+          <div>
+            <h3>Active release</h3>
+            <table id="launches"><thead><tr><th>Route</th><th>Clearance</th><th>Result</th></tr></thead><tbody></tbody></table>
+            <p id="mesh-cost"></p>
+            <button type="button" id="save-analysis">Export motion analysis</button>
+          </div>
+        </div>
+      </section>
       <section id="reference" hidden>
         <video controls muted playsinline preload="metadata"></video>
         <div>
@@ -76,12 +106,16 @@
           </details>
           <details id="exchange-panel" hidden>
             <summary>Edit and export flight study</summary>
-            <label>Prototype rules <textarea id="edit-prototypes" rows="9" spellcheck="false"></textarea></label>
+            <label><span id="rules-label">Prototype rules</span> <textarea id="edit-prototypes" rows="9" spellcheck="false"></textarea></label>
             <div><button id="apply-rules">Preview changes</button>
               <button id="reset-rules">Restore source rules</button></div>
             <p id="movement-envelope"></p>
             <button id="save-glb">Save GLB</button>
             <button id="save-ir">Save WorldIR</button>
+            <a id="fly-skimmer" target="_blank" rel="noopener noreferrer">Fly in Skimmer ↗</a>
+            <p id="fly-instructions" hidden>Save this GLB, then choose it in Skimmer’s local world library.</p>
+            <label class="report-file">Read downstream flight report <input type="file" id="flight-report" accept=".json,application/json"></label>
+            <p id="report-result" aria-live="polite"></p>
             <output id="exchange-status" aria-live="polite"></output>
           </details>
           <p><a id="document">Open WorldIR ↗</a></p>
