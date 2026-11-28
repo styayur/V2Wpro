@@ -34,6 +34,14 @@ export function departureRelief(id,scale,profile,revision) {
   return Math.min(1,heightLimit/((id==="sky-arch" ? 38 : 18)*scale));
 }
 
+export function helicalReturn(id,profile,revision) {
+  if (revision<2 || id!=="helix") return 0;
+  // The descending strand formerly intercepted a pilot who left the first
+  // quarter-turn along its incoming tangent. Bend the return out to the side
+  // of that corridor, preserving both sockets and the complete climbing loop.
+  return 2*(16+profile.clearance+profile.hullRadius);
+}
+
 function validateRecipe(recipe, seed) {
   if (!uint32(seed)) throw Error("Invalid uint32 kinetic seed");
   validateKineticRecipe(recipe);
@@ -113,7 +121,8 @@ export function compileKineticWorld(world, realization) {
       const scale=recipe.relief*(0.91+0.12*deriveSeed(world.seed,link.id,"shape")/0xffffffff);
       const key=link.module+"/"+scale;
       if (!modules.has(key)) modules.set(key,designModule(link.module,scale,
-        departureRelief(link.module,scale,profile,recipe.ruleRevision)));
+        departureRelief(link.module,scale,profile,recipe.ruleRevision),
+        helicalReturn(link.module,profile,recipe.ruleRevision)));
       module=modules.get(key);
     }
     function place(p,t) {
