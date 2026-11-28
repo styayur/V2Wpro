@@ -1,10 +1,10 @@
-# V2Wpro · Kinetogenesis
+# V2Wpro · Topogenesis
 
-**Video imagines. Algorithms expand. Engines realize.**
+在 Switchyard 的高架岔道上选定航线，检查曲率、速度和机身净空，再用 Skimmer 的游戏记录复核预测。这个有限区域有两条走廊、两个分流口和十条有向边。同一套六种参数化模块也供 Skimmer 的按需生成城市使用。
 
 一段拍到书架与红椅的镜头，可以给出一套空间生成规则：把横向搁板与竖向支撑组合成结构单元，重复排列，再把椅子设为岔路口的地标。v0.2.0 将这些解释与设计编译成可执行的 WorldIR。玩家可以在空间中自由转向，检查节点之间的路线，并通过种子改变同一规则下的排列。
 
-[在线试玩八个世界](https://styayur.github.io/V2Wpro/) · [完整发布包及录像](https://github.com/styayur/V2Wpro/releases/tag/v0.2.0) · [English](README.md)
+[运动检查器](https://styayur.github.io/V2Wpro/?world=topogenesis) · [独立中文教程](https://styayur.github.io/V2Wpro/guide.html#zh) · [生成规则与实飞证据](docs/topogenesis.md) · [English](README.md)
 
 ## 快速开始
 

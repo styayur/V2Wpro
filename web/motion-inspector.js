@@ -1,14 +1,15 @@
 import * as T from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { createKineticIndex, inspectKineticWorld } from "../src/motion-analysis.js";
+import { local } from "./locale.js";
 
 const el=id=>document.getElementById(id);
 const point=p=>new T.Vector3(...p);
 const reasonLabels={
-  "hull-clearance":"The swept hull reaches a collider.",
-  "curvature-below-minimum-speed":"This bend requires a speed below the profile minimum.",
-  "entry-needs-prior-braking":"Brake before entering this edge.",
-  "no-clear-sampled-departure":"All three sampled departures intersect geometry or end too close to a surface.",
+  "hull-clearance":local("The swept hull reaches a collider.","扫掠机身与碰撞面相交。"),
+  "curvature-below-minimum-speed":local("This bend requires a speed below the profile minimum.","通过此弯所需的速度低于配置下限。"),
+  "entry-needs-prior-braking":local("Brake before entering this edge.","进入此航段前需要减速。"),
+  "no-clear-sampled-departure":local("All three sampled departures intersect geometry or end too close to a surface.","三个采样脱离点均与几何相交或终点净空不足。"),
 };
 
 export function setupMotionInspector(compiled,scene,canvas,materials,flightCamera) {
@@ -74,8 +75,8 @@ export function setupMotionInspector(compiled,scene,canvas,materials,flightCamer
   function setOverview(value) {
     overview=value;orbit.enabled=value;
     scene.fog=value ? null : flightFog;
-    el("overview").textContent=value ? "Fly from entry":"Overview";
-    el("instructions").textContent=value ? "Drag to orbit · Scroll to zoom" : originalInstructions;
+    el("overview").textContent=value ? local("Fly from entry","从入口起飞"):local("Overview","俯览");
+    el("instructions").textContent=value ? local("Drag to orbit · Scroll to zoom","拖动环绕观察 · 滚轮缩放") : originalInstructions;
   }
   el("overview").onclick=()=>{setOverview(!overview);if (!overview) el("reset").click();};
   setOverview(true);
@@ -113,22 +114,22 @@ export function setupMotionInspector(compiled,scene,canvas,materials,flightCamer
     el("edge-state").dataset.blocked=String(edge.reasons.length>0);
     el("edge-state").textContent=[edge.level,...edge.reasons.map(r=>reasonLabels[r]??r)].join(" · ");
     el("station-values").textContent=(edge.length*f).toFixed(1)+" m · "+row.speed.toFixed(1)+" m/s · "+
-      (row.curvature??0).toFixed(4)+" m⁻¹ curvature · "+row.clearance.toFixed(2)+" m clearance";
+      (row.curvature??0).toFixed(4)+local(" m⁻¹ curvature · "," m⁻¹ 曲率 · ")+row.clearance.toFixed(2)+local(" m clearance"," m 净空");
     const body=el("launches").tBodies[0];body.replaceChildren();
     for (const launch of edge.launches) {
       const tr=body.insertRow();
       for (const label of [Math.round(launch.fraction*100)+"%",launch.minimumClearance.toFixed(2)+" m",
-        launch.feasible ? "Clear":"Rejected"]) tr.insertCell().textContent=label;
+        launch.feasible ? local("Clear","可脱离"):local("Rejected","被拒绝")]) tr.insertCell().textContent=label;
       tr.dataset.pass=String(launch.feasible);
     }
     renderPlot(edge,f);
   }
   selector.onchange=update;el("motion-station").oninput=update;update();
-  el("mesh-cost").textContent=report.renderTriangles.toLocaleString()+" render triangles · "+
-    report.collisionTriangles.toLocaleString()+" collision triangles";
-  el("summary").textContent=compiled.sockets.length+" sockets · "+report.edges.length+" directed edges";
-  el("movement-envelope").textContent=report.profile.id+" · "+report.profile.speed+" m/s entry · "+
-    report.edges.filter(e=>e.reasons.length).length+" edges with a recorded constraint";
+  el("mesh-cost").textContent=report.renderTriangles.toLocaleString()+local(" render triangles · "," 个渲染三角面 · ")+
+    report.collisionTriangles.toLocaleString()+local(" collision triangles"," 个碰撞三角面");
+  el("summary").textContent=compiled.sockets.length+local(" sockets · "," 个接口 · ")+report.edges.length+local(" directed edges"," 条有向边");
+  el("movement-envelope").textContent=report.profile.id+" · "+report.profile.speed+local(" m/s entry · "," m/s 进入速度 · ")+
+    report.edges.filter(e=>e.reasons.length).length+local(" edges with a recorded constraint"," 个航段受限");
   el("save-analysis").onclick=()=>{
     const a=document.createElement("a");
     a.href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:"application/json"}));

@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+.study-guide {max-width: 56rem; padding-bottom: 4rem;}
+.study-guide article {line-height: 1.65;}
+.study-guide h1 {font-size: clamp(2rem,5vw,3.5rem); line-height: 1.07;}
+.study-guide h2 {margin-top: 2rem;}
+.study-guide code {overflow-wrap: anywhere;}
 body {
   margin: 0;
   background: #f4f3ed;
