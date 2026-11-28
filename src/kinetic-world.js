@@ -22,6 +22,18 @@ export function kineticProfile(name) {
     forwardAcceleration:26, departureSeconds:1, departurePitchRadians:0.065};
 }
 
+// Neutral LB release carries the incoming tangent. Reserve half a second
+// of travel and a half-metre measurement margin before the hull can meet
+// a rising deck. For y = H sin²(pi z/L), |y''| <= 2 pi² H/L².
+export function departureRelief(id,scale,profile,revision) {
+  if (!revision || !["sky-arch","bowl"].includes(id)) return 1;
+  const margin=profile.clearance-profile.hullRadius-0.5;
+  const travel=0.55*profile.speed;
+  const curvature=2*Math.max(0.01,margin)/travel**2;
+  const heightLimit=curvature*chunkSize**2/(2*Math.PI**2);
+  return Math.min(1,heightLimit/((id==="sky-arch" ? 38 : 18)*scale));
+}
+
 function validateRecipe(recipe, seed) {
   if (!uint32(seed)) throw Error("Invalid uint32 kinetic seed");
   validateKineticRecipe(recipe);
@@ -100,7 +112,8 @@ export function compileKineticWorld(world, realization) {
     else {
       const scale=recipe.relief*(0.91+0.12*deriveSeed(world.seed,link.id,"shape")/0xffffffff);
       const key=link.module+"/"+scale;
-      if (!modules.has(key)) modules.set(key,designModule(link.module,scale));
+      if (!modules.has(key)) modules.set(key,designModule(link.module,scale,
+        departureRelief(link.module,scale,profile,recipe.ruleRevision)));
       module=modules.get(key);
     }
     function place(p,t) {

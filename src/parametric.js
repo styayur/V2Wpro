@@ -12,7 +12,7 @@ const thickness = 1.6;
 
 // The loop has level lead-ins and a common horizontal tangent on both sides
 // of each join. The increasing elevation keeps the entry and exit disjoint.
-function spine(id, t, scale) {
+function spine(id, t, scale, heightGain) {
   if (id === "helix") {
     const a = 0.22, b = 0.73, base = 58, lift = 48 * scale, radius = 39 * scale;
     if (t < a) return [0, 0, base * t / a];
@@ -26,8 +26,8 @@ function spine(id, t, scale) {
   const hill = rise(t) * scale;
   switch (id) {
     case "s-curve": return [21 * hill * Math.sin(2*pi*t), 2.5*hill, chunkSize*t];
-    case "sky-arch": return [0, 38*hill, chunkSize*t];
-    case "bowl": return [0, -18*hill, chunkSize*t];
+    case "sky-arch": return [0, 38*hill*heightGain, chunkSize*t];
+    case "bowl": return [0, -18*hill*heightGain, chunkSize*t];
     case "ribbon-bridge": return [12*hill, 5*hill*Math.sin(2*pi*t), chunkSize*t];
     case "tunnel": return [-5*hill, 0, chunkSize*t];
     default: throw Error("Unknown kinetic module: " + id);
@@ -52,11 +52,11 @@ function vaultSection() {
   return [...arc(inner).reverse(), ...arc(outer)];
 }
 
-function frameAt(id, t, scale) {
-  const center = spine(id,t,scale);
+function frameAt(id, t, scale, heightGain=1) {
+  const center = spine(id,t,scale,heightGain);
   const step = 1e-5;
   const tangent = t === 0 || t === 1 ? new Vector3(0,0,1) :
-    vec(spine(id,Math.min(1,t+step),scale)).sub(vec(spine(id,Math.max(0,t-step),scale))).normalize();
+    vec(spine(id,Math.min(1,t+step),scale,heightGain)).sub(vec(spine(id,Math.max(0,t-step),scale,heightGain))).normalize();
   const right = new Vector3(tangent.z,0,-tangent.x).normalize();
   if (id === "ribbon-bridge") right.applyAxisAngle(tangent, 0.35*rise(t)*Math.sin(2*pi*t));
   return {t, center, right:right.toArray(), up:tangent.clone().cross(right).normalize().toArray()};
@@ -120,13 +120,14 @@ function sampleSweep(evaluate, section, knots, tolerance, angleLimit) {
   }));
 }
 
-export function designModule(id, scale = 1) {
+export function designModule(id, scale = 1, heightGain=1) {
   if (!moduleIds.includes(id) || !Number.isFinite(scale) || scale < 0.25 || scale > 1.45)
     throw Error("Invalid module or shaping scale");
+  if (!Number.isFinite(heightGain) || heightGain<=0 || heightGain>1) throw Error("Invalid vertical relief gain");
   const collisionTolerance = 0.16, renderTolerance = 0.055;
   const section = ribbonSection(id === "bowl" ? 12 : 1,0);
   const at = t => {
-    const frame = frameAt(id,t,scale);
+    const frame = frameAt(id,t,scale,heightGain);
     if (id === "bowl") frame.section = ribbonSection(12,6*rise(t)*scale);
     return frame;
   };
@@ -152,7 +153,7 @@ export function moduleLibrary() {
 // Independent off-grid point-to-triangle measurements on the built cells.
 // The cross-section is the declared polygon; both longitudinal tessellations
 // are compared to the same analytic spine, frame and loft.
-export function measureSurfaceError(module, scale=1) {
+export function measureSurfaceError(module, scale=1, heightGain=1) {
   const results=[];
   for (const part of [module,...module.shells]) {
     for (const role of ["render","collision"]) {
@@ -163,7 +164,7 @@ export function measureSurfaceError(module, scale=1) {
         const low=ringAt(a,part.section).map(vec), high=ringAt(b,part.section).map(vec);
         for (const f of [0.173,0.437,0.793]) {
           const t=a.t+(b.t-a.t)*f;
-          const target=frameAt(module.id,t,scale);
+          const target=frameAt(module.id,t,scale,heightGain);
           if (module.id==="bowl") target.section=ribbonSection(12,6*rise(t)*scale);
           const ring=ringAt(target,part.section).map(vec);
           for (let k=0;k<ring.length;k++) {
