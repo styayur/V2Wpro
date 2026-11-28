@@ -1,0 +1,11 @@
+{
+  "$schema":"http://json-schema.org/draft-07/schema#",
+  "title":"Locally resolvable authored motionSemantic node extra",
+  "type":"object","additionalProperties":false,
+  "required":["version","id","kind","capabilities"],
+  "properties":{
+    "version":{"const":1},"id":{"type":"string","pattern":"^[A-Za-z][A-Za-z0-9._-]{0,79}$"},
+    "kind":{"enum":["surface","route","landmark","socket","escape"]},
+    "capabilities":{"type":"array","maxItems":5,"uniqueItems":true,"items":{"enum":["glide","guide","scout","release","observe"]}}
+  }
+}

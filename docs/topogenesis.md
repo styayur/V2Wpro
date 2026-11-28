@@ -36,6 +36,14 @@ The analysis derives curvature from successive contact-offset centerline points.
 
 The finite sampler retains blocked edges in the report. An author can see the actual conflict and revise the recipe. A route marked motion-verified still needs the game run to establish that its contact controller can acquire and hold it. Hardware input and foreground GPU measurements carry separate receipts.
 
+## Joint rule revisions
+
+Use numeric revision 0 to regenerate the original study, 1 for the measured departure-curvature bound, or 2 for the displaced helical return. The two initial boost runs contacted the shield after leaving the bowl and sky arch. Revision 1 limits the longitudinal height of those two 220 m modules according to entry speed, hull margin and a 0.55 s neutral departure interval. The same boost inputs then yielded 159.9 m and 237.5 m of sampled glide and zero shield impacts. In revision 2 the descending limb of the helix bends away from the incoming tangent. The upstream curve still completes one climbing revolution. A neutral stock pilot can lose contact there and leave safely. Applications tracking physical traversal must distinguish that outcome from completing the loop.
+
+The original finite Switchyard has two crossing branches that approach other decks inside the hull margin. It remains available as `examples/topogenesis.json`. The revision 2 Switchyard separates junctions from the high-relief spans. A shared row height and a quintic lateral blend give each fork common endpoint slopes. Both crossovers span two chunks. At seed 8131 the ten directed edges pass the cruise motion analysis. The engine evidence for an individual module covers its tested approach.
+
+The production module file is `examples/kinetic-flight-modules.json`. Generate the identical bytes with `node tools/topogenesis.js flight-library boost 2 OUTPUT`. The original untuned library is retained as `examples/kinetic-modules.json`. The raw [stock-engine captures, layout identities and failures](https://github.com/styayur/Skimmer-Scraper/pull/88) live with the AGPL consumer.
+
 ## GLB exchange
 
 The visible skin uses the existing DECORATION role and the independent collider uses SURFACE with a masked material. The scene carries flightEntry and motionTopology. Surface and socket nodes can expose the bounded motionSemantic vocabulary. Semantic records identify an observation candidate. The consuming game resolves the current world epoch and checks local geometry before accepting a mission.

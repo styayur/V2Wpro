@@ -61,6 +61,18 @@ function slab(z0,z1) {
     stations:rows,collisionStations:rows,shells:[]};
 }
 
+function junctionDeck(delta) {
+  const deck=slab(0,delta[2]);
+  function stations(tolerance) {
+    // The quintic port blend has |f''| < 6. Bound the chord deviation
+    // independently for the skin and collider, including the height blend.
+    const count=Math.max(2,Math.ceil(delta[2]/18),
+      Math.ceil(Math.sqrt(6*Math.hypot(delta[0],delta[1])/(8*tolerance))));
+    return Array.from({length:count+1},(_,i)=>({t:i/count,center:[0,0,i*delta[2]/count],...identityFrame}));
+  }
+  return {...deck,stations:stations(0.055),collisionStations:stations(0.16)};
+}
+
 // Boundary identity is a function of the world and the shared coordinates.
 // A neighbouring region does not need the previous region's state.
 function boundary(seed, col, row) {
@@ -77,6 +89,25 @@ export function planKineticRegion(recipe,seed) {
       {id:"runout",from:{id:"exit",point:[0,0,220]},to:{id:"end",point:[0,0,360]},module:"apron"}];
   }
   const edges=[];
+  if (recipe.ruleRevision>=2) {
+    const col=2*recipe.regionX, base=6*recipe.regionZ;
+    const port=(x,z)=>{
+      const p=boundary(seed,x,z);
+      p.point[1]=38+18*deriveSeed(seed,"junction-level",z)/0xffffffff;
+      return p;
+    };
+    for (const [offset,span,side] of [[0,2,0],[2,1,0],[3,2,1],[5,1,1]]) {
+      const z=base+offset;
+      function join(fromX,toX) {
+        const from=port(fromX,z),to=port(toX,z+span);
+        const module=span===2 ? "junction-deck" : moduleIds[deriveSeed(seed,"module",fromX,z)%moduleIds.length];
+        edges.push({id:from.id+"-to-"+to.id,from,to,module});
+      }
+      join(col,col);join(col+1,col+1);
+      if (span===2) join(col+side,col+1-side);
+    }
+    return edges;
+  }
   const col=2*recipe.regionX, row=3*recipe.regionZ;
   function connect(x,z,dx,module) {
     const from=boundary(seed,x,z), to=boundary(seed,x+dx,z+1);
@@ -139,6 +170,7 @@ export function compileKineticWorld(world, realization) {
     const delta=end.map((n,i)=>n-start[i]);
     let module;
     if (link.module === "apron") module=slab(0,delta[2]);
+    else if (link.module === "junction-deck") module=junctionDeck(delta);
     else {
       const scale=recipe.relief*(0.91+0.12*deriveSeed(world.seed,link.id,"shape")/0xffffffff);
       const key=link.module+"/"+scale;
@@ -150,7 +182,7 @@ export function compileKineticWorld(world, realization) {
     function place(p,t) {
       // Blend the port offset with zero endpoint slope. All stored ring
       // coordinates are metres in a common, right-handed frame.
-      const f=flatten(t);
+      const f=link.module==="junction-deck" ? t**3*(10-15*t+6*t*t) : flatten(t);
       return [start[0]+p[0]+delta[0]*f,start[1]+p[1]+delta[1]*f,start[2]+p[2]];
     }
     for (const [i,part] of [module,...module.shells].entries()) {

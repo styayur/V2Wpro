@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { BoxGeometry, Vector3 } from "three";
+import Ajv from "ajv";
 import { makeKineticWorld, planKineticRegion } from "../src/kinetic-world.js";
 import { validate } from "../src/validate.js";
 import { moduleLibrary, measureSurfaceError, sweepMesh } from "../src/parametric.js";
@@ -70,4 +71,26 @@ test("region planning yields directed alternatives and order-independent neighbo
   assert.ok(a.some(e=>a.filter(f=>f.from.id===e.from.id).length>1));
   assert.deepEqual(planKineticRegion(recipe,w.seed),a);
   assert.notDeepEqual(planKineticRegion(recipe,w.seed+1),a);
+});
+
+test("published module data and actual GLB scene extras conform to their independent contracts",()=>{
+  const validator=file=>new Ajv().compile(JSON.parse(readFileSync("schema/"+file+".json")));
+  const library=validator("kinetic-module-library-1");
+  for (const name of ["kinetic-modules","kinetic-flight-modules"])
+    assert.ok(library(JSON.parse(readFileSync("examples/"+name+".json"))),JSON.stringify(library.errors));
+  const bytes=readFileSync("examples/topogenesis.glb");
+  const gltf=JSON.parse(bytes.subarray(20,20+bytes.readUInt32LE(12)));
+  const topology=validator("motion-topology-1"),semantic=validator("motion-semantic-1");
+  assert.ok(topology(gltf.scenes[0].extras.motionTopology),JSON.stringify(topology.errors));
+  for (const node of gltf.nodes) if (node.extras?.motionSemantic)
+    assert.ok(semantic(node.extras.motionSemantic),JSON.stringify(semantic.errors));
+});
+
+test("Switchyard's two crossovers support the cruise hull through their mouths",()=>{
+  const w=JSON.parse(readFileSync("examples/switchyard.json"));
+  const edges=inspectWorld(w).edges;
+  assert.equal(edges.length,10);
+  assert.ok(edges.every(e=>!e.reasons.length));
+  assert.ok(Math.min(...edges.map(e=>e.minimumClearance))>6.4);
+  assert.deepEqual(Buffer.from(exportExchange(w)),readFileSync("examples/switchyard.glb"));
 });
