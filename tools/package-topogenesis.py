@@ -16,7 +16,7 @@ args = parser.parse_args()
 producer = Path(__file__).resolve().parents[1]
 
 def git(root, *args):
-    return subprocess.check_output(["git", "-C", str(root), *args])
+    return subprocess.check_output(["git", "-C", str(root), "-c", "core.autocrlf=false", *args])
 
 def blob(root, commit, name):
     return git(root, "show", f"{commit}:{name}")
