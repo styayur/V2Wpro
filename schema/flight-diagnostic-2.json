@@ -1,0 +1,32 @@
+{
+  "$schema":"http://json-schema.org/draft-07/schema#",
+  "title":"Skimmer finite imported-world engine replay, flight-diagnostic-2",
+  "type":"object",
+  "required":["format","sha256","experiment","world","binary","build","fixedHz","trace","imported","replayed","errors","returnedToBuiltin","outcome"],
+  "definitions":{
+    "hash":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "xyz":{"type":"object","required":["x","y","z"],"properties":{"x":{"type":"number"},"y":{"type":"number"},"z":{"type":"number"}}},
+    "identity":{"type":"object","required":["id","spawn","variant","bounds","collisionTriangles"],"properties":{
+      "id":{"$ref":"#/definitions/hash"},"spawn":{"$ref":"#/definitions/xyz"},"bounds":{"$ref":"#/definitions/xyz"},
+      "variant":{"type":"integer","minimum":0,"maximum":4294967295},"collisionTriangles":{"type":"integer","minimum":1}
+    }}
+  },
+  "properties":{
+    "format":{"const":"flight-diagnostic-2"},"sha256":{"$ref":"#/definitions/hash"},"fixedHz":{"const":120},
+    "experiment":{"type":"object","required":["seed","module","profile","inputId","ruleRevision","disposition"],"properties":{
+      "seed":{"type":"integer","minimum":0,"maximum":4294967295},"module":{"type":"string","minLength":1,"maxLength":80},
+      "profile":{"enum":["cruise","boost"]},"inputId":{"type":"string","minLength":1,"maxLength":200},
+      "ruleRevision":{"type":"integer","minimum":0},"disposition":{"enum":["must-succeed","may-reject","must-reject"]}
+    }},
+    "world":{"type":"object","required":["sha256","bytes","layoutSeed"],"properties":{
+      "sha256":{"$ref":"#/definitions/hash"},"bytes":{"type":"integer","minimum":28,"maximum":134217728},
+      "layoutSeed":{"type":"string","maxLength":16384,"pattern":"^glb-world:[A-Za-z0-9_-]+$"}}},
+    "binary":{"type":"object","required":["sha256","bytes"],"properties":{"sha256":{"$ref":"#/definitions/hash"},"bytes":{"type":"integer","minimum":1}}},
+    "build":{"type":"object","required":["sourceCommit","dirty"],"properties":{"sourceCommit":{"type":"string","pattern":"^[0-9a-f]{40}$"},"dirty":{"type":"boolean"}}},
+    "trace":{"type":"array","minItems":2,"maxItems":65536,"items":{"type":"object","required":["time","position","speed","phase","impacts","mode"],"properties":{
+      "time":{"type":"number","minimum":0},"position":{"$ref":"#/definitions/xyz"},"speed":{"type":"number","minimum":0},
+      "phase":{"type":"string","maxLength":48},"impacts":{"type":"integer","minimum":0},"mode":{"type":"string","maxLength":24}}}},
+    "imported":{"$ref":"#/definitions/identity"},"replayed":{"$ref":"#/definitions/identity"},
+    "errors":{"type":"array","maxItems":256},"returnedToBuiltin":{"type":"boolean"},"outcome":{"type":"string","minLength":1,"maxLength":128}
+  }
+}

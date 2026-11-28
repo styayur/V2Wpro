@@ -57,8 +57,8 @@ function releaseCheck(samples,fraction,index,profile) {
     model:"bounded-pitch-departure",end:end.map(round)};
 }
 
-export function inspectKineticWorld(compiled) {
-  const index=createKineticIndex(compiled), profile=compiled.profile;
+export function inspectKineticWorld(compiled,index=createKineticIndex(compiled)) {
+  const profile=compiled.profile;
   const edges=compiled.edges.map(edge=>{
     const points=edge.points.map(vec).filter((p,i,arr)=>!i || p.distanceToSquared(arr[i-1])>1e-12);
     const samples=speedEnvelope(points,profile);

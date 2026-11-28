@@ -42,6 +42,14 @@ export function helicalReturn(id,profile,revision) {
   return 2*(16+profile.clearance+profile.hullRadius);
 }
 
+export function flightModuleLibrary(name="boost",revision=2) {
+  const profile=kineticProfile(name);
+  if (![0,1,2].includes(revision)) throw Error("Unknown generation rule revision");
+  return {format:"kinetic-module-library-1",units:"metres",axes:"right-handed-y-up",chunkSize,
+    ruleRevision:revision,profile,modules:moduleIds.map(id=>designModule(id,1,
+      departureRelief(id,1,profile,revision),helicalReturn(id,profile,revision)))};
+}
+
 function validateRecipe(recipe, seed) {
   if (!uint32(seed)) throw Error("Invalid uint32 kinetic seed");
   validateKineticRecipe(recipe);
@@ -101,6 +109,20 @@ export function makeKineticWorld(module,seed,profile="cruise",ruleRevision=0,mod
     evidence:[{id:"sweep",kind:"decision",source:"docs/topogenesis.md",confidence:1,
       claim:"Lay out common boundary sockets before sweeping original deck and vault sections."}],
     extensions:{kineticRecipe:recipe,flightEntry:{version:1,position:entry,toward:[entry[0],entry[1],entry[2]+20]}}};
+}
+
+// A seed or region edit moves the ports. Refresh the study's derived entry
+// and survey markers while preserving author-edited productions and evidence.
+export function refreshKineticPorts(world) {
+  const recipe=world.extensions?.kineticRecipe;
+  if (!recipe) return world;
+  const plan=planKineticRegion(recipe,world.seed);
+  const start=plan[0].from.point, end=plan.at(-1).to.point;
+  const entry=[start[0],start[1]+10,start[2]+8];
+  const positions={approach:entry,survey:[end[0],end[1]+90,end[2]]};
+  return {...world,topology:{...world.topology,nodes:world.topology.nodes.map(node=>
+    Object.hasOwn(positions,node.id) ? {...node,position:positions[node.id]} : node)},
+    extensions:{...world.extensions,flightEntry:{version:1,position:entry,toward:[entry[0],entry[1],entry[2]+20]}}};
 }
 
 export function compileKineticWorld(world, realization) {
