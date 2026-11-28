@@ -1,5 +1,6 @@
 import Ajv from "ajv";
 import schema from "../schema/worldir-2.0.json" with { type: "json" };
+import { validateKineticRecipe } from "./kinetic-contract.js";
 
 const validator = new Ajv().compile(schema);
 const forbidden = new Set(["constructor", "prototype", "__proto__"]);
@@ -164,6 +165,7 @@ export function realize(w, { includeSolidity = false } = {}) {
           .map((e) => e.instancePath + " " + e.message)
           .join(", "),
     );
+  if (Object.hasOwn(w.extensions,"kineticRecipe")) validateKineticRecipe(w.extensions.kineticRecipe);
   checkProgram(w);
   const items = [],
     solids = [],
