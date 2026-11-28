@@ -1,11 +1,13 @@
 import { BoxGeometry, Color, IcosahedronGeometry, TorusGeometry } from "three";
 import { contactDeck, deckCycles } from "./contact-deck.js";
 import { inspectRoutes, realize } from "./morph.js";
+import { compileKineticWorld } from "./kinetic-world.js";
 
 // Bake an independently readable, static local-world GLB. Collision meshes use
 // the WorldIR solid extents because the recipient collides with triangles.
 export function exportExchange(world) {
   const scene = realize(world,{includeSolidity:true});
+  const kinetic = compileKineticWorld(world,scene);
   if (scene.items.length >= 2500) throw Error("Exchange exceeds 2499 mesh nodes");
   const routes = inspectRoutes(world, scene);
   if (!routes.connected || routes.blockedEdges.length) throw Error("Exchange requires clear physical routes");
@@ -31,7 +33,7 @@ export function exportExchange(world) {
     byteLength += data.length + padding.length;
     const bufferView = gltf.bufferViews.push({ buffer: 0, byteOffset: start, byteLength: data.length }) - 1;
     const width = type === "SCALAR" ? 1 : 3;
-    return gltf.accessors.push({ bufferView, componentType: width === 1 ? 5123 : 5126,
+    return gltf.accessors.push({ bufferView, componentType: width === 1 ? (array instanceof Uint32Array ? 5125 : 5123) : 5126,
       count: array.length / width, type, ...bounds }) - 1;
   }
   const shapes = new Map(), meshes = new Map();
@@ -88,6 +90,38 @@ export function exportExchange(world) {
       gltf.scenes[0].nodes.push(gltf.nodes.length);
       gltf.nodes.push({mesh:meshes.get(name),name,translation:item.position,scale:item.size,
         extras:{skimmerRole:"SURFACE",collisionOnly:true,evidence:item.evidence}});
+    }
+  }
+  if (kinetic) {
+    const proxyMaterial=materials.push({name:"kinetic collision",alphaMode:"MASK",alphaCutoff:0.5,
+      pbrMetallicRoughness:{baseColorFactor:[0,0,0,0]}})-1;
+    gltf.scenes[0].extras.motionTopology={format:kinetic.format,level:"authored",
+      profile:kinetic.profile,edges:kinetic.edges,sockets:kinetic.sockets};
+    for (const surface of kinetic.surfaces) {
+      for (const role of ["render","collision"]) {
+        const g=surface[role], proxy=role === "collision";
+        const min=g.boundingBox.min.toArray(),max=g.boundingBox.max.toArray();
+        for (let i=0;i<3;i++) {
+          low[i]=Math.min(low[i],min[i]); high[i]=Math.max(high[i],max[i]);
+          if (proxy) { solidLow[i]=Math.min(solidLow[i],min[i]); solidHigh[i]=Math.max(solidHigh[i],max[i]); }
+        }
+        const primitive={attributes:{POSITION:accessor(g.attributes.position.array,"VEC3",{min,max}),
+          NORMAL:accessor(g.attributes.normal.array,"VEC3")},indices:accessor(g.index.array,"SCALAR"),
+          material:proxy ? proxyMaterial : Number(surface.material === "accent")};
+        triangleCount+=g.index.count/3;
+        const mesh=gltf.meshes.push({primitives:[primitive]})-1;
+        gltf.scenes[0].nodes.push(gltf.nodes.length);
+        gltf.nodes.push({name:surface.id+"-"+role,mesh,extras:{skimmerRole:proxy ? "SURFACE" : "DECORATION",
+          collisionOnly:proxy,source:"V2Wpro Topogenesis",license:"MIT",
+          ...(proxy ? {motionSemantic:{version:1,id:surface.id,kind:"surface",capabilities:["glide","observe"]}} : {})}});
+        g.dispose();
+      }
+    }
+    for (const [i,socket] of kinetic.sockets.entries()) {
+      gltf.scenes[0].nodes.push(gltf.nodes.length);
+      gltf.nodes.push({name:socket.id,translation:socket.center,extras:{
+        ...(i===0 || i===kinetic.sockets.length-1 ? {skimmerSocket:i===0 ? "entry":"exit"} : {}),
+        motionSemantic:{version:1,id:socket.id,kind:"socket",capabilities:["guide","scout"]}}});
     }
   }
   const sockets = world.extensions.passageSockets;

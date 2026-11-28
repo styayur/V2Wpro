@@ -26,12 +26,15 @@ export async function buildSite(out = "dist", custom) {
     recursive: true,
   });
   cpSync(path.join(root, "LICENSE"), path.join(out, "LICENSE"));
+  for (const folder of ["schema","contracts"])
+    cpSync(path.join(root,folder),path.join(out,folder),{recursive:true});
   const worlds = Object.fromEntries(
-    ["arcade", "island", "gate", "canopy", "caldera", "lattice", "contact", "district"].map((id) => [
+    ["arcade", "island", "gate", "canopy", "caldera", "lattice", "contact", "district", "s-curve-study", "topogenesis"].map((id) => [
       id,
       "./examples/" + id + ".json",
     ]),
   );
+  worlds.topogenesis="./examples/switchyard.json";
   if (custom) {
     worlds.custom = "./custom/world.json";
     mkdirSync(path.join(out, "custom"), { recursive: true });

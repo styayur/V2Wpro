@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>V2Wpro · Flight study guide</title><link rel="icon" href="./logo.svg"><link rel="stylesheet" href="./style.css">
+</head><body>
+  <header><a class="brand" href="./"><img src="./logo.svg" alt="">V2Wpro</a>
+    <nav aria-label="Language"><a href="#en" lang="en">English</a> · <a href="#zh" lang="zh-CN">简体中文</a></nav></header>
+  <main class="study-guide">
+    <article id="en" lang="en">
+      <h1>Follow a route through Switchyard</h1>
+      <p>Start at the junction, compare two exits, and take one of them into the flight game. The inspector opens the revision 2 district at seed 8131. <a href="./?world=topogenesis">Open Switchyard</a></p>
+      <h2>Read the deck</h2>
+      <p>Drag to orbit and scroll to zoom. Switch on Collision and Zones. Select a directed route and move Inspect distance. The marker shows the selected station. The graph reports allowed speed along the edge, including the distance needed to brake before an upcoming bend. The readout gives curvature and hull-center clearance.</p>
+      <p>The three rows under Active release sample different departure points. A rejected row retains its measured clearance. Select Fly from entry for a collision-checked preview. Use W/S for forward and back, A/D for lateral motion, the up and down arrows for altitude and the mouse to turn. Overview returns to the route graph.</p>
+      <h2>Change the rules</h2>
+      <p>Change the seed and choose Apply seed. Expand Edit and export flight study and change the recipe. For a single curved deck, open the S-curve study and adjust relief between 0.4 and 1.2. Preview changes rebuilds the world. Restore source rules reloads the bundled example. Save WorldIR to preserve your design and Save GLB to export the realized skin, collision mesh, entry and sockets.</p>
+      <h2>Fly and bring back evidence</h2>
+      <p>For a bundled catalog asset, Fly in Skimmer selects the matching public world. Review the source, byte count and SHA-256 in the game and confirm the import. For an edited study, choose your saved GLB in the local library. Keep the layout so you can reopen the same entry and variant. In Free Flight, tap Space or LB near a deck to arm the two-second capture window. Tap again while attached to launch.</p>
+      <p>Download the flight diagnostic in Skimmer. In the original study, select Read downstream flight report. The reader verifies the asset fingerprint and shows measured contact distance, clearance and impacts. A player recording describes observed play. A controlled replay also binds the tested input, game build and reopened layout. Export motion analysis saves the compiler's separate prediction. <a href="https://styayur.github.io/Skimmer-Scraper/?catalog=switchyard">Open the partner world library</a></p>
+      <h2>Run offline</h2>
+      <p>Unzip the offline site into a folder and run <code>python -m http.server 8080 --bind 127.0.0.1</code> there. Open <code>http://127.0.0.1:8080/</code>. The inspector and local exports work with the files in that folder. Partner catalog downloads require a network connection. <a href="./contracts/manifest.json">Versioned data and fingerprints</a></p>
+    </article>
+    <article id="zh" lang="zh-CN" hidden>
+      <h1>在岔道上选一条航路</h1>
+      <p>从一个交汇点出发，比较两个出口，再到游戏中实飞。检查器默认打开种子 8131 的第二版 Switchyard。<a href="./?world=topogenesis">打开 Switchyard</a></p>
+      <h2>观察桥面与脱离点</h2>
+      <p>拖动环绕观察，滚轮缩放。打开碰撞和运动区图层，选择有向航路，拖动“检查航路位置”。标记跟随航程移动。速度曲线考虑即将到来的弯道和提前制动所需的距离。下方读数显示局部曲率和机身中心离碰撞面的净空。</p>
+      <p>“主动脱离”表列出三个位置的扫掠结果，遭拒绝的位置也有实测净空。选择“从入口起飞”进入带碰撞的预览。W/S 前后，A/D 横移，上下方向键改变高度，拖动鼠标转向。“俯览”返回航路图。</p>
+      <h2>修改种子和规则</h2>
+      <p>更换种子后点“应用种子”。展开“编辑与导出飞行研究”可编辑配方。要观察单条弯道，可打开 S-curve study，把 relief 调到 0.4 至 1.2 之间。点“预览修改”重新生成，或点“还原原始规则”回到自带示例。“保存 WorldIR”保留设计，“保存 GLB”导出渲染网格、碰撞面、出生点与连接接口。</p>
+      <h2>实飞并读回证据</h2>
+      <p>对官方目录中的资产，点“前往 Skimmer 实飞”，核对游戏列出的来源、字节数与 SHA-256 后确认导入。改过的设计可从本地世界库选择刚保存的 GLB。保留布局即可重开相同变体与出生点。在自由飞行中靠近桥面，轻按空格或手柄 LB 开启两秒捕获窗口，贴面后再按一次主动脱离。</p>
+      <p>在游戏中下载飞行诊断。返回原设计，用“读取下游飞行报告”打开文件。检查器核对资产指纹，显示实际接触距离、净空与撞击。玩家记录描述当次操作，受控重放还绑定输入、游戏版本及重开的布局。“导出运动分析”保存编译器的预测数据。<a href="https://styayur.github.io/Skimmer-Scraper/?catalog=switchyard">打开合作世界库</a></p>
+      <h2>离线使用</h2>
+      <p>解压离线网站，在该目录运行 <code>python -m http.server 8080 --bind 127.0.0.1</code>，浏览器打开 <code>http://127.0.0.1:8080/</code>。检查、编辑和导出均使用本地文件，合作目录的下载需要网络。<a href="./contracts/manifest.json">版本化协议与内容指纹</a></p>
+    </article>
+  </main>
+  <script>
+    function language() {
+      const zh=location.hash==="#zh" || (location.hash!=="#en" && /^zh(?:-|$)/i.test(navigator.language));
+      document.getElementById("en").hidden=zh;
+      document.getElementById("zh").hidden=!zh;
+      document.documentElement.lang=zh ? "zh-CN":"en";
+      document.title=zh ? "V2Wpro · 飞行研究教程":"V2Wpro · Flight study guide";
+    }
+    addEventListener("hashchange",language);
+    language();
+  </script>
+</body></html>

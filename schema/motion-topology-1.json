@@ -1,0 +1,25 @@
+{
+  "$schema":"http://json-schema.org/draft-07/schema#",
+  "title":"Motion topology v1 scene extra",
+  "type":"object","required":["format","level","profile","edges","sockets"],
+  "definitions":{
+    "id":{"type":"string","minLength":1,"maxLength":160},
+    "metres3":{"type":"array","minItems":3,"maxItems":3,"items":{"type":"number","minimum":-16384,"maximum":16384}},
+    "positive":{"type":"number","exclusiveMinimum":0,"maximum":1000}
+  },
+  "properties":{
+    "format":{"const":"motion-topology-1"},"level":{"const":"authored"},
+    "profile":{"type":"object","required":["version","id","speed","minimumSpeed","hullRadius","clearance","contactSeconds","lateralAcceleration","brakingDeceleration","forwardAcceleration","departureSeconds","departurePitchRadians"],
+      "properties":{"version":{"const":2},"id":{"$ref":"#/definitions/id"},"speed":{"$ref":"#/definitions/positive"},"minimumSpeed":{"$ref":"#/definitions/positive"},
+        "hullRadius":{"$ref":"#/definitions/positive"},"clearance":{"$ref":"#/definitions/positive"},"contactSeconds":{"$ref":"#/definitions/positive"},
+        "lateralAcceleration":{"$ref":"#/definitions/positive"},"brakingDeceleration":{"$ref":"#/definitions/positive"},"forwardAcceleration":{"$ref":"#/definitions/positive"},
+        "departureSeconds":{"type":"number","exclusiveMinimum":0,"maximum":4},"departurePitchRadians":{"type":"number","exclusiveMinimum":0,"maximum":1.0471975511965976}}},
+    "edges":{"type":"array","maxItems":256,"items":{"type":"object","required":["id","from","to","module","points","zones"],
+      "properties":{"id":{"$ref":"#/definitions/id"},"from":{"$ref":"#/definitions/id"},"to":{"$ref":"#/definitions/id"},"module":{"$ref":"#/definitions/id"},
+        "points":{"type":"array","minItems":2,"maxItems":4096,"items":{"$ref":"#/definitions/metres3"}},
+        "zones":{"type":"array","maxItems":16,"items":{"type":"object","required":["kind","from","to"],
+          "properties":{"kind":{"enum":["capture","glide","release","escape"]},"from":{"type":"number","minimum":0,"maximum":1},"to":{"type":"number","minimum":0,"maximum":1}}}}}}},
+    "sockets":{"type":"array","maxItems":256,"items":{"type":"object","required":["id","center","forward","up","width"],
+      "properties":{"id":{"$ref":"#/definitions/id"},"center":{"$ref":"#/definitions/metres3"},"forward":{"$ref":"#/definitions/metres3"},"up":{"$ref":"#/definitions/metres3"},"width":{"$ref":"#/definitions/positive"}}}}
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$schema":"http://json-schema.org/draft-07/schema#",
+  "$id":"flight-diagnostic-2.json",
+  "title":"Skimmer flight diagnostic v2",
+  "oneOf":[{"$ref":"flight-replay-2.json"},{"$ref":"flight-observation-2.json"}]
+}

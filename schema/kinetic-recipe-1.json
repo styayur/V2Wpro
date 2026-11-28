@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WorldIR 2.0 kineticRecipe extension, version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version","mode","module","profile","ruleRevision","relief","regionX","regionZ"],
+  "properties": {
+    "version":{"const":1},
+    "mode":{"enum":["fixture","district"]},
+    "module":{"enum":["s-curve","helix","sky-arch","bowl","ribbon-bridge","tunnel"]},
+    "profile":{"enum":["cruise","boost"]},
+    "ruleRevision":{"enum":[0,1,2]},
+    "relief":{"type":"number","minimum":0.4,"maximum":1.2},
+    "regionX":{"type":"integer","minimum":-6,"maximum":6},
+    "regionZ":{"type":"integer","minimum":-6,"maximum":6}
+  }
+}
