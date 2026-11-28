@@ -1,0 +1,21 @@
+[
+  {
+    "viewport": [
+      1360,
+      940
+    ],
+    "routes": 10,
+    "station": "221.3 m \u00b7 66.0 m/s \u00b7 0.0003 m\u207b\u00b9 curvature \u00b7 6.50 m clearance",
+    "glbSha256": "7227e0cfe7d9c4051ea509e298028c7ae7eece2cde0e1d54b324f7f09197a348",
+    "downstream": "glide-and-release \u00b7 165.5 m continuous glide \u00b7 6.00 m minimum glide clearance \u00b7 0 impacts \u00b7 991138b8c67c"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "routes": 10,
+    "station": "221.3 m \u00b7 66.0 m/s \u00b7 0.0003 m\u207b\u00b9 curvature \u00b7 6.50 m clearance",
+    "glbSha256": "7227e0cfe7d9c4051ea509e298028c7ae7eece2cde0e1d54b324f7f09197a348"
+  }
+]

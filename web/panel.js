@@ -2,6 +2,14 @@ import { inspectRoutes, realize } from "../src/morph.js";
 import { exportExchange } from "../src/exchange.js";
 import { inspectMovement } from "../src/movement.js";
 import profile from "../examples/profiles/skimmer-cruise.json" with { type: "json" };
+import { refreshKineticPorts } from "../src/kinetic-world.js";
+import { readDiagnostic } from "../src/flight-diagnostic.js";
+
+const partnerWorlds=new Map([
+  ["a707d463ce3279c9517d51b3dccde296c461eea2131b214315923b58b4f383d0","relay-district"],
+  ["243949bbceae959ee58da971859bd5f614bf4b2f30ae7e5cf711fb3f597d89f3","contact-deck"],
+  ["7227e0cfe7d9c4051ea509e298028c7ae7eece2cde0e1d54b324f7f09197a348","switchyard"],
+]);
 
 const el = (id) => document.getElementById(id);
 export function setupPanel(w, id, url, scene) {
@@ -24,21 +32,24 @@ export function setupPanel(w, id, url, scene) {
   if (spatial) {
     el("exchange-panel").hidden = false;
     const editor = el("edit-prototypes");
-    editor.value = JSON.stringify(w.prototypes,null,2);
+    const kinetic=w.extensions.kineticRecipe;
+    editor.value = JSON.stringify(kinetic ?? w.prototypes,null,2);
+    if (kinetic) el("rules-label").textContent="Kinetic region recipe";
     const selected = w.extensions.movementProfile ?? profile;
     const report = inspectMovement(w,scene,selected);
     const blocked = report.edges.filter(edge => !edge.clear);
     el("movement-envelope").textContent = selected.id + " at " + selected.speed + " m/s · turn radius " +
       report.turnRadius.toFixed(1) + " m · braking " + report.brakingDistance.toFixed(1) +
       " m · clearance conflicts: " + (blocked.map(edge => edge.from + " → " + edge.to).join(", ") || "none");
-    const key = "rules:" + url.href;
+    const key = (kinetic ? "kinetic:":"rules:") + url.href;
     el("apply-rules").onclick = () => {
       try {
-        const candidate = {...w,prototypes:JSON.parse(editor.value)};
+        const rules=JSON.parse(editor.value);
+        const candidate = kinetic ? refreshKineticPorts({...w,extensions:{...w.extensions,kineticRecipe:rules}}) : {...w,prototypes:rules};
         const routes = inspectRoutes(candidate,realize(candidate));
         if (!routes.connected || routes.blockedEdges.length) throw Error("Rules obstruct the WorldIR route");
         exportExchange(candidate);
-        sessionStorage.setItem(key,JSON.stringify(candidate.prototypes));
+        sessionStorage.setItem(key,JSON.stringify(rules));
         location.reload();
       } catch (err) { el("exchange-status").textContent = err.message; }
     };
@@ -54,9 +65,42 @@ export function setupPanel(w, id, url, scene) {
     }
     el("save-glb").onclick = () => download("glb",() => exportExchange(w));
     el("save-ir").onclick = () => download("json",() => JSON.stringify(w,null,2));
+    let identity;
+    function assetIdentity() {
+      identity ??= (async()=>{
+        const bytes=exportExchange(w),hash=await crypto.subtle.digest("SHA-256",bytes);
+        const digest=Array.from(new Uint8Array(hash),n=>n.toString(16).padStart(2,"0")).join("");
+        return {digest,bytes:bytes.byteLength};
+      })();
+      return identity;
+    }
+    const game="https://styayur.github.io/Skimmer-Scraper/";
+    const fly=el("fly-skimmer");
+    fly.href=game;
+    el("exchange-panel").addEventListener("toggle",async()=>{
+      if (!el("exchange-panel").open) return;
+      try {
+        const {digest}=await assetIdentity(), id=partnerWorlds.get(digest);
+        fly.href=id ? game+"?catalog="+id : game;
+        el("fly-instructions").hidden=Boolean(id);
+      } catch(err) {el("exchange-status").textContent=err.message;}
+    });
+    el("flight-report").onchange=async event=>{
+      const result=el("report-result"),file=event.target.files[0];
+      if (!file) return;
+      try {
+        if (file.size>8*1024*1024) throw Error("Flight report exceeds 8 MiB.");
+        const {digest,bytes}=await assetIdentity();
+        const r=readDiagnostic(JSON.parse(await file.text()),digest,bytes);
+        result.textContent=r.outcome+" · "+r.longestContinuousMeters.toFixed(1)+" m continuous glide · "+
+          (r.minimumGlideClearance===null ? "no glide samples":r.minimumGlideClearance.toFixed(2)+" m minimum glide clearance")+
+          " · "+r.impacts+" impacts"+(r.truncated ? " · first two minutes recorded" : "")+
+          (r.consumer ? " · "+r.consumer.slice(0,12) : "");
+      } catch(err) {result.textContent=err.message;}
+    };
   }
   el("rules").textContent = JSON.stringify(
-    spatial ? w.prototypes : w.rules,
+    spatial ? w.extensions.kineticRecipe ?? w.prototypes : w.rules,
     null,
     2,
   );

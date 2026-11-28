@@ -26,3 +26,14 @@ test("historical v1 records retain the sampled distance and clearance fields",()
   assert.equal(result.minimumGlideClearance,7);
   assert.equal(result.sampledGlideSeconds,0.1);
 });
+test("a bounded player recording can be inspected before or after its layout is reopened",()=>{
+  const observed={...report,recording:{kind:"player",truncated:true},experiment:null,replayed:null,
+    binary:null,build:{version:"0.11.0",sourceCommit:null},outcome:"player-observation",returnedToBuiltin:false};
+  const result=readDiagnostic(observed,hash,128);
+  assert.equal(result.level,"player-observation");
+  assert.equal(result.sampledGlideMeters,6);
+  assert.equal(result.truncated,true);
+  assert.equal(result.layoutReopened,false);
+  assert.equal(readDiagnostic({...observed,replayed:layout},hash,128).layoutReopened,true);
+  assert.throws(()=>readDiagnostic({...observed,experiment:report.experiment},hash),/Invalid v2/);
+});
