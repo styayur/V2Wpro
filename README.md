@@ -1,12 +1,12 @@
 <img src="web/logo.svg" width="54" alt="V2Wpro logo">
 
-# V2Wpro · Kinetogenesis
+# V2Wpro · Topogenesis
 
-**Video imagines. Algorithms expand. Engines realize.**
+Design a flight route, inspect its collision surface, then compare the predicted motion with a recorded Skimmer flight. Switchyard has two aerial corridors, two branching junctions and ten directed edges. The same six families of parametric modules supply the downstream Kinetic City.
 
 A video reviewer can describe a room as a reusable rule: stack shelves between uprights, repeat the assembly, and put the player's junction beside the landmark chair. V2Wpro compiles those choices into a bounded WorldIR program. Every emitted object links back to the claims that produced it.
 
-[Play the eight worlds](https://styayur.github.io/V2Wpro/) · [简体中文](README.zh-CN.md) · [v0.2.0 release and recordings](https://github.com/styayur/V2Wpro/releases/tag/v0.2.0)
+[Open the Motion Inspector](https://styayur.github.io/V2Wpro/?world=topogenesis) · [Flight study tutorial](https://styayur.github.io/V2Wpro/guide.html) · [Measured rule revisions](docs/topogenesis.md) · [简体中文](README.zh-CN.md)
 
 ## Quick start
 

@@ -23,6 +23,11 @@ if (manifest.commit !== sha || manifest.version !== pkg.version)
 for (const name of [
   "app.js",
   "index.html",
+  "guide.html",
+  "contracts/manifest.json",
+  "examples/switchyard.glb",
+  "examples/kinetic-flight-modules.json",
+  "schema/flight-diagnostic-2.json",
   "examples/contact.glb",
   "examples/district.glb",
   "examples/canopy.json",

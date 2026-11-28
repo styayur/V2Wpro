@@ -1,0 +1,6680 @@
+{
+  "format": "topogenesis-measurement-1",
+  "node": "v26.7.0",
+  "platform": "win32",
+  "cpu": "AMD Ryzen 7 H 255 w/ Radeon 780M Graphics",
+  "rssPeakKiB": 242032,
+  "legacy": [
+    {
+      "id": "canopy",
+      "sha256": "d6c1ef9f3235a21c5a777c54acac1a8ed6c34caf5e33a291911509542afc72d9",
+      "bytes": 22148,
+      "timings": {
+        "baseline": [
+          {
+            "wallMs": 4.147,
+            "cpuMs": 32
+          },
+          {
+            "wallMs": 1.5,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.748,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.784,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.875,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.879,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.763,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.024,
+            "cpuMs": 0
+          }
+        ],
+        "candidate": [
+          {
+            "wallMs": 2.837,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 6.92,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.299,
+            "cpuMs": 31
+          },
+          {
+            "wallMs": 1.234,
+            "cpuMs": 16
+          },
+          {
+            "wallMs": 1.068,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.419,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 2.673,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.711,
+            "cpuMs": 78
+          }
+        ]
+      }
+    },
+    {
+      "id": "caldera",
+      "sha256": "1c0ebf2bb7725f1e43152dab448ce9e9e2c5a43ee649df75d3fd83cfee9ec813",
+      "bytes": 13068,
+      "timings": {
+        "baseline": [
+          {
+            "wallMs": 1.035,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.857,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.749,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.991,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.104,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.836,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.839,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.575,
+            "cpuMs": 0
+          }
+        ],
+        "candidate": [
+          {
+            "wallMs": 0.996,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.914,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.724,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.005,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.103,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 3.626,
+            "cpuMs": 31
+          },
+          {
+            "wallMs": 0.736,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.149,
+            "cpuMs": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "lattice",
+      "sha256": "ccd5cfe69e084c7921f52399bb738539a455ed2e38959d66cf471e108252941f",
+      "bytes": 32796,
+      "timings": {
+        "baseline": [
+          {
+            "wallMs": 5.723,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.867,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.095,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 4.379,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.275,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.659,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.036,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.792,
+            "cpuMs": 0
+          }
+        ],
+        "candidate": [
+          {
+            "wallMs": 1.586,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.235,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.298,
+            "cpuMs": 15
+          },
+          {
+            "wallMs": 1.465,
+            "cpuMs": 16
+          },
+          {
+            "wallMs": 5.309,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.167,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.595,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.541,
+            "cpuMs": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "contact",
+      "sha256": "243949bbceae959ee58da971859bd5f614bf4b2f30ae7e5cf711fb3f597d89f3",
+      "bytes": 72744,
+      "timings": {
+        "baseline": [
+          {
+            "wallMs": 2.329,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.835,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 6.373,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 3.204,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.94,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.86,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.518,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.838,
+            "cpuMs": 0
+          }
+        ],
+        "candidate": [
+          {
+            "wallMs": 3.917,
+            "cpuMs": 32
+          },
+          {
+            "wallMs": 5.253,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 2.178,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.716,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.282,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.507,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.413,
+            "cpuMs": 15
+          },
+          {
+            "wallMs": 1.39,
+            "cpuMs": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "district",
+      "sha256": "a707d463ce3279c9517d51b3dccde296c461eea2131b214315923b58b4f383d0",
+      "bytes": 18928,
+      "timings": {
+        "baseline": [
+          {
+            "wallMs": 0.986,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.298,
+            "cpuMs": 47
+          },
+          {
+            "wallMs": 1.44,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.421,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.144,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.949,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.698,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.15,
+            "cpuMs": 0
+          }
+        ],
+        "candidate": [
+          {
+            "wallMs": 1.273,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.071,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.734,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 2.626,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.23,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.155,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 1.482,
+            "cpuMs": 0
+          },
+          {
+            "wallMs": 0.906,
+            "cpuMs": 0
+          }
+        ]
+      }
+    }
+  ],
+  "probes": [
+    {
+      "module": "s-curve",
+      "part": "s-curve",
+      "role": "render",
+      "probes": 2952,
+      "maxError": 0.029374378410666153,
+      "tolerance": 0.055,
+      "withinTolerance": true
+    },
+    {
+      "module": "s-curve",
+      "part": "s-curve",
+      "role": "collision",
+      "probes": 1656,
+      "maxError": 0.07648322857721648,
+      "tolerance": 0.16,
+      "withinTolerance": true
+    },
+    {
+      "module": "helix",
+      "part": "helix",
+      "role": "render",
+      "probes": 38232,
+      "maxError": 0.023009094836087866,
+      "tolerance": 0.055,
+      "withinTolerance": true
+    },
+    {
+      "module": "helix",
+      "part": "helix",
+      "role": "collision",
+      "probes": 12204,
+      "maxError": 0.07382305135548092,
+      "tolerance": 0.16,
+      "withinTolerance": true
+    },
+    {
+      "module": "sky-arch",
+      "part": "sky-arch",
+      "role": "render",
+      "probes": 720,
+      "maxError": 0.03454749770909489,
+      "tolerance": 0.055,
+      "withinTolerance": true
+    },
+    {
+      "module": "sky-arch",
+      "part": "sky-arch",
+      "role": "collision",
+      "probes": 576,
+      "maxError": 0.04063186740303733,
+      "tolerance": 0.16,
+      "withinTolerance": true
+    },
+    {
+      "module": "bowl",
+      "part": "bowl",
+      "role": "render",
+      "probes": 10296,
+      "maxError": 0.023710992673359518,
+      "tolerance": 0.055,
+      "withinTolerance": true
+    },
+    {
+      "module": "bowl",
+      "part": "bowl",
+      "role": "collision",
+      "probes": 3744,
+      "maxError": 0.05726752821555965,
+      "tolerance": 0.16,
+      "withinTolerance": true
+    },
+    {
+      "module": "ribbon-bridge",
+      "part": "ribbon-bridge",
+      "role": "render",
+      "probes": 10656,
+      "maxError": 0.030959694812449312,
+      "tolerance": 0.055,
+      "withinTolerance": true
+    },
+    {
+      "module": "ribbon-bridge",
+      "part": "ribbon-bridge",
+      "role": "collision",
+      "probes": 3960,
+      "maxError": 0.08446082642988295,
+      "tolerance": 0.16,
+      "withinTolerance": true
+    },
+    {
+      "module": "tunnel",
+      "part": "tunnel",
+      "role": "render",
+      "probes": 864,
+      "maxError": 0.027032296448297154,
+      "tolerance": 0.055,
+      "withinTolerance": true
+    },
+    {
+      "module": "tunnel",
+      "part": "tunnel",
+      "role": "collision",
+      "probes": 576,
+      "maxError": 0.047910456944008355,
+      "tolerance": 0.16,
+      "withinTolerance": true
+    },
+    {
+      "module": "tunnel",
+      "part": "vault",
+      "role": "render",
+      "probes": 10296,
+      "maxError": 0.012989855254025618,
+      "tolerance": 0.055,
+      "withinTolerance": true
+    },
+    {
+      "module": "tunnel",
+      "part": "vault",
+      "role": "collision",
+      "probes": 5616,
+      "maxError": 0.0485190414826239,
+      "tolerance": 0.16,
+      "withinTolerance": true
+    }
+  ],
+  "samples": [
+    {
+      "seed": 8131,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "f2c56eca52d8ee69e937f9498fb7f3cb1f280545c12d0226c48c385cfe46953d",
+      "glbBytes": 29660,
+      "buildMs": 4.57,
+      "buildCpuMs": 31,
+      "inspectMs": 32.864,
+      "inspectCpuMs": 78,
+      "exportMs": 15.601,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 52414312,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48151,
+      "minimumSpeed": 44.17984,
+      "length": 229.3125,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "61e368454aaa5c2b0f95925b32fab98f169eb7781648a95843a86d7ec3814322",
+      "glbBytes": 224828,
+      "buildMs": 46.681,
+      "buildCpuMs": 124,
+      "inspectMs": 138.384,
+      "inspectCpuMs": 188,
+      "exportMs": 31.028,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2756,
+      "heapUsed": 66689152,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42244,
+      "minimumSpeed": 33.45788,
+      "length": 509.93356,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "93adfade672e88b2ae9dd9099ef2daf61bff561cf42476e828372a095cbda0a3",
+      "glbBytes": 16776,
+      "buildMs": 2.798,
+      "buildCpuMs": 0,
+      "inspectMs": 3.837,
+      "inspectCpuMs": 31,
+      "exportMs": 3.095,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 72738640,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "13bc55549320e83e7f0b0917e5ca6ab66c7a85f2a6c88f51eef65f04d3e1d2a1",
+      "glbBytes": 66380,
+      "buildMs": 16.935,
+      "buildCpuMs": 31,
+      "inspectMs": 9.286,
+      "inspectCpuMs": 16,
+      "exportMs": 7.825,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 57125248,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4849,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "ea7a65d31b4d35dbf200d255181663b16ac1bd33be3d7600fdf93f6a1c8d2f91",
+      "glbBytes": 72540,
+      "buildMs": 4.74,
+      "buildCpuMs": 0,
+      "inspectMs": 49.579,
+      "inspectCpuMs": 31,
+      "exportMs": 15.85,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 82012936,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40373,
+      "minimumSpeed": 66,
+      "length": 222.22413,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "d1e72869abead54da1cfd9f372ed570640d4d87660570f5cdf20549e35f28aa8",
+      "glbBytes": 84956,
+      "buildMs": 6.259,
+      "buildCpuMs": 16,
+      "inspectMs": 19.934,
+      "inspectCpuMs": 16,
+      "exportMs": 8.485,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 74755160,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.27117,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "c93431a90723264975c638dcc6e8e9349939d4991bdd6ca67de7d362fc31d6af",
+      "glbBytes": 29660,
+      "buildMs": 2.308,
+      "buildCpuMs": 0,
+      "inspectMs": 5.832,
+      "inspectCpuMs": 16,
+      "exportMs": 4.025,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 64055400,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48151,
+      "minimumSpeed": 44.17984,
+      "length": 229.3125,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "51b3db2d758422b5d622d56b20f6cbf14079a7e0a58689813eb99adcd117a861",
+      "glbBytes": 224828,
+      "buildMs": 25.226,
+      "buildCpuMs": 31,
+      "inspectMs": 129.797,
+      "inspectCpuMs": 141,
+      "exportMs": 24.132,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2756,
+      "heapUsed": 92726168,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42244,
+      "minimumSpeed": 33.45788,
+      "length": 509.93356,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "d36b9959411425e75e190670fbbeb7ea55f4c5146d90d4f1e76e04a595184d1c",
+      "glbBytes": 15584,
+      "buildMs": 0.594,
+      "buildCpuMs": 0,
+      "inspectMs": 1.226,
+      "inspectCpuMs": 15,
+      "exportMs": 0.712,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 97715056,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "e192fa8a246733d1d57589bd7cf086d4d608c5fd2f6b9325ec56d5274d91e666",
+      "glbBytes": 66336,
+      "buildMs": 2.581,
+      "buildCpuMs": 0,
+      "inspectMs": 9.464,
+      "inspectCpuMs": 0,
+      "exportMs": 7.798,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 19912216,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48712,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "ea10bbf4d6868ff37aa26bdcb03ab33bb961ef8d4036b754c34678cc06c79247",
+      "glbBytes": 72540,
+      "buildMs": 10.796,
+      "buildCpuMs": 16,
+      "inspectMs": 32.209,
+      "inspectCpuMs": 15,
+      "exportMs": 8.991,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 41280464,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40373,
+      "minimumSpeed": 72.50156,
+      "length": 222.22413,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 8131,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "2a03b63ad9d9dcc3a01115faae9f6d20d86e4a9383e3610fe8e656d7c59bbff4",
+      "glbBytes": 84956,
+      "buildMs": 6.306,
+      "buildCpuMs": 0,
+      "inspectMs": 22.432,
+      "inspectCpuMs": 16,
+      "exportMs": 7.648,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 54462880,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.27117,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "281a24348e4cfdb9afcb729c5995f2a627483d896bf95005103c771cfab67d5d",
+      "glbBytes": 29348,
+      "buildMs": 2.748,
+      "buildCpuMs": 0,
+      "inspectMs": 2.743,
+      "inspectCpuMs": 0,
+      "exportMs": 1.247,
+      "renderTriangles": 636,
+      "collisionTriangles": 420,
+      "heapUsed": 40880856,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48392,
+      "minimumSpeed": 45.67502,
+      "length": 228.14231,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "e32136ae557fad767f27b905b4c03e64391d720e0b82113b81ab9663c4874c20",
+      "glbBytes": 223500,
+      "buildMs": 19.902,
+      "buildCpuMs": 31,
+      "inspectMs": 100.413,
+      "inspectCpuMs": 94,
+      "exportMs": 32.77,
+      "renderTriangles": 8460,
+      "collisionTriangles": 2756,
+      "heapUsed": 63518480,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42753,
+      "minimumSpeed": 33.54099,
+      "length": 492.33282,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "8161e582743d2007e2b91c1781cd9d63f3e1cab924b17287dc50bf17aae855cc",
+      "glbBytes": 16776,
+      "buildMs": 0.962,
+      "buildCpuMs": 0,
+      "inspectMs": 2.939,
+      "inspectCpuMs": 0,
+      "exportMs": 3.588,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 69101328,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "b9c05bd721e82d904e7cfc57cca8a9606932c20af87c34f26c9d6d96f1800a2f",
+      "glbBytes": 66380,
+      "buildMs": 3.831,
+      "buildCpuMs": 16,
+      "inspectMs": 17.798,
+      "inspectCpuMs": 31,
+      "exportMs": 3.891,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 75015024,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48651,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "a2508f6e1c2a7ca04c0bdf942e7341788f5a95f0daa3d97ac86484612a3953cc",
+      "glbBytes": 72548,
+      "buildMs": 9.441,
+      "buildCpuMs": 0,
+      "inspectMs": 8.947,
+      "inspectCpuMs": 16,
+      "exportMs": 7.28,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 66662240,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40294,
+      "minimumSpeed": 66,
+      "length": 221.95066,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "cda705a8dbdc9a3ce6762cf54d163db7eb643382c2b6fa83802f97395428a929",
+      "glbBytes": 81212,
+      "buildMs": 5.007,
+      "buildCpuMs": 0,
+      "inspectMs": 20.215,
+      "inspectCpuMs": 32,
+      "exportMs": 5.671,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 77268840,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.23585,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "83d26b05c28c6f1882ea3f218f17d391e0ff5bd327aaf1b4dead76c50e57b73a",
+      "glbBytes": 29348,
+      "buildMs": 1.638,
+      "buildCpuMs": 0,
+      "inspectMs": 5.296,
+      "inspectCpuMs": 16,
+      "exportMs": 2.364,
+      "renderTriangles": 636,
+      "collisionTriangles": 420,
+      "heapUsed": 91758776,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48392,
+      "minimumSpeed": 45.67502,
+      "length": 228.14231,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "835783fb2bac937ab31a04813f50786ccc831698e050f1c46a87b833d1af3f0b",
+      "glbBytes": 223500,
+      "buildMs": 40.509,
+      "buildCpuMs": 93,
+      "inspectMs": 181.661,
+      "inspectCpuMs": 78,
+      "exportMs": 19.645,
+      "renderTriangles": 8460,
+      "collisionTriangles": 2756,
+      "heapUsed": 114118328,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42753,
+      "minimumSpeed": 33.54099,
+      "length": 492.33282,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "445a7099a3307d7c68c5bf44c1498b7f9cd80010215fe5e0dea19bb72a5c2dd6",
+      "glbBytes": 15584,
+      "buildMs": 0.768,
+      "buildCpuMs": 0,
+      "inspectMs": 13.387,
+      "inspectCpuMs": 0,
+      "exportMs": 1.593,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 93821088,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "bb3c28098c5a951b1effffc4ace89dc13f9cd5a78d02d5a32ed7563cee16a5d1",
+      "glbBytes": 66336,
+      "buildMs": 3.46,
+      "buildCpuMs": 0,
+      "inspectMs": 8.151,
+      "inspectCpuMs": 16,
+      "exportMs": 9.61,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 99184696,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48873,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "f569312a5736222e16124c68886d30de7679397b88c705656a1d769fddb9266e",
+      "glbBytes": 72548,
+      "buildMs": 5.083,
+      "buildCpuMs": 0,
+      "inspectMs": 19.518,
+      "inspectCpuMs": 31,
+      "exportMs": 7.248,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 117050912,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40294,
+      "minimumSpeed": 74.35868,
+      "length": 221.95066,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 8132,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "0bc9f2315b27c8980dddfd59d87e12a84010bec0ba821f6d431cee7de2aa90ba",
+      "glbBytes": 81212,
+      "buildMs": 3.855,
+      "buildCpuMs": 0,
+      "inspectMs": 55.018,
+      "inspectCpuMs": 16,
+      "exportMs": 3.297,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 128543560,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.23585,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "d4c443602eae62ef7d16761adb815d0f7884b8634e376fc3140bbe962d848339",
+      "glbBytes": 29636,
+      "buildMs": 3.201,
+      "buildCpuMs": 16,
+      "inspectMs": 19.956,
+      "inspectCpuMs": 0,
+      "exportMs": 3.236,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 116338648,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48134,
+      "minimumSpeed": 44.08285,
+      "length": 229.39524,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "670cc27fff0d5e45b3e015d912a2507e4267961553ea29833137911d164d6383",
+      "glbBytes": 224816,
+      "buildMs": 37.639,
+      "buildCpuMs": 31,
+      "inspectMs": 286.354,
+      "inspectCpuMs": 156,
+      "exportMs": 71.608,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2756,
+      "heapUsed": 39824392,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42209,
+      "minimumSpeed": 33.45115,
+      "length": 511.14192,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "75acf7e8ba2fd4f77845914b87e8c907151b28178601c33a29bdc39cb19bbc7e",
+      "glbBytes": 16776,
+      "buildMs": 2.224,
+      "buildCpuMs": 16,
+      "inspectMs": 1.91,
+      "inspectCpuMs": 0,
+      "exportMs": 2.405,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 45888184,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "985ebfc3deb3f3d9a518efd70aea66a3a5f9a269f7a3d779fe42a267f946ac25",
+      "glbBytes": 68252,
+      "buildMs": 10.785,
+      "buildCpuMs": 78,
+      "inspectMs": 9.385,
+      "inspectCpuMs": 0,
+      "exportMs": 11.043,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 58401488,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48479,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "9c62c275d1af449b918a0754d4616dd90c30e7e67b39d1880ecb066ec85612d0",
+      "glbBytes": 72672,
+      "buildMs": 19.271,
+      "buildCpuMs": 62,
+      "inspectMs": 26.061,
+      "inspectCpuMs": 15,
+      "exportMs": 19.043,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 53106024,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40379,
+      "minimumSpeed": 66,
+      "length": 222.24355,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "37708dbd9cbd2ac6e2fc207c0756b0db5068ceafbc3641f8dee2a4606c7183b7",
+      "glbBytes": 84952,
+      "buildMs": 7.62,
+      "buildCpuMs": 0,
+      "inspectMs": 38.028,
+      "inspectCpuMs": 32,
+      "exportMs": 7.753,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 66536360,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.27368,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "9521a91b879eec9a0388dc810d43d43323b0a3f96e346303b8759c37457cd5f0",
+      "glbBytes": 29636,
+      "buildMs": 10.868,
+      "buildCpuMs": 16,
+      "inspectMs": 6.852,
+      "inspectCpuMs": 16,
+      "exportMs": 3.273,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 52797848,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48134,
+      "minimumSpeed": 44.08285,
+      "length": 229.39524,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "d72cf3aca8ad1c3c2b62080f7671a8b7ff310e966932999f5dc529c9d31e8050",
+      "glbBytes": 224816,
+      "buildMs": 46.235,
+      "buildCpuMs": 31,
+      "inspectMs": 309.056,
+      "inspectCpuMs": 109,
+      "exportMs": 46.137,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2756,
+      "heapUsed": 70259728,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42209,
+      "minimumSpeed": 33.45115,
+      "length": 511.14192,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "500fa6e48315f57648a2912e7672083b41b94b40730d6e5df1b7c31762a16ee6",
+      "glbBytes": 15584,
+      "buildMs": 0.86,
+      "buildCpuMs": 0,
+      "inspectMs": 3.191,
+      "inspectCpuMs": 16,
+      "exportMs": 1.83,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 75070400,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "c3d3c79251f64dffc584ca9818ad04942f6cdc3a4be04027bd53933d7b5b312c",
+      "glbBytes": 66336,
+      "buildMs": 11.163,
+      "buildCpuMs": 0,
+      "inspectMs": 20.482,
+      "inspectCpuMs": 16,
+      "exportMs": 5.23,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 81213184,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.487,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "a5c2f27ab030bf24c64f8390891500f82ee87759dfaaab6f89d6f316ef4e2129",
+      "glbBytes": 72672,
+      "buildMs": 19.434,
+      "buildCpuMs": 0,
+      "inspectMs": 38.953,
+      "inspectCpuMs": 15,
+      "exportMs": 49.674,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 99357168,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40379,
+      "minimumSpeed": 72.38253,
+      "length": 222.24355,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 10243,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "2917f0a967bb47cb24611e3896d2121d7b4aa0ac59937ac718e7f71c74d5c2da",
+      "glbBytes": 84952,
+      "buildMs": 14.941,
+      "buildCpuMs": 16,
+      "inspectMs": 91.929,
+      "inspectCpuMs": 16,
+      "exportMs": 5.925,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 84420232,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.27368,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "4a312a027dd6d652a6bfbf0626fe4e659f3b29b46d62f038a5f254b354079bba",
+      "glbBytes": 29688,
+      "buildMs": 2.672,
+      "buildCpuMs": 0,
+      "inspectMs": 10.006,
+      "inspectCpuMs": 0,
+      "exportMs": 3.401,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 98554928,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48154,
+      "minimumSpeed": 44.19508,
+      "length": 229.29961,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "149573c166b58c53ae41231b61fc6868b13a88070d5d03bfadf486a7253cbb3d",
+      "glbBytes": 224916,
+      "buildMs": 27.798,
+      "buildCpuMs": 31,
+      "inspectMs": 504.151,
+      "inspectCpuMs": 187,
+      "exportMs": 33.042,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2756,
+      "heapUsed": 116516976,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42249,
+      "minimumSpeed": 33.45821,
+      "length": 509.74482,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "950d99d7891705e3e0d4a185ef829a5469a048111e79d46076d849628edff01a",
+      "glbBytes": 16776,
+      "buildMs": 0.571,
+      "buildCpuMs": 0,
+      "inspectMs": 2.366,
+      "inspectCpuMs": 0,
+      "exportMs": 0.933,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 121917744,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "6d30199b31ea0863bcdb16b5f01c1ac268b83a54e18ff716948dc3ac46f560e3",
+      "glbBytes": 66380,
+      "buildMs": 3.136,
+      "buildCpuMs": 0,
+      "inspectMs": 18.526,
+      "inspectCpuMs": 15,
+      "exportMs": 5.766,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 127562416,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48492,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "e3f9825ef0ea9fa35989b6ed899efa69ae15d09802ef0f2ca3fb07a2ed1c4963",
+      "glbBytes": 72608,
+      "buildMs": 23.746,
+      "buildCpuMs": 0,
+      "inspectMs": 44.119,
+      "inspectCpuMs": 16,
+      "exportMs": 32.809,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 21264968,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40372,
+      "minimumSpeed": 66,
+      "length": 222.2211,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "2303a23a3db19f4b9c57c3a5808368940d49f7ef5c2ff745593f4983f4f56d50",
+      "glbBytes": 84952,
+      "buildMs": 13.185,
+      "buildCpuMs": 0,
+      "inspectMs": 39.346,
+      "inspectCpuMs": 32,
+      "exportMs": 4.813,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 31124520,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.27078,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "c3dfff2e4c454553b9925de44f07329fd7b2528140b30e3bcbae15e7acfac5b4",
+      "glbBytes": 29688,
+      "buildMs": 2.025,
+      "buildCpuMs": 0,
+      "inspectMs": 14.438,
+      "inspectCpuMs": 0,
+      "exportMs": 19.269,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 47609144,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48154,
+      "minimumSpeed": 44.19508,
+      "length": 229.29961,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "1442e2a32ec2d6c1a56aacf6afae7b6fc7545413529d4ca692b4d4086a3ab4a7",
+      "glbBytes": 224916,
+      "buildMs": 33.098,
+      "buildCpuMs": 63,
+      "inspectMs": 146.757,
+      "inspectCpuMs": 109,
+      "exportMs": 29.9,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2756,
+      "heapUsed": 55039968,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42249,
+      "minimumSpeed": 33.45821,
+      "length": 509.74482,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "d38a67a4f8bbf78441863d22c72bcb715fabe397b0af319727d187bd7abb630d",
+      "glbBytes": 15584,
+      "buildMs": 1.265,
+      "buildCpuMs": 15,
+      "inspectMs": 3.187,
+      "inspectCpuMs": 0,
+      "exportMs": 0.732,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 59825736,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "461b2eb12679cad090ea93afacec1e78c9ff5a08b4bc69602c1b8693ea94fffa",
+      "glbBytes": 66340,
+      "buildMs": 3.65,
+      "buildCpuMs": 0,
+      "inspectMs": 17.597,
+      "inspectCpuMs": 0,
+      "exportMs": 6.369,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 67033952,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48713,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "361de10d2bfdfcb833dbf3c3174a12f01115ee5f77aa01fc5803c4f9fce3d896",
+      "glbBytes": 72608,
+      "buildMs": 10.989,
+      "buildCpuMs": 16,
+      "inspectMs": 44.681,
+      "inspectCpuMs": 0,
+      "exportMs": 12.596,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 59670024,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40372,
+      "minimumSpeed": 72.51828,
+      "length": 222.2211,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 18731,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "dee634118ab38548996d56ccb314b7152e2e20d7c1bdd1c2d354b0fc2622fe38",
+      "glbBytes": 84952,
+      "buildMs": 3.231,
+      "buildCpuMs": 0,
+      "inspectMs": 86.813,
+      "inspectCpuMs": 15,
+      "exportMs": 11.523,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 70831464,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.27078,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "e6ced5227969298de1e47515df4d97e36b896c9a58621f505a833f73775de453",
+      "glbBytes": 29600,
+      "buildMs": 2.237,
+      "buildCpuMs": 0,
+      "inspectMs": 10.21,
+      "inspectCpuMs": 16,
+      "exportMs": 7.267,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 84946688,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48217,
+      "minimumSpeed": 44.56589,
+      "length": 228.99116,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "f7882f455500d89d8f01fe1637e831b8b21cb8af79b2a7494bd483a92cd18794",
+      "glbBytes": 224352,
+      "buildMs": 43.907,
+      "buildCpuMs": 108,
+      "inspectMs": 368.27,
+      "inspectCpuMs": 204,
+      "exportMs": 158.21,
+      "renderTriangles": 8508,
+      "collisionTriangles": 2756,
+      "heapUsed": 102080992,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42381,
+      "minimumSpeed": 33.48062,
+      "length": 505.19735,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "40e0e7cf70561cea90c3ff687eb303aefa0d36e56c4f75094c2fc7bef0ab3b16",
+      "glbBytes": 16776,
+      "buildMs": 2.26,
+      "buildCpuMs": 0,
+      "inspectMs": 4.541,
+      "inspectCpuMs": 15,
+      "exportMs": 2.477,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 107453888,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "13758b693c7ade1ac82f2253d2b911eec76f399416d50668e36753f2141879c5",
+      "glbBytes": 66380,
+      "buildMs": 905.192,
+      "buildCpuMs": 0,
+      "inspectMs": 211.664,
+      "inspectCpuMs": 0,
+      "exportMs": 7.345,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 88971648,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48534,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "fb1bf48016cd79f04062c1d781be91b0489364e2cd1e6aedd00c8d9eabd6b952",
+      "glbBytes": 72652,
+      "buildMs": 169.863,
+      "buildCpuMs": 0,
+      "inspectMs": 444.951,
+      "inspectCpuMs": 16,
+      "exportMs": 255.715,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 106896976,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40351,
+      "minimumSpeed": 66,
+      "length": 222.1488,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "a6adfdf60d639af71a962855f5192caf9376f98aeb143b1d5a42a0a9c6768ddb",
+      "glbBytes": 84948,
+      "buildMs": 10.702,
+      "buildCpuMs": 15,
+      "inspectMs": 577.136,
+      "inspectCpuMs": 32,
+      "exportMs": 4.229,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 118604408,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.26144,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "847ecf08cb4a6fa11f09ca9d688493431d6e08d2129c4f5e08df52627754b182",
+      "glbBytes": 29600,
+      "buildMs": 1.713,
+      "buildCpuMs": 0,
+      "inspectMs": 733.47,
+      "inspectCpuMs": 16,
+      "exportMs": 1.966,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 106283008,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48217,
+      "minimumSpeed": 44.56589,
+      "length": 228.99116,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "a95e29fd0a5cadc52996251559efeb4dd6b356d2315252cad308d3f6672bcbef",
+      "glbBytes": 224352,
+      "buildMs": 890.443,
+      "buildCpuMs": 46,
+      "inspectMs": 3197.653,
+      "inspectCpuMs": 235,
+      "exportMs": 1001.55,
+      "renderTriangles": 8508,
+      "collisionTriangles": 2756,
+      "heapUsed": 40059888,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42381,
+      "minimumSpeed": 33.48062,
+      "length": 505.19735,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "1e008caa77542c9bcbe1683b2a4762eaf1f11bbea5684ed2253e0b5944b55afe",
+      "glbBytes": 15584,
+      "buildMs": 0.793,
+      "buildCpuMs": 0,
+      "inspectMs": 5.984,
+      "inspectCpuMs": 0,
+      "exportMs": 7.509,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 45378328,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "42e925e59431a3b3138a45b17c46b3463896b226799a77231259a65fbe4b7555",
+      "glbBytes": 66340,
+      "buildMs": 39.824,
+      "buildCpuMs": 16,
+      "inspectMs": 18.504,
+      "inspectCpuMs": 15,
+      "exportMs": 37.645,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 55396752,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48756,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "0c52f0ed8786fd6efb0ed727ed25e55852d019bab9b02c8ebf1c7f4ed185e012",
+      "glbBytes": 72652,
+      "buildMs": 93.431,
+      "buildCpuMs": 0,
+      "inspectMs": 42.842,
+      "inspectCpuMs": 16,
+      "exportMs": 93.481,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 50988456,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40351,
+      "minimumSpeed": 72.98676,
+      "length": 222.1488,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 25057,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "a673efa9c3dcf3a3dca8dc864a0cfeaaa8d804e3e10bf27e8b3e5825c13fd607",
+      "glbBytes": 84948,
+      "buildMs": 5.071,
+      "buildCpuMs": 0,
+      "inspectMs": 148.216,
+      "inspectCpuMs": 77,
+      "exportMs": 18.982,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 64290008,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.26144,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "685955265fa3d1c77a8bfed2b2639f57585b3efdad92ec03eb51c823ff7d7768",
+      "glbBytes": 29572,
+      "buildMs": 95.167,
+      "buildCpuMs": 16,
+      "inspectMs": 7.435,
+      "inspectCpuMs": 0,
+      "exportMs": 2.74,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 51445768,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48342,
+      "minimumSpeed": 45.34298,
+      "length": 228.38538,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "319763a5393c82c7c5b921f6df2fecaa356dca34e58ef3e78454ef74979f488d",
+      "glbBytes": 224440,
+      "buildMs": 827.587,
+      "buildCpuMs": 47,
+      "inspectMs": 1767.586,
+      "inspectCpuMs": 250,
+      "exportMs": 62.812,
+      "renderTriangles": 8484,
+      "collisionTriangles": 2780,
+      "heapUsed": 71177024,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42644,
+      "minimumSpeed": 33.52454,
+      "length": 496.07363,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "aa1661f1667dbc84521aad3e43b5e0b44cecc26640ab5beb8eb2ead7a86dbd4f",
+      "glbBytes": 16776,
+      "buildMs": 1.366,
+      "buildCpuMs": 0,
+      "inspectMs": 2.088,
+      "inspectCpuMs": 15,
+      "exportMs": 1.403,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 76558360,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "137e01c81872e3154013a6c62364900b6c84f7e155cff6ca5b4ed65c2a9a23ed",
+      "glbBytes": 66380,
+      "buildMs": 4.363,
+      "buildCpuMs": 0,
+      "inspectMs": 15.082,
+      "inspectCpuMs": 16,
+      "exportMs": 14.16,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 80933288,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48618,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "5ccb8e7c54e7043bca07620012a0b624d96caf60921f8f625e757d83fc5b7c03",
+      "glbBytes": 72732,
+      "buildMs": 9.311,
+      "buildCpuMs": 0,
+      "inspectMs": 271.154,
+      "inspectCpuMs": 48,
+      "exportMs": 39.266,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 98892184,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4031,
+      "minimumSpeed": 66,
+      "length": 222.00727,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "89eb0ea276fe5c10e1ebed7915910d6db289b0183b114f87215e588f44ccf671",
+      "glbBytes": 81208,
+      "buildMs": 183.985,
+      "buildCpuMs": 47,
+      "inspectMs": 301.588,
+      "inspectCpuMs": 31,
+      "exportMs": 74.458,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 82531768,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.24316,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "3bb300571e908356a04da666c7e88fbcf200e6ddffbf6b7a3dba8dbc697572a5",
+      "glbBytes": 29572,
+      "buildMs": 5.383,
+      "buildCpuMs": 0,
+      "inspectMs": 22.093,
+      "inspectCpuMs": 0,
+      "exportMs": 21.467,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 96796952,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48342,
+      "minimumSpeed": 45.34298,
+      "length": 228.38538,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "41f91b85173b0220a2dcacc3520ee5b41faebb649739342e20f8bad2fe00eadd",
+      "glbBytes": 224440,
+      "buildMs": 161.618,
+      "buildCpuMs": 78,
+      "inspectMs": 746.989,
+      "inspectCpuMs": 234,
+      "exportMs": 62.818,
+      "renderTriangles": 8484,
+      "collisionTriangles": 2780,
+      "heapUsed": 118006408,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42644,
+      "minimumSpeed": 33.52454,
+      "length": 496.07363,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "d423ab146ff94538ec89cec9426072bfe01e23d8e3bbb77d4e8593af7cc60ca5",
+      "glbBytes": 15584,
+      "buildMs": 2.59,
+      "buildCpuMs": 0,
+      "inspectMs": 19.343,
+      "inspectCpuMs": 0,
+      "exportMs": 4.605,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 122736904,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "37eb1d225b62422ccfa154da905f8b0a4b02189a26cdf158f5e53e3aa1bffaec",
+      "glbBytes": 66340,
+      "buildMs": 14.229,
+      "buildCpuMs": 16,
+      "inspectMs": 73.764,
+      "inspectCpuMs": 16,
+      "exportMs": 26.292,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 18111824,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4884,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "4846ddac163e2c56f302a2caeb66e8a1ec3900bcddce9738b28385571d49c560",
+      "glbBytes": 72732,
+      "buildMs": 37.917,
+      "buildCpuMs": 0,
+      "inspectMs": 233.486,
+      "inspectCpuMs": 31,
+      "exportMs": 25.026,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 36115976,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4031,
+      "minimumSpeed": 73.94959,
+      "length": 222.00727,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 31607,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "ce57f71ee3727e860f6f64d57b49901f0beafe37df443a41fd4de52ded296241",
+      "glbBytes": 81208,
+      "buildMs": 4.132,
+      "buildCpuMs": 0,
+      "inspectMs": 318.495,
+      "inspectCpuMs": 47,
+      "exportMs": 54.756,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 46418024,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.24316,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "3af95e70c902fc71b37ccbbaf72f1510195d76bcccd7e5c4e33b0e0574dea67a",
+      "glbBytes": 30300,
+      "buildMs": 7.863,
+      "buildCpuMs": 0,
+      "inspectMs": 31.592,
+      "inspectCpuMs": 0,
+      "exportMs": 2.641,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 33186568,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48118,
+      "minimumSpeed": 43.99053,
+      "length": 229.47518,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "01e72f7b51919664379b40f807e7102a32bd4227df8a8748a42d16e1947d6f99",
+      "glbBytes": 224548,
+      "buildMs": 77.255,
+      "buildCpuMs": 47,
+      "inspectMs": 587.719,
+      "inspectCpuMs": 109,
+      "exportMs": 128.43,
+      "renderTriangles": 8516,
+      "collisionTriangles": 2756,
+      "heapUsed": 49649840,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42176,
+      "minimumSpeed": 33.44609,
+      "length": 512.30525,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "ddeca34e54cad1384e29be2c05184c74177c971bd7bbf988a1e0387cb421ee8e",
+      "glbBytes": 16776,
+      "buildMs": 1.082,
+      "buildCpuMs": 0,
+      "inspectMs": 2.63,
+      "inspectCpuMs": 0,
+      "exportMs": 2.899,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 55037120,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "df7622654ac5104e2b76ac8e65b328e7da1a5ec6fbd7a10e2165a2336d3e03eb",
+      "glbBytes": 68252,
+      "buildMs": 14.998,
+      "buildCpuMs": 15,
+      "inspectMs": 23.481,
+      "inspectCpuMs": 16,
+      "exportMs": 9.314,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 60207056,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48467,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "62b0c7d1ab85a3c398d3f32a9ea6f2975f4d8b45fe33d38928632498040796a9",
+      "glbBytes": 72656,
+      "buildMs": 35.982,
+      "buildCpuMs": 0,
+      "inspectMs": 38.26,
+      "inspectCpuMs": 15,
+      "exportMs": 6.37,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 77317536,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40383,
+      "minimumSpeed": 66,
+      "length": 222.26233,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "c1c378cd2724bd0d990a4f497856942a6685bce1df0a3a9182ab352f93f91079",
+      "glbBytes": 84956,
+      "buildMs": 2.69,
+      "buildCpuMs": 0,
+      "inspectMs": 17.826,
+      "inspectCpuMs": 15,
+      "exportMs": 4.251,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 89118640,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.27611,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "9e7fec7d2d7102bf591c083714c8be40733a1ae0c3f9e3d08bd7e205ddda1868",
+      "glbBytes": 30300,
+      "buildMs": 3.905,
+      "buildCpuMs": 0,
+      "inspectMs": 4.76,
+      "inspectCpuMs": 0,
+      "exportMs": 2.598,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 77446672,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48118,
+      "minimumSpeed": 43.99053,
+      "length": 229.47518,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "cac8a57ce52546e8a4b9fe3346af6ebe07cbd949b8868fd5f09375acf18b40bb",
+      "glbBytes": 224548,
+      "buildMs": 119.622,
+      "buildCpuMs": 0,
+      "inspectMs": 904.632,
+      "inspectCpuMs": 202,
+      "exportMs": 302.178,
+      "renderTriangles": 8516,
+      "collisionTriangles": 2756,
+      "heapUsed": 95159040,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42176,
+      "minimumSpeed": 33.44609,
+      "length": 512.30525,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "9ef4bfeaa1e0429551d0b17eb39d76bc58e30c45e2056c47e4ada74329e01c8e",
+      "glbBytes": 15584,
+      "buildMs": 0.646,
+      "buildCpuMs": 0,
+      "inspectMs": 1.652,
+      "inspectCpuMs": 0,
+      "exportMs": 0.961,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 99915712,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "6955c8c4af86a19ec98297c9f698bad759e52ba6b6ae08d6be97fc73d3a1b858",
+      "glbBytes": 68212,
+      "buildMs": 59.8,
+      "buildCpuMs": 15,
+      "inspectMs": 189.158,
+      "inspectCpuMs": 16,
+      "exportMs": 9.473,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 105014624,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48689,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "5f5fe0a4f80284e203b5f2c5c455f3d49c93e18d2d2caa7a1737383d1e860928",
+      "glbBytes": 72656,
+      "buildMs": 234.699,
+      "buildCpuMs": 0,
+      "inspectMs": 24.122,
+      "inspectCpuMs": 32,
+      "exportMs": 475.943,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 123255456,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40383,
+      "minimumSpeed": 72.26405,
+      "length": 222.26233,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 40751,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "b97394c3649a737f19b9676abc122dc6112208ad3acd59113425f82f84177a84",
+      "glbBytes": 84956,
+      "buildMs": 23.12,
+      "buildCpuMs": 62,
+      "inspectMs": 2180.989,
+      "inspectCpuMs": 79,
+      "exportMs": 11.757,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 52912544,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.27611,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "63f5eb5cd17b6a348337e23d551afe0c86208316b3d914d95ea27748e3cf1e5d",
+      "glbBytes": 30160,
+      "buildMs": 47.034,
+      "buildCpuMs": 15,
+      "inspectMs": 8.355,
+      "inspectCpuMs": 0,
+      "exportMs": 2.635,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 37247376,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48058,
+      "minimumSpeed": 43.66549,
+      "length": 229.76376,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "3c0c273b9991f5f5bb61b6ebe0da8ecfdb27270167e6ac3edf767eac57d4ecc8",
+      "glbBytes": 226056,
+      "buildMs": 297.17,
+      "buildCpuMs": 47,
+      "inspectMs": 1047.039,
+      "inspectCpuMs": 172,
+      "exportMs": 293.388,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2812,
+      "heapUsed": 54773536,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42056,
+      "minimumSpeed": 33.42521,
+      "length": 516.47279,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "51d4d3a849b991cc2c05a2c00f3849bb24542b82522f887f93941c65cc3c3871",
+      "glbBytes": 16776,
+      "buildMs": 0.728,
+      "buildCpuMs": 0,
+      "inspectMs": 1.828,
+      "inspectCpuMs": 0,
+      "exportMs": 2.032,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 60145632,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "d018f8b8a461ad81434894444419e16e7db33ceecf4f35188b3f8bd29296588d",
+      "glbBytes": 68252,
+      "buildMs": 1043.44,
+      "buildCpuMs": 0,
+      "inspectMs": 62.457,
+      "inspectCpuMs": 31,
+      "exportMs": 4.125,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 65335432,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48427,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "7c974a2c59c5592fb6de1c0847aecb39c639d27dacf0b00bcceb3657681e2722",
+      "glbBytes": 72696,
+      "buildMs": 6.651,
+      "buildCpuMs": 16,
+      "inspectMs": 2451.6,
+      "inspectCpuMs": 31,
+      "exportMs": 5.249,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 56170920,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40405,
+      "minimumSpeed": 66,
+      "length": 222.33022,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "289a6b3a5db835b99638cdbd204d2ca459dc814529fd0357bf311242ccebc779",
+      "glbBytes": 84952,
+      "buildMs": 3.474,
+      "buildCpuMs": 0,
+      "inspectMs": 14.881,
+      "inspectCpuMs": 15,
+      "exportMs": 4.3,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 66367392,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.28488,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "f885ed3f28012a4ff49ce3574c71296fc6eef10765381c7af6fb8d063e84d2a3",
+      "glbBytes": 30160,
+      "buildMs": 2.957,
+      "buildCpuMs": 0,
+      "inspectMs": 5.31,
+      "inspectCpuMs": 0,
+      "exportMs": 2.03,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 81006456,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48058,
+      "minimumSpeed": 43.66549,
+      "length": 229.76376,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "1692e956c349c1adc7992e9251bd7ae0b893965bf84c00d702dbc98fb28b0960",
+      "glbBytes": 226056,
+      "buildMs": 1366.766,
+      "buildCpuMs": 31,
+      "inspectMs": 1221.626,
+      "inspectCpuMs": 265,
+      "exportMs": 35.224,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2812,
+      "heapUsed": 99355568,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42056,
+      "minimumSpeed": 33.42521,
+      "length": 516.47279,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "9716567c25ca955c1bd31ebb66af79324f4595fe150cea57316c0c84e66e1287",
+      "glbBytes": 15584,
+      "buildMs": 1.548,
+      "buildCpuMs": 0,
+      "inspectMs": 2.793,
+      "inspectCpuMs": 0,
+      "exportMs": 1.441,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 104136800,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "4d22e684513aa44c495062b1d88d483bd705e41ca6ffafd8e919afd968c2efcf",
+      "glbBytes": 68212,
+      "buildMs": 5.096,
+      "buildCpuMs": 16,
+      "inspectMs": 18.98,
+      "inspectCpuMs": 0,
+      "exportMs": 4.244,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 109520616,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48649,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "3c9b3b036850b5ada04d865730745ddc86be15c2b4599c2db20714e733cc593c",
+      "glbBytes": 72696,
+      "buildMs": 30.021,
+      "buildCpuMs": 16,
+      "inspectMs": 61.648,
+      "inspectCpuMs": 31,
+      "exportMs": 6.739,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 101366080,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40405,
+      "minimumSpeed": 71.84888,
+      "length": 222.33022,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 48947,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "7e65206a81dcf322625680bbf778911a1aa89525b435bfd58977653f59abbd7a",
+      "glbBytes": 84952,
+      "buildMs": 4.266,
+      "buildCpuMs": 0,
+      "inspectMs": 41.298,
+      "inspectCpuMs": 15,
+      "exportMs": 11.868,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 112347304,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.28488,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "5877cbb18b3d845a3999fce9cc09b0e90ca108765c36aa35971ae9f0fdf7ec26",
+      "glbBytes": 29280,
+      "buildMs": 1.562,
+      "buildCpuMs": 0,
+      "inspectMs": 6.087,
+      "inspectCpuMs": 0,
+      "exportMs": 3.73,
+      "renderTriangles": 636,
+      "collisionTriangles": 420,
+      "heapUsed": 126284296,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48367,
+      "minimumSpeed": 45.50479,
+      "length": 228.26565,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "4b85333e82d868004f7aa31c8d21381e63227167463d3ff93df2d335762f4a21",
+      "glbBytes": 224172,
+      "buildMs": 70.4,
+      "buildCpuMs": 31,
+      "inspectMs": 330.546,
+      "inspectCpuMs": 219,
+      "exportMs": 80.446,
+      "renderTriangles": 8484,
+      "collisionTriangles": 2764,
+      "heapUsed": 40426040,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42697,
+      "minimumSpeed": 33.53242,
+      "length": 494.23685,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "95ef550e2ddab28b468f506294363ae746e69085ed5de5a619b7d003b2ea7eac",
+      "glbBytes": 16776,
+      "buildMs": 0.592,
+      "buildCpuMs": 16,
+      "inspectMs": 3.004,
+      "inspectCpuMs": 0,
+      "exportMs": 1.188,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 46452936,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "6e37b2458b525456dd52bcb4e04cbf99b9cd341f1c1435a1400695f292f058c2",
+      "glbBytes": 66380,
+      "buildMs": 7.459,
+      "buildCpuMs": 0,
+      "inspectMs": 12.706,
+      "inspectCpuMs": 15,
+      "exportMs": 6.394,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 56643632,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48634,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "7a41e0f26d06b5d9b2f4ceea629cca37dd5b11e01580e6afbb8a1962e895b024",
+      "glbBytes": 72628,
+      "buildMs": 22.681,
+      "buildCpuMs": 94,
+      "inspectMs": 22.88,
+      "inspectCpuMs": 16,
+      "exportMs": 55.35,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 51148008,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40302,
+      "minimumSpeed": 66,
+      "length": 221.97937,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "a65181740db22b4064a0868b5447b0c3e84e21e8404147c3c3e8542b6f24137e",
+      "glbBytes": 81208,
+      "buildMs": 80.843,
+      "buildCpuMs": 15,
+      "inspectMs": 52.837,
+      "inspectCpuMs": 16,
+      "exportMs": 17.143,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 60582128,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.23955,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "83165b8209b6fe2e372681c93373b3999057eeb625a3f1925ce43869d58052aa",
+      "glbBytes": 29280,
+      "buildMs": 1.701,
+      "buildCpuMs": 0,
+      "inspectMs": 7.166,
+      "inspectCpuMs": 0,
+      "exportMs": 5.141,
+      "renderTriangles": 636,
+      "collisionTriangles": 420,
+      "heapUsed": 47977472,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48367,
+      "minimumSpeed": 45.50479,
+      "length": 228.26565,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "c7a83dbdc970f88aa45790de3f0d6426810e8424108db5297501f3551a8c15fe",
+      "glbBytes": 224172,
+      "buildMs": 37.356,
+      "buildCpuMs": 31,
+      "inspectMs": 518.32,
+      "inspectCpuMs": 203,
+      "exportMs": 53.847,
+      "renderTriangles": 8484,
+      "collisionTriangles": 2764,
+      "heapUsed": 68708920,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42697,
+      "minimumSpeed": 33.53242,
+      "length": 494.23685,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "e629e7cf33e55d5d0640b996dc52cd4f4e6cea0eb78d00cdb1f9b8c0d4ff9ee0",
+      "glbBytes": 15584,
+      "buildMs": 0.691,
+      "buildCpuMs": 0,
+      "inspectMs": 1.476,
+      "inspectCpuMs": 0,
+      "exportMs": 0.966,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 73426040,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "c75cd8f8d5aa930cf02a75266a038a79d4628baf5ad72f3b06aa6d758f9795c3",
+      "glbBytes": 66340,
+      "buildMs": 16.593,
+      "buildCpuMs": 0,
+      "inspectMs": 13.228,
+      "inspectCpuMs": 16,
+      "exportMs": 30.031,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 78098152,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48856,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "14cad8cc7975fa881d512f5a50c082a1220dbf6497947fcacac722b8f2cc1c3b",
+      "glbBytes": 72628,
+      "buildMs": 3.615,
+      "buildCpuMs": 31,
+      "inspectMs": 38.833,
+      "inspectCpuMs": 0,
+      "exportMs": 33.73,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 95256272,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40302,
+      "minimumSpeed": 74.15673,
+      "length": 221.97937,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 55001,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "647e22b34c34735c5acc0fd51df8b8fc6d8e35cbcc572a0a76d44d159e67e720",
+      "glbBytes": 81208,
+      "buildMs": 26.155,
+      "buildCpuMs": 31,
+      "inspectMs": 51.787,
+      "inspectCpuMs": 0,
+      "exportMs": 3.526,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 106444536,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.23955,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "da591b71c433309248eb5cdcdb3a12d791b05c438b13502a0218a43aa2908327",
+      "glbBytes": 29400,
+      "buildMs": 16.139,
+      "buildCpuMs": 0,
+      "inspectMs": 42.597,
+      "inspectCpuMs": 0,
+      "exportMs": 2.277,
+      "renderTriangles": 636,
+      "collisionTriangles": 420,
+      "heapUsed": 94137552,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48385,
+      "minimumSpeed": 45.62996,
+      "length": 228.17513,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "1930e684f9f77c6e1246ed9bb9add876857f0bbc6992446c093d743c1b44f427",
+      "glbBytes": 223368,
+      "buildMs": 193.004,
+      "buildCpuMs": 47,
+      "inspectMs": 1314.124,
+      "inspectCpuMs": 188,
+      "exportMs": 283.644,
+      "renderTriangles": 8460,
+      "collisionTriangles": 2756,
+      "heapUsed": 113736760,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42738,
+      "minimumSpeed": 33.53908,
+      "length": 492.84052,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "99dbba82a7d66487e9576f388ac8db1ebceb770a69644f3dd8554ebd9660acfe",
+      "glbBytes": 16776,
+      "buildMs": 2.936,
+      "buildCpuMs": 0,
+      "inspectMs": 8.43,
+      "inspectCpuMs": 16,
+      "exportMs": 1.934,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 119040808,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "48007ec0e2f76737dde5f60280042f3044951864b95f09fe8d1a3a38665d39ee",
+      "glbBytes": 66380,
+      "buildMs": 11.081,
+      "buildCpuMs": 16,
+      "inspectMs": 557.391,
+      "inspectCpuMs": 15,
+      "exportMs": 169.494,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 22584280,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48647,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "2766e59930122f1dd97d734800fbceceac1675b82a126f50ebda3dfbc444319a",
+      "glbBytes": 72568,
+      "buildMs": 186.412,
+      "buildCpuMs": 0,
+      "inspectMs": 22.907,
+      "inspectCpuMs": 15,
+      "exportMs": 227.251,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 42731392,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40297,
+      "minimumSpeed": 66,
+      "length": 221.95829,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "37734ecb9dc7a2f96febdbbbd1b41b5e3105dda955db31c11be53fa181b9bb9a",
+      "glbBytes": 81208,
+      "buildMs": 52.182,
+      "buildCpuMs": 0,
+      "inspectMs": 547.136,
+      "inspectCpuMs": 32,
+      "exportMs": 3.558,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 52367808,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.23683,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "db75e03118017300ee0b179762f4f3814656f42bcb867cd5d5bcb0bce644c592",
+      "glbBytes": 29400,
+      "buildMs": 1.642,
+      "buildCpuMs": 0,
+      "inspectMs": 96.155,
+      "inspectCpuMs": 0,
+      "exportMs": 28.49,
+      "renderTriangles": 636,
+      "collisionTriangles": 420,
+      "heapUsed": 38994280,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48385,
+      "minimumSpeed": 45.62996,
+      "length": 228.17513,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "31bdad51495487a8c31be64ad1c17b82a6b4d8e6b9b3b3e11fb67c97911546bc",
+      "glbBytes": 223368,
+      "buildMs": 77.182,
+      "buildCpuMs": 16,
+      "inspectMs": 589.54,
+      "inspectCpuMs": 250,
+      "exportMs": 55.877,
+      "renderTriangles": 8460,
+      "collisionTriangles": 2756,
+      "heapUsed": 59085232,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42738,
+      "minimumSpeed": 33.53908,
+      "length": 492.84052,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "c1196632442771694fd28528745cfc3fc8695d81905a6115d5d851576fe1282f",
+      "glbBytes": 15584,
+      "buildMs": 0.767,
+      "buildCpuMs": 0,
+      "inspectMs": 3.881,
+      "inspectCpuMs": 0,
+      "exportMs": 5.796,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 63821048,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "f25334068b8f1c541ee884c107e90dde2ee60622faa0068bf76274a0c279b7d1",
+      "glbBytes": 66336,
+      "buildMs": 22.109,
+      "buildCpuMs": 0,
+      "inspectMs": 27.589,
+      "inspectCpuMs": 15,
+      "exportMs": 7.313,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 68286560,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48868,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "cc5016f4e80a7a376190b2e3250c5b608895c2233b9e5cec5352bf03fbd9fe66",
+      "glbBytes": 72568,
+      "buildMs": 28.653,
+      "buildCpuMs": 0,
+      "inspectMs": 81.577,
+      "inspectCpuMs": 31,
+      "exportMs": 32.12,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 85658672,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40297,
+      "minimumSpeed": 74.30666,
+      "length": 221.95829,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 62819,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "502843ab80084a5bd86b874682977c92ab0d708b9ce7af9c7f11cdc4ea7a7fa4",
+      "glbBytes": 81208,
+      "buildMs": 33.587,
+      "buildCpuMs": 15,
+      "inspectMs": 99.485,
+      "inspectCpuMs": 47,
+      "exportMs": 4.972,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 69254432,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.23683,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "0b34be75e503902225daeae702fe8ea080e4fa62f6758d60518ef4e3b3d571ee",
+      "glbBytes": 29340,
+      "buildMs": 10.934,
+      "buildCpuMs": 15,
+      "inspectMs": 29.124,
+      "inspectCpuMs": 16,
+      "exportMs": 78.617,
+      "renderTriangles": 636,
+      "collisionTriangles": 420,
+      "heapUsed": 83124408,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48355,
+      "minimumSpeed": 45.43112,
+      "length": 228.31941,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "6d65da3704f0c232d1764e83799a87e935dff70cac46db0f9a21e4dc7210ab31",
+      "glbBytes": 224268,
+      "buildMs": 40.462,
+      "buildCpuMs": 16,
+      "inspectMs": 693.084,
+      "inspectCpuMs": 109,
+      "exportMs": 131.022,
+      "renderTriangles": 8484,
+      "collisionTriangles": 2772,
+      "heapUsed": 102703184,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42674,
+      "minimumSpeed": 33.52866,
+      "length": 495.06326,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "c7efa7ae826ebea60ddb8c37991b23ed25f388a72025d79292be592d590d722b",
+      "glbBytes": 16776,
+      "buildMs": 0.727,
+      "buildCpuMs": 0,
+      "inspectMs": 1.606,
+      "inspectCpuMs": 0,
+      "exportMs": 1.596,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 108006296,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "5765cee9deaa32d562947e33208e949f4a14cc4e3a0ffe41ad85a128cbbe5274",
+      "glbBytes": 66380,
+      "buildMs": 16.639,
+      "buildCpuMs": 0,
+      "inspectMs": 73.98,
+      "inspectCpuMs": 94,
+      "exportMs": 45.234,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 112467608,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48627,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "c888b1ce5b91d521af40548280781616748ac615321bce5abac00fba5c30cd27",
+      "glbBytes": 72664,
+      "buildMs": 36.928,
+      "buildCpuMs": 0,
+      "inspectMs": 363.751,
+      "inspectCpuMs": 31,
+      "exportMs": 27.735,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 104686072,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40306,
+      "minimumSpeed": 66,
+      "length": 221.99189,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "18343e8c5e2b513de38020d2246a20129d0f872fe45230c7e8c89677499953da",
+      "glbBytes": 81204,
+      "buildMs": 6.95,
+      "buildCpuMs": 0,
+      "inspectMs": 144.957,
+      "inspectCpuMs": 31,
+      "exportMs": 44.313,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 22438800,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.24117,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "c7d3881b7de11cd9961d7af4df78ce31ab01272d266897da6313108f7d12d4d5",
+      "glbBytes": 29340,
+      "buildMs": 3.114,
+      "buildCpuMs": 15,
+      "inspectMs": 10.378,
+      "inspectCpuMs": 0,
+      "exportMs": 58.121,
+      "renderTriangles": 636,
+      "collisionTriangles": 420,
+      "heapUsed": 38985752,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48355,
+      "minimumSpeed": 45.43112,
+      "length": 228.31941,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "33747bca27982a8df4bab31964c9814b8cadf024580838cebdef033f0bcc1bea",
+      "glbBytes": 224268,
+      "buildMs": 305.275,
+      "buildCpuMs": 78,
+      "inspectMs": 2334.827,
+      "inspectCpuMs": 203,
+      "exportMs": 623.541,
+      "renderTriangles": 8484,
+      "collisionTriangles": 2772,
+      "heapUsed": 58932728,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42674,
+      "minimumSpeed": 33.52866,
+      "length": 495.06326,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "be464bb60483f863e1d71ffe1480c2cc19b4cabe85b391ceabec6051891fd9a9",
+      "glbBytes": 15584,
+      "buildMs": 0.692,
+      "buildCpuMs": 0,
+      "inspectMs": 35.385,
+      "inspectCpuMs": 0,
+      "exportMs": 187.112,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 63715144,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "57e99770054dcb254f43cb977ed446e5b4fe5885a93e8cff404a61664d283b0b",
+      "glbBytes": 66336,
+      "buildMs": 133.766,
+      "buildCpuMs": 0,
+      "inspectMs": 97.457,
+      "inspectCpuMs": 15,
+      "exportMs": 3.984,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 68244584,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48849,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "b4ba68333853559305eb167fc6fa1625b1d19c521def09b5a9867f000db147dc",
+      "glbBytes": 72664,
+      "buildMs": 147.307,
+      "buildCpuMs": 0,
+      "inspectMs": 134.566,
+      "inspectCpuMs": 32,
+      "exportMs": 6.262,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 59329592,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40306,
+      "minimumSpeed": 74.06538,
+      "length": 221.99189,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 71023,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "687d677c895a33cbe51262ec0f54dca63383aeefdc0d7928fbf7ef5309f0058b",
+      "glbBytes": 81204,
+      "buildMs": 4.629,
+      "buildCpuMs": 15,
+      "inspectMs": 297.865,
+      "inspectCpuMs": 16,
+      "exportMs": 8.949,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 69054304,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.24117,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "0a21bc640757d1189429650f2a3ea0fda1e444559acccb2e297d2cdf8d165de4",
+      "glbBytes": 29604,
+      "buildMs": 1.986,
+      "buildCpuMs": 0,
+      "inspectMs": 5.664,
+      "inspectCpuMs": 0,
+      "exportMs": 2.118,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 83150608,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48304,
+      "minimumSpeed": 45.09568,
+      "length": 228.57223,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "388d56c9ffcd91cf418c378bd3e458d38ff085292c3d8a51532d458a6a1fe877",
+      "glbBytes": 225324,
+      "buildMs": 1000.104,
+      "buildCpuMs": 63,
+      "inspectMs": 2326.134,
+      "inspectCpuMs": 188,
+      "exportMs": 36.263,
+      "renderTriangles": 8516,
+      "collisionTriangles": 2788,
+      "heapUsed": 102189472,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42562,
+      "minimumSpeed": 33.51079,
+      "length": 498.91742,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "708aafff05ddfb0abe981ee5542b1b96d8792a2704aca7dc7b9f31b132e7f747",
+      "glbBytes": 16776,
+      "buildMs": 0.749,
+      "buildCpuMs": 0,
+      "inspectMs": 5.883,
+      "inspectCpuMs": 0,
+      "exportMs": 1.093,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 81907024,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "ce9e41a80cf91c1a74c53be8e2ac5faa5b3647af1f0d33380a8fe5e900e29d93",
+      "glbBytes": 66380,
+      "buildMs": 4.273,
+      "buildCpuMs": 0,
+      "inspectMs": 8.95,
+      "inspectCpuMs": 0,
+      "exportMs": 3.781,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 86100680,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48592,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "9ccff7dd0ff83ae440aa74d2121215a35b48c910587bdea378074c37bebda782",
+      "glbBytes": 72680,
+      "buildMs": 6.762,
+      "buildCpuMs": 0,
+      "inspectMs": 204.67,
+      "inspectCpuMs": 15,
+      "exportMs": 234.961,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 103279192,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40323,
+      "minimumSpeed": 66,
+      "length": 222.05085,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "47f7f2dff7b9424f4ec9b610e122909079fd8ccfe3b03e4cfc50e11b26f83411",
+      "glbBytes": 81208,
+      "buildMs": 4.959,
+      "buildCpuMs": 0,
+      "inspectMs": 615.108,
+      "inspectCpuMs": 16,
+      "exportMs": 4.083,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 113616840,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.24878,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "e15e89d3029d9def0d5493f65f0348f526a174b58162ca0f1071f430c4b1de3a",
+      "glbBytes": 29604,
+      "buildMs": 1.609,
+      "buildCpuMs": 0,
+      "inspectMs": 9.817,
+      "inspectCpuMs": 16,
+      "exportMs": 2.836,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 101027768,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48304,
+      "minimumSpeed": 45.09568,
+      "length": 228.57223,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "3a1f96a39aeb4c7a2a348e4ffaaa98fbd1fa0a76baf8e5198f23a5c0608d8d00",
+      "glbBytes": 225324,
+      "buildMs": 1011.527,
+      "buildCpuMs": 47,
+      "inspectMs": 2971.802,
+      "inspectCpuMs": 171,
+      "exportMs": 434.299,
+      "renderTriangles": 8516,
+      "collisionTriangles": 2788,
+      "heapUsed": 40853672,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42562,
+      "minimumSpeed": 33.51079,
+      "length": 498.91742,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "15c1755908f63b6baa9b87a10fa7c7466efe56c55a5fe18e0919bde77cf32a9b",
+      "glbBytes": 15584,
+      "buildMs": 0.997,
+      "buildCpuMs": 0,
+      "inspectMs": 1.754,
+      "inspectCpuMs": 0,
+      "exportMs": 1.248,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 46147912,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "750073372cd11644a368d34263b65f09644b3e8e8c56fe1cf0bf7a0cd93a72c3",
+      "glbBytes": 66340,
+      "buildMs": 66.57,
+      "buildCpuMs": 0,
+      "inspectMs": 338.723,
+      "inspectCpuMs": 0,
+      "exportMs": 208.509,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 55842952,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48814,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "bfce5deea6ceb4a17c6765f8b331885009a451063653f147f4072ead814c042d",
+      "glbBytes": 72680,
+      "buildMs": 342.186,
+      "buildCpuMs": 15,
+      "inspectMs": 458.625,
+      "inspectCpuMs": 32,
+      "exportMs": 190.671,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 48702384,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40323,
+      "minimumSpeed": 73.64081,
+      "length": 222.05085,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 79757,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "fff6c51612a7703541a4a0513198f7834f72c0ab836817260a42b8b6ccc2f7e8",
+      "glbBytes": 81208,
+      "buildMs": 3.495,
+      "buildCpuMs": 16,
+      "inspectMs": 241.368,
+      "inspectCpuMs": 31,
+      "exportMs": 123.768,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 58759008,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.24878,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "5ff3df18f274295523b5a260263dedd94808725ade82a00c7602803ecd65d17d",
+      "glbBytes": 30280,
+      "buildMs": 2.643,
+      "buildCpuMs": 0,
+      "inspectMs": 115.631,
+      "inspectCpuMs": 31,
+      "exportMs": 2.02,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 46475472,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48062,
+      "minimumSpeed": 43.69123,
+      "length": 229.74141,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "4abde98ca77dd3061f0df27861ee6c9ed438c414311536de83c4d6e249a5d875",
+      "glbBytes": 225620,
+      "buildMs": 373.943,
+      "buildCpuMs": 79,
+      "inspectMs": 1151.917,
+      "inspectCpuMs": 140,
+      "exportMs": 475.04,
+      "renderTriangles": 8516,
+      "collisionTriangles": 2804,
+      "heapUsed": 64695088,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42065,
+      "minimumSpeed": 33.42668,
+      "length": 516.15205,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "3081729bf5738774e60524a2a8b168597d5c48a08cf02f6ec66c9798f5798359",
+      "glbBytes": 16776,
+      "buildMs": 0.743,
+      "buildCpuMs": 0,
+      "inspectMs": 1.547,
+      "inspectCpuMs": 0,
+      "exportMs": 1.413,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 70070728,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "dcd43609a0589f909a4fa86e735f31fb05deb0bb885aaf01111fbf49b58f443a",
+      "glbBytes": 68252,
+      "buildMs": 5.405,
+      "buildCpuMs": 0,
+      "inspectMs": 168.343,
+      "inspectCpuMs": 16,
+      "exportMs": 148.099,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 75245928,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48431,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "8bfdbceec450b9d1a4236e955104664f62e6810a348745ade84cfb97309ca717",
+      "glbBytes": 72628,
+      "buildMs": 4.974,
+      "buildCpuMs": 0,
+      "inspectMs": 300.677,
+      "inspectCpuMs": 31,
+      "exportMs": 160.656,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 92120888,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40403,
+      "minimumSpeed": 66,
+      "length": 222.32495,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "6ddf85fbf75798977d8df3ea463dc4f9386c2df1e04c1e2aa01dd9d673c5fd80",
+      "glbBytes": 84956,
+      "buildMs": 4.369,
+      "buildCpuMs": 0,
+      "inspectMs": 321.848,
+      "inspectCpuMs": 47,
+      "exportMs": 96.245,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 103534504,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.2842,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "a9e75c159ba0b6ae4f66e47649fa472ccaef706a73a94bff1434d926c27cebc5",
+      "glbBytes": 30280,
+      "buildMs": 58.239,
+      "buildCpuMs": 16,
+      "inspectMs": 6.8,
+      "inspectCpuMs": 0,
+      "exportMs": 8.99,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 91605904,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48062,
+      "minimumSpeed": 43.69123,
+      "length": 229.74141,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "efdb752f8899766e913481838fafac1ed9091b0b7cd82c73ea90449cca77883f",
+      "glbBytes": 225620,
+      "buildMs": 401.375,
+      "buildCpuMs": 63,
+      "inspectMs": 1032.037,
+      "inspectCpuMs": 125,
+      "exportMs": 36.327,
+      "renderTriangles": 8516,
+      "collisionTriangles": 2804,
+      "heapUsed": 110082704,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42065,
+      "minimumSpeed": 33.42668,
+      "length": 516.15205,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "78a620f9d0421a4e5c4028c45c2d321b463fbb5fbca9c60fd1fbbe97dd9b825e",
+      "glbBytes": 15584,
+      "buildMs": 1.117,
+      "buildCpuMs": 0,
+      "inspectMs": 1.925,
+      "inspectCpuMs": 0,
+      "exportMs": 2.321,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 114857864,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "a96a3c3cba7bac9cdded5e661df189ed837ff318268f5eeeca7a587f38811789",
+      "glbBytes": 68208,
+      "buildMs": 36.894,
+      "buildCpuMs": 0,
+      "inspectMs": 146.076,
+      "inspectCpuMs": 15,
+      "exportMs": 86.402,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 120015256,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48652,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "ce3ffeb5e3af55ba9d16e5a8ab917dd09cfc9f246134afc970f65494a5c554e9",
+      "glbBytes": 72628,
+      "buildMs": 86.784,
+      "buildCpuMs": 0,
+      "inspectMs": 148.931,
+      "inspectCpuMs": 47,
+      "exportMs": 359.286,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 20159488,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40403,
+      "minimumSpeed": 71.87285,
+      "length": 222.32495,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 87337,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "5d75cd8d2521b6c5d46accf2bd71bed055f733eeefe430d893bfcbb5f504ea3c",
+      "glbBytes": 84956,
+      "buildMs": 36.116,
+      "buildCpuMs": 31,
+      "inspectMs": 34.152,
+      "inspectCpuMs": 16,
+      "exportMs": 167.666,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 30398448,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.2842,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "1e678d0f594d5b9a14ef52b0742d2b3979afe1b8b4843f9e0c60070b6b90d681",
+      "glbBytes": 29604,
+      "buildMs": 2.906,
+      "buildCpuMs": 0,
+      "inspectMs": 159.428,
+      "inspectCpuMs": 0,
+      "exportMs": 3.609,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 46476352,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48327,
+      "minimumSpeed": 45.24201,
+      "length": 228.46139,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "871180693baabcc4437fa31a1e889cedf113197ffe562441b40af07000fa69b4",
+      "glbBytes": 224860,
+      "buildMs": 174.077,
+      "buildCpuMs": 47,
+      "inspectMs": 602.096,
+      "inspectCpuMs": 141,
+      "exportMs": 303.69,
+      "renderTriangles": 8500,
+      "collisionTriangles": 2788,
+      "heapUsed": 52968240,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.4261,
+      "minimumSpeed": 33.51854,
+      "length": 497.23373,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "9e5e0ba7a99b6a36c6b02a40605e59b60dac5fcb8fda1aaf418a79a5a5215908",
+      "glbBytes": 16776,
+      "buildMs": 0.864,
+      "buildCpuMs": 0,
+      "inspectMs": 1.484,
+      "inspectCpuMs": 0,
+      "exportMs": 65.882,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 58342176,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "a79adc8641e21c65c9d53b9a1b65bed297e284c5e5459e317c53b69a309b11fb",
+      "glbBytes": 66380,
+      "buildMs": 21.764,
+      "buildCpuMs": 0,
+      "inspectMs": 193.571,
+      "inspectCpuMs": 16,
+      "exportMs": 7.123,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 63051320,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48607,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "78588147dbc5c430676602bd250f07febca5fe9fee563722c521662dfd4276c1",
+      "glbBytes": 72664,
+      "buildMs": 5.868,
+      "buildCpuMs": 0,
+      "inspectMs": 22.343,
+      "inspectCpuMs": 93,
+      "exportMs": 6.587,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 53889048,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40316,
+      "minimumSpeed": 66,
+      "length": 222.02499,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "73a064a3692d420341647f12eeac4ace1ddbfef843ec0d15c6bf59a8ad683e17",
+      "glbBytes": 81204,
+      "buildMs": 3.814,
+      "buildCpuMs": 0,
+      "inspectMs": 88.106,
+      "inspectCpuMs": 16,
+      "exportMs": 107.942,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 63216608,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.24544,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "a257125a8e9ca813af2bb854ec3f5c9e288d6352a7ea45f4045554e0492742ea",
+      "glbBytes": 29604,
+      "buildMs": 6.31,
+      "buildCpuMs": 0,
+      "inspectMs": 31.746,
+      "inspectCpuMs": 0,
+      "exportMs": 31.682,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 77465528,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48327,
+      "minimumSpeed": 45.24201,
+      "length": 228.46139,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "d8b19bc3a912ec1da6e472cacd24dafa11c44977b0bdf92ad1a4fe7e37ea4364",
+      "glbBytes": 224860,
+      "buildMs": 24.849,
+      "buildCpuMs": 15,
+      "inspectMs": 995.79,
+      "inspectCpuMs": 157,
+      "exportMs": 398.293,
+      "renderTriangles": 8500,
+      "collisionTriangles": 2788,
+      "heapUsed": 97365752,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.4261,
+      "minimumSpeed": 33.51854,
+      "length": 497.23373,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "5c2a6e97833375c84ec2df9676f2826d5e69217cca0d74d4b72c6b82338068d0",
+      "glbBytes": 15584,
+      "buildMs": 1.001,
+      "buildCpuMs": 0,
+      "inspectMs": 87.111,
+      "inspectCpuMs": 16,
+      "exportMs": 0.919,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 102066136,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "f9038754cbc765a06f5f16cca82b2c991298842b0c84d952b7731993cce27a9f",
+      "glbBytes": 66340,
+      "buildMs": 56.819,
+      "buildCpuMs": 15,
+      "inspectMs": 22.66,
+      "inspectCpuMs": 16,
+      "exportMs": 6.631,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 106213832,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48829,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "310de4b90ddb605e40ac2d47fded1393424753dbfa93c64a7e32a90112484d5b",
+      "glbBytes": 72664,
+      "buildMs": 115.31,
+      "buildCpuMs": 31,
+      "inspectMs": 72.041,
+      "inspectCpuMs": 16,
+      "exportMs": 42.013,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 97216304,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40316,
+      "minimumSpeed": 73.82173,
+      "length": 222.02499,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 95603,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "d341319dd394e960990f3cd5928929762c6ba86c57bfb92eab938909d014a6d2",
+      "glbBytes": 81204,
+      "buildMs": 52.826,
+      "buildCpuMs": 16,
+      "inspectMs": 83.044,
+      "inspectCpuMs": 31,
+      "exportMs": 7.025,
+      "renderTriangles": 2400,
+      "collisionTriangles": 1528,
+      "heapUsed": 107020896,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.24544,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "8a18866321b1a786fb86b969ef28d817e9e6eb86b750277c18107eecfc7df330",
+      "glbBytes": 30208,
+      "buildMs": 2.639,
+      "buildCpuMs": 0,
+      "inspectMs": 4.263,
+      "inspectCpuMs": 0,
+      "exportMs": 3.108,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 121319536,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48062,
+      "minimumSpeed": 43.69128,
+      "length": 229.74028,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "dd158865838dc0d5815555e5d057a684c04a420ebd380377bda17e3cfc3cbc31",
+      "glbBytes": 225624,
+      "buildMs": 61.219,
+      "buildCpuMs": 31,
+      "inspectMs": 2810.835,
+      "inspectCpuMs": 188,
+      "exportMs": 245.753,
+      "renderTriangles": 8516,
+      "collisionTriangles": 2804,
+      "heapUsed": 39329480,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42066,
+      "minimumSpeed": 33.42642,
+      "length": 516.1358,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "34a2f8d755c49e20f6daec4b0b8e3a2d2acb21fa6ee37bb08a1c0e7d79f1cdc6",
+      "glbBytes": 16776,
+      "buildMs": 2.777,
+      "buildCpuMs": 0,
+      "inspectMs": 28.798,
+      "inspectCpuMs": 0,
+      "exportMs": 2.812,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 45302984,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "e636e0a0fb77e093a55d64ae6b674684196dd4bd63ef4a802667267d5adb0b77",
+      "glbBytes": 68252,
+      "buildMs": 33.425,
+      "buildCpuMs": 0,
+      "inspectMs": 43.033,
+      "inspectCpuMs": 16,
+      "exportMs": 9.476,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 55568408,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48431,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "618d945d1b39e14c4649ecef6093c00902ee6969fdc3e78f092416497061798b",
+      "glbBytes": 72692,
+      "buildMs": 12.196,
+      "buildCpuMs": 78,
+      "inspectMs": 35.553,
+      "inspectCpuMs": 15,
+      "exportMs": 12.859,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 51912504,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40403,
+      "minimumSpeed": 66,
+      "length": 222.32469,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "de0fe5181716e84f86f925a38cefc9f24db8feadc1e47a00fcdfad4bdc2d1bcd",
+      "glbBytes": 84956,
+      "buildMs": 3.931,
+      "buildCpuMs": 0,
+      "inspectMs": 62.231,
+      "inspectCpuMs": 47,
+      "exportMs": 6.271,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 64662760,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.28417,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "1f1173aa7838c2066d81ea87cdd85c630b98bb7e7c351797e1ff27f77831e7bd",
+      "glbBytes": 30208,
+      "buildMs": 2.459,
+      "buildCpuMs": 0,
+      "inspectMs": 10.172,
+      "inspectCpuMs": 15,
+      "exportMs": 12.897,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 52167816,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48062,
+      "minimumSpeed": 43.69128,
+      "length": 229.74028,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "0c3589b35cef6138c2d69b0d2ecc8c1adcc91376edc6ec675b9694aedc76c8d3",
+      "glbBytes": 225624,
+      "buildMs": 47.104,
+      "buildCpuMs": 16,
+      "inspectMs": 1385.86,
+      "inspectCpuMs": 140,
+      "exportMs": 137.974,
+      "renderTriangles": 8516,
+      "collisionTriangles": 2804,
+      "heapUsed": 70161664,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42066,
+      "minimumSpeed": 33.42642,
+      "length": 516.1358,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "16daf13d89b8ed55ae181b9a293b5ec52b50fbf6f18742a7c585741f4964b7c9",
+      "glbBytes": 15588,
+      "buildMs": 6.186,
+      "buildCpuMs": 0,
+      "inspectMs": 34.001,
+      "inspectCpuMs": 0,
+      "exportMs": 1.047,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 74871152,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "5e6914d1c44764b07a6c9c7e4c2c2c7287cbdc1e9a02ea66bdc97de2a70b7a46",
+      "glbBytes": 68212,
+      "buildMs": 251.381,
+      "buildCpuMs": 0,
+      "inspectMs": 8.754,
+      "inspectCpuMs": 16,
+      "exportMs": 3.715,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 80232296,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48652,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "269abb1b4ee7832b0af77d491f3837d55738880831d5628b7e992a11b1472997",
+      "glbBytes": 72692,
+      "buildMs": 242.648,
+      "buildCpuMs": 0,
+      "inspectMs": 143.561,
+      "inspectCpuMs": 16,
+      "exportMs": 44.241,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 97390944,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40403,
+      "minimumSpeed": 71.88226,
+      "length": 222.32469,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 104729,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "1835b8bd20721261fcf502040e188fa1d5e4d14d54154e1967616fb979e1bc7c",
+      "glbBytes": 84956,
+      "buildMs": 74.453,
+      "buildCpuMs": 0,
+      "inspectMs": 301.885,
+      "inspectCpuMs": 16,
+      "exportMs": 47.271,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 109644600,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.28417,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "aeb8de750e779a4f35b6b1c30f74026f4709760e28dfad3f57c81fee8d60adf0",
+      "glbBytes": 29544,
+      "buildMs": 158.378,
+      "buildCpuMs": 0,
+      "inspectMs": 18.342,
+      "inspectCpuMs": 16,
+      "exportMs": 1.924,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 97033456,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48147,
+      "minimumSpeed": 44.15754,
+      "length": 229.33205,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "cf4dd259ad9cba997d2d0d0bebccde9cb775ff360e89cf0fb6d16c30a140f05c",
+      "glbBytes": 224896,
+      "buildMs": 332.955,
+      "buildCpuMs": 31,
+      "inspectMs": 868.014,
+      "inspectCpuMs": 172,
+      "exportMs": 394.66,
+      "renderTriangles": 8540,
+      "collisionTriangles": 2756,
+      "heapUsed": 112795056,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42236,
+      "minimumSpeed": 33.45631,
+      "length": 510.21953,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "721c8e54e868acc4d4a2f5a53310a173cbe06e619b9f572eda07939acdcb6a1b",
+      "glbBytes": 16776,
+      "buildMs": 0.975,
+      "buildCpuMs": 0,
+      "inspectMs": 1.41,
+      "inspectCpuMs": 0,
+      "exportMs": 1.082,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 118089240,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "33efa2d52398048738f3fe2eb5a9c56e53ab0e6f904dd41b0709ff9e23de0be5",
+      "glbBytes": 68252,
+      "buildMs": 310.824,
+      "buildCpuMs": 94,
+      "inspectMs": 292.441,
+      "inspectCpuMs": 31,
+      "exportMs": 22.212,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 45665984,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48487,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "ac528c44c15d1e7c34a8b1b5107d1e1e06101e143e6e24c0c0806e748cb033bb",
+      "glbBytes": 72624,
+      "buildMs": 10.49,
+      "buildCpuMs": 16,
+      "inspectMs": 21.011,
+      "inspectCpuMs": 31,
+      "exportMs": 8.893,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 34723112,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40374,
+      "minimumSpeed": 66,
+      "length": 222.22872,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "d19e3f7b39e33203271d5e9f08d7379bb7a0dc6d6638fe551f8943205bdfb7ce",
+      "glbBytes": 84952,
+      "buildMs": 4.044,
+      "buildCpuMs": 0,
+      "inspectMs": 206.183,
+      "inspectCpuMs": 31,
+      "exportMs": 21.52,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 44682128,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.27176,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "21559452aede0969fcff03c87d7bb4cc8af51b38eb97acf371493cff90b90184",
+      "glbBytes": 29544,
+      "buildMs": 2.48,
+      "buildCpuMs": 0,
+      "inspectMs": 7.297,
+      "inspectCpuMs": 16,
+      "exportMs": 11.45,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 31271776,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48147,
+      "minimumSpeed": 44.15754,
+      "length": 229.33205,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "60db953ce58bca4bb49692ac62562e7cb3163fad0afd79b98d070e019e1cb67c",
+      "glbBytes": 224896,
+      "buildMs": 56.257,
+      "buildCpuMs": 31,
+      "inspectMs": 647.572,
+      "inspectCpuMs": 204,
+      "exportMs": 69.138,
+      "renderTriangles": 8540,
+      "collisionTriangles": 2756,
+      "heapUsed": 74431664,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42236,
+      "minimumSpeed": 33.45631,
+      "length": 510.21953,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "51b22e9adc6403b2633c56bd70cacfc66fafaa21e8baf049f4dd4418728fae61",
+      "glbBytes": 15588,
+      "buildMs": 3.647,
+      "buildCpuMs": 0,
+      "inspectMs": 42.558,
+      "inspectCpuMs": 0,
+      "exportMs": 29.659,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 53320776,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "85b0990299ba5fbe6ae8140908772e226c6eff9d8750719980587c6c7e13822c",
+      "glbBytes": 66340,
+      "buildMs": 9.655,
+      "buildCpuMs": 0,
+      "inspectMs": 29.838,
+      "inspectCpuMs": 0,
+      "exportMs": 14.363,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 57604312,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48709,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "da93896ad7d2f8cdb60a03b62dafd4b77e0fed545ac70d2734d1d45e656e510b",
+      "glbBytes": 72624,
+      "buildMs": 5.532,
+      "buildCpuMs": 15,
+      "inspectMs": 19.573,
+      "inspectCpuMs": 15,
+      "exportMs": 12.576,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 75230840,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40374,
+      "minimumSpeed": 72.47253,
+      "length": 222.22872,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 112909,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "2a5b0076ec2b7532657351a72c3e2f3948fbd6dbae14e31996374b2885156126",
+      "glbBytes": 84952,
+      "buildMs": 4.174,
+      "buildCpuMs": 16,
+      "inspectMs": 82.423,
+      "inspectCpuMs": 0,
+      "exportMs": 4.531,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 87019328,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.27176,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "7075a90d04565eae4d28eb9f170bf933d055f31cbb60afbc938fa577919819b8",
+      "glbBytes": 29660,
+      "buildMs": 3.535,
+      "buildCpuMs": 0,
+      "inspectMs": 12.048,
+      "inspectCpuMs": 0,
+      "exportMs": 2.577,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 74239520,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48151,
+      "minimumSpeed": 44.18155,
+      "length": 229.31138,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "0f87f1e63cb9a3676443da82198374128a0774f8456e402669151504376841f9",
+      "glbBytes": 225044,
+      "buildMs": 89.041,
+      "buildCpuMs": 31,
+      "inspectMs": 865.988,
+      "inspectCpuMs": 125,
+      "exportMs": 129.018,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2756,
+      "heapUsed": 90679592,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42244,
+      "minimumSpeed": 33.45792,
+      "length": 509.91715,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "4f4fc994600367cfc867c3349770e822b1fd9852c2bce5861624c76cf1714ba2",
+      "glbBytes": 16776,
+      "buildMs": 30.171,
+      "buildCpuMs": 0,
+      "inspectMs": 2.931,
+      "inspectCpuMs": 0,
+      "exportMs": 1.166,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 96048784,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "8c3e07b7e6f0fca90c02404cb1c5605622484545eaae8d3ff85a530900658315",
+      "glbBytes": 66380,
+      "buildMs": 72.908,
+      "buildCpuMs": 0,
+      "inspectMs": 83.413,
+      "inspectCpuMs": 31,
+      "exportMs": 4.732,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 100669928,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4849,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "66e5783c7f09f4970f1b7368ddb721599349c61abb171b5131b2431aef759f2e",
+      "glbBytes": 72584,
+      "buildMs": 66.862,
+      "buildCpuMs": 0,
+      "inspectMs": 37.051,
+      "inspectCpuMs": 31,
+      "exportMs": 9.683,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 117545544,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40373,
+      "minimumSpeed": 66,
+      "length": 222.22387,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "03bfdfb7f73e89807d54766c4c7bb6a455167c12858c6ff5bffc8fdf66da2444",
+      "glbBytes": 84960,
+      "buildMs": 93.619,
+      "buildCpuMs": 0,
+      "inspectMs": 158.545,
+      "inspectCpuMs": 63,
+      "exportMs": 128.862,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 46433752,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.27114,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "c259769085cb2a7a022eec98a6a4f07da312f15285c0f7d820326485339dafb9",
+      "glbBytes": 29660,
+      "buildMs": 9.05,
+      "buildCpuMs": 0,
+      "inspectMs": 7.528,
+      "inspectCpuMs": 0,
+      "exportMs": 4.246,
+      "renderTriangles": 652,
+      "collisionTriangles": 420,
+      "heapUsed": 30983664,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48151,
+      "minimumSpeed": 44.18155,
+      "length": 229.31138,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "be5825d42fbfb18e39773b1ae2727fc747ea89c44c9d9d30e7aa4e2c5a984b65",
+      "glbBytes": 225044,
+      "buildMs": 204.7,
+      "buildCpuMs": 31,
+      "inspectMs": 263.033,
+      "inspectCpuMs": 125,
+      "exportMs": 145.414,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2756,
+      "heapUsed": 67889848,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42244,
+      "minimumSpeed": 33.45792,
+      "length": 509.91715,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "0f0360f9d3519c67f0326b132a31f054002cee0c1de85723e160d908b5ae9bd1",
+      "glbBytes": 15588,
+      "buildMs": 0.76,
+      "buildCpuMs": 0,
+      "inspectMs": 10.744,
+      "inspectCpuMs": 0,
+      "exportMs": 1.503,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 46491808,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "ca526400a2b33923924126d6bd863bd4cc391721bdfb31b7d4364267b43517a3",
+      "glbBytes": 66340,
+      "buildMs": 4.786,
+      "buildCpuMs": 0,
+      "inspectMs": 22.219,
+      "inspectCpuMs": 0,
+      "exportMs": 4.597,
+      "renderTriangles": 2256,
+      "collisionTriangles": 928,
+      "heapUsed": 51239048,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48712,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "e981163d32adc5539f5997d0c6b19d3a988af6dddb5130a9c6efd8427c7b32b0",
+      "glbBytes": 72584,
+      "buildMs": 5.459,
+      "buildCpuMs": 0,
+      "inspectMs": 27.138,
+      "inspectCpuMs": 0,
+      "exportMs": 16.153,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 69114056,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40373,
+      "minimumSpeed": 72.50112,
+      "length": 222.22387,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 120011,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "db110691eaf0b385832164303f085725722f9f588669c6a34b1951f44b49f7e9",
+      "glbBytes": 84960,
+      "buildMs": 3.473,
+      "buildCpuMs": 0,
+      "inspectMs": 87.211,
+      "inspectCpuMs": 31,
+      "exportMs": 4.419,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 81556488,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.27114,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "b06a9862c43d147c6e69d34851d67071f6b7f06bc5ec0b5f7e33228c581c7f73",
+      "glbBytes": 30208,
+      "buildMs": 8.509,
+      "buildCpuMs": 0,
+      "inspectMs": 52.569,
+      "inspectCpuMs": 0,
+      "exportMs": 3.017,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 69645984,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48115,
+      "minimumSpeed": 43.97519,
+      "length": 229.48845,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "8572d43d2dc88996d09d60c1b0e363b005ecdbe7d4bc373254fbdc812d02076f",
+      "glbBytes": 224964,
+      "buildMs": 32.299,
+      "buildCpuMs": 47,
+      "inspectMs": 334.983,
+      "inspectCpuMs": 156,
+      "exportMs": 97.268,
+      "renderTriangles": 8524,
+      "collisionTriangles": 2764,
+      "heapUsed": 86855456,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.4217,
+      "minimumSpeed": 33.44513,
+      "length": 512.49834,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "0eebb25c5de9a792a4e8a5373dcea1325725cbeb0f94bd37233abf40082f2f25",
+      "glbBytes": 16776,
+      "buildMs": 0.757,
+      "buildCpuMs": 0,
+      "inspectMs": 1.471,
+      "inspectCpuMs": 0,
+      "exportMs": 1.282,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 92218224,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "a491d07f200b2df244f5eec3bfb5e45287d68857acc26295422404369428b794",
+      "glbBytes": 68252,
+      "buildMs": 10.01,
+      "buildCpuMs": 15,
+      "inspectMs": 12.072,
+      "inspectCpuMs": 16,
+      "exportMs": 9.025,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 97391664,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48466,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "65958a00fd7c811f43fe55d1f9b5fc1723b7705330565576270a003437da2471",
+      "glbBytes": 72680,
+      "buildMs": 53.96,
+      "buildCpuMs": 16,
+      "inspectMs": 40.116,
+      "inspectCpuMs": 15,
+      "exportMs": 42.912,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 114786512,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40386,
+      "minimumSpeed": 66,
+      "length": 222.26545,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "e40783efcd5c10509bbf02789bb2cb20bb544259e4cd59735b9ceeff984c45ca",
+      "glbBytes": 84956,
+      "buildMs": 16.991,
+      "buildCpuMs": 93,
+      "inspectMs": 19.221,
+      "inspectCpuMs": 16,
+      "exportMs": 24.465,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 100027544,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.27651,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "8fe8d4dca1eaefb7f35c5130e66300526fc555f79469a8f4272419b1fac6525d",
+      "glbBytes": 30208,
+      "buildMs": 2.88,
+      "buildCpuMs": 0,
+      "inspectMs": 16.491,
+      "inspectCpuMs": 15,
+      "exportMs": 25.096,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 114673248,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48115,
+      "minimumSpeed": 43.97519,
+      "length": 229.48845,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "cdcb450c9da5a26eae176bf0338cbce5bc57e1b6748fcd4ebff1b12039c4922a",
+      "glbBytes": 224964,
+      "buildMs": 89.307,
+      "buildCpuMs": 47,
+      "inspectMs": 510.115,
+      "inspectCpuMs": 219,
+      "exportMs": 88.351,
+      "renderTriangles": 8524,
+      "collisionTriangles": 2764,
+      "heapUsed": 51507320,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.4217,
+      "minimumSpeed": 33.44513,
+      "length": 512.49834,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "4224278d8ff6732987a9fac31368c9a632e1ac10918832022d99ed98896d5641",
+      "glbBytes": 15588,
+      "buildMs": 0.794,
+      "buildCpuMs": 0,
+      "inspectMs": 14.337,
+      "inspectCpuMs": 0,
+      "exportMs": 1.055,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 56802960,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "99bf9b2ef2714f3c1821d994a5a363adb179cc3db624f4e61f5184af879a28c2",
+      "glbBytes": 68212,
+      "buildMs": 7.947,
+      "buildCpuMs": 47,
+      "inspectMs": 11.625,
+      "inspectCpuMs": 0,
+      "exportMs": 31.688,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 38598968,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48687,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "eafe421836b7017d1e5f0e65bb32a6fcf837a2bae50ff3ceadb204219709f3f4",
+      "glbBytes": 72680,
+      "buildMs": 11.841,
+      "buildCpuMs": 0,
+      "inspectMs": 76.28,
+      "inspectCpuMs": 15,
+      "exportMs": 14.116,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 62136640,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40386,
+      "minimumSpeed": 72.23487,
+      "length": 222.26545,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 131071,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "d61d3f5212c01f11cad65c9f0e1d9b1af49f3fc694fa75490f4b8699287aab73",
+      "glbBytes": 84956,
+      "buildMs": 10.73,
+      "buildCpuMs": 15,
+      "inspectMs": 52.049,
+      "inspectCpuMs": 16,
+      "exportMs": 5.746,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 48676344,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.27651,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "c8a1f420b649dbda2efcec653a78f4053066f0f3d7893da1dfc3aad05a67b01a",
+      "glbBytes": 30164,
+      "buildMs": 1.984,
+      "buildCpuMs": 0,
+      "inspectMs": 4.215,
+      "inspectCpuMs": 0,
+      "exportMs": 3.292,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 63058512,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48038,
+      "minimumSpeed": 43.56274,
+      "length": 229.85735,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "c656047acd06addcbf6bf57b1a0d729b6e4fc860b333c0c1c3989c2672d57866",
+      "glbBytes": 226284,
+      "buildMs": 58.767,
+      "buildCpuMs": 78,
+      "inspectMs": 420.472,
+      "inspectCpuMs": 219,
+      "exportMs": 40.337,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2820,
+      "heapUsed": 81913840,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.42018,
+      "minimumSpeed": 33.41877,
+      "length": 517.81354,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "0b5dd80c4690cfa244df251c7f0e69a6685b63807f5bb4045ec44a575e780692",
+      "glbBytes": 16776,
+      "buildMs": 1.004,
+      "buildCpuMs": 0,
+      "inspectMs": 2.147,
+      "inspectCpuMs": 0,
+      "exportMs": 1.13,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 87213344,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "b11109e5bd46160c50986385d72b856e8f1b7da91626e941340f991385f42daf",
+      "glbBytes": 68252,
+      "buildMs": 7.51,
+      "buildCpuMs": 0,
+      "inspectMs": 100.637,
+      "inspectCpuMs": 0,
+      "exportMs": 6.641,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 92487024,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48414,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "98b70b69637fe9999cdb73626beeae72598238b58989a908869710b250f87b46",
+      "glbBytes": 72724,
+      "buildMs": 31.607,
+      "buildCpuMs": 0,
+      "inspectMs": 157.465,
+      "inspectCpuMs": 31,
+      "exportMs": 16.62,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 84595784,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4041,
+      "minimumSpeed": 66,
+      "length": 222.35226,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "8ed78a3b933876ba40534368f53049f1f866fc9427eca29b366f7bdf2589bd08",
+      "glbBytes": 84948,
+      "buildMs": 3.655,
+      "buildCpuMs": 16,
+      "inspectMs": 69.899,
+      "inspectCpuMs": 15,
+      "exportMs": 66.47,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 94896968,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.28774,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "e10241179545a4f4bcb0415c1f1688eaa5c44a9103f0e1d70576e411db634ff2",
+      "glbBytes": 30164,
+      "buildMs": 1.922,
+      "buildCpuMs": 0,
+      "inspectMs": 34.859,
+      "inspectCpuMs": 31,
+      "exportMs": 1.999,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 109432320,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48038,
+      "minimumSpeed": 43.56274,
+      "length": 229.85735,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "1e297444fdfc609e54bafa37dcff9dd07986801c5cdbb6cc56ef4a0e47f8a545",
+      "glbBytes": 226284,
+      "buildMs": 42.596,
+      "buildCpuMs": 94,
+      "inspectMs": 468.994,
+      "inspectCpuMs": 203,
+      "exportMs": 77.567,
+      "renderTriangles": 8532,
+      "collisionTriangles": 2820,
+      "heapUsed": 128537104,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.42018,
+      "minimumSpeed": 33.41877,
+      "length": 517.81354,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "1dec1359c068bcde7de623fe0c8fe7308797f2b05c62295aa307cb56354c2256",
+      "glbBytes": 15588,
+      "buildMs": 1.868,
+      "buildCpuMs": 0,
+      "inspectMs": 2.172,
+      "inspectCpuMs": 0,
+      "exportMs": 1.641,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 18380208,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "945514514aa77422a4a1518743db928c2fe831d21fcf12de99146b1573ceeaff",
+      "glbBytes": 68212,
+      "buildMs": 10.51,
+      "buildCpuMs": 15,
+      "inspectMs": 21.999,
+      "inspectCpuMs": 16,
+      "exportMs": 4.72,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 23231304,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48636,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "83c9cd2ef510bd2896e242e2e37cc9c5c87a207cfda9a8899b68bea0074a591d",
+      "glbBytes": 72724,
+      "buildMs": 5.28,
+      "buildCpuMs": 16,
+      "inspectMs": 74.998,
+      "inspectCpuMs": 31,
+      "exportMs": 10.873,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 41896880,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.4041,
+      "minimumSpeed": 71.70939,
+      "length": 222.35226,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 140053,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "1fea36eac1a08b51736a703d6fcc08ff7623abdec2849a1dca1874755cc48e22",
+      "glbBytes": 84948,
+      "buildMs": 6.411,
+      "buildCpuMs": 0,
+      "inspectMs": 36.904,
+      "inspectCpuMs": 31,
+      "exportMs": 4.571,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 53165424,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.28774,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "cruise",
+      "module": "s-curve",
+      "sha256": "fa09be14123eac84e631e071931ec72d5a32886c56a3a2533da09fa5c212d5be",
+      "glbBytes": 30108,
+      "buildMs": 2.039,
+      "buildCpuMs": 0,
+      "inspectMs": 41.113,
+      "inspectCpuMs": 16,
+      "exportMs": 16.283,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 40032272,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48018,
+      "minimumSpeed": 43.45661,
+      "length": 229.95424,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "cruise",
+      "module": "helix",
+      "sha256": "b69cd23a80c0e00159e27d7f15d500ea92caa73612f63220e64cc0040664bea2",
+      "glbBytes": 226216,
+      "buildMs": 127.033,
+      "buildCpuMs": 15,
+      "inspectMs": 297.842,
+      "inspectCpuMs": 188,
+      "exportMs": 72.43,
+      "renderTriangles": 8524,
+      "collisionTriangles": 2828,
+      "heapUsed": 58441824,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed"
+      ],
+      "minimumClearance": 6.41978,
+      "minimumSpeed": 33.41135,
+      "length": 519.19546,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "cruise",
+      "module": "sky-arch",
+      "sha256": "7254b01c445a977defc373eff5a6bc0fa187b2f6a774a8c755fac00b6d0bcff1",
+      "glbBytes": 16776,
+      "buildMs": 0.842,
+      "buildCpuMs": 0,
+      "inspectMs": 1.764,
+      "inspectCpuMs": 16,
+      "exportMs": 1.475,
+      "renderTriangles": 252,
+      "collisionTriangles": 180,
+      "heapUsed": 63753248,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.4973,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "cruise",
+      "module": "bowl",
+      "sha256": "d9fbd209019c92276a4edf8e775da51ed1c4ea26ac600131ccb0959fc9045c13",
+      "glbBytes": 68252,
+      "buildMs": 9.11,
+      "buildCpuMs": 0,
+      "inspectMs": 14.751,
+      "inspectCpuMs": 0,
+      "exportMs": 13.043,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 68959576,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48401,
+      "minimumSpeed": 66,
+      "length": 221.19741,
+      "departures": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "cruise",
+      "module": "ribbon-bridge",
+      "sha256": "b2f4987b93c5008fd2bbf54b65c528c9192ca7f6888a9b841ee31ca899f2eec6",
+      "glbBytes": 72684,
+      "buildMs": 5.106,
+      "buildCpuMs": 16,
+      "inspectMs": 42.17,
+      "inspectCpuMs": 0,
+      "exportMs": 8.311,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 86285440,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.40416,
+      "minimumSpeed": 66,
+      "length": 222.3751,
+      "departures": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "cruise",
+      "module": "tunnel",
+      "sha256": "1b5e04a01c957a86f6fc6b7c52d8c121cc57491d4ce829ce8b9035b9e80d644c",
+      "glbBytes": 84952,
+      "buildMs": 47.882,
+      "buildCpuMs": 0,
+      "inspectMs": 28.536,
+      "inspectCpuMs": 16,
+      "exportMs": 4.326,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 71403368,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 66,
+      "length": 220.29069,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "boost",
+      "module": "s-curve",
+      "sha256": "76bd40e9e2a55823fd0f4ed78bfe4afac455c03b9cd10c5bcf6fe95495bb496c",
+      "glbBytes": 30108,
+      "buildMs": 2.488,
+      "buildCpuMs": 0,
+      "inspectMs": 7.253,
+      "inspectCpuMs": 0,
+      "exportMs": 4.872,
+      "renderTriangles": 684,
+      "collisionTriangles": 420,
+      "heapUsed": 85969928,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.48018,
+      "minimumSpeed": 43.45661,
+      "length": 229.95424,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "boost",
+      "module": "helix",
+      "sha256": "57924f478a0f36d6add2bdec3d34b9d9445741af35da468c1357547a899bfb0a",
+      "glbBytes": 226216,
+      "buildMs": 26.72,
+      "buildCpuMs": 31,
+      "inspectMs": 324.693,
+      "inspectCpuMs": 109,
+      "exportMs": 52.31,
+      "renderTriangles": 8524,
+      "collisionTriangles": 2828,
+      "heapUsed": 105823392,
+      "level": "geometry-verified",
+      "reasons": [
+        "curvature-below-minimum-speed",
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.41978,
+      "minimumSpeed": 33.41135,
+      "length": 519.19546,
+      "departures": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "boost",
+      "module": "sky-arch",
+      "sha256": "a988a27ef006c2b9844fecf05728d33119ba2231ebe63d6392cca348ee31f154",
+      "glbBytes": 15588,
+      "buildMs": 1.115,
+      "buildCpuMs": 0,
+      "inspectMs": 2.844,
+      "inspectCpuMs": 0,
+      "exportMs": 2.283,
+      "renderTriangles": 188,
+      "collisionTriangles": 180,
+      "heapUsed": 110533848,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.49953,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "boost",
+      "module": "bowl",
+      "sha256": "b3acff991a50bc15ec2079e50505091cb50a67583392a066fa0d6edf230ad7d1",
+      "glbBytes": 68212,
+      "buildMs": 4.86,
+      "buildCpuMs": 0,
+      "inspectMs": 79.999,
+      "inspectCpuMs": 47,
+      "exportMs": 18.232,
+      "renderTriangles": 2360,
+      "collisionTriangles": 928,
+      "heapUsed": 115747600,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.48622,
+      "minimumSpeed": 102,
+      "length": 220.21061,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "boost",
+      "module": "ribbon-bridge",
+      "sha256": "6c78d90b05705d5f6dc85ec7d006620ea3a6591b4ee1e3164c5d2bcc9a4fd69d",
+      "glbBytes": 72684,
+      "buildMs": 30.477,
+      "buildCpuMs": 0,
+      "inspectMs": 200.401,
+      "inspectCpuMs": 15,
+      "exportMs": 77.091,
+      "renderTriangles": 2396,
+      "collisionTriangles": 932,
+      "heapUsed": 18109960,
+      "level": "geometry-verified",
+      "reasons": [
+        "entry-needs-prior-braking"
+      ],
+      "minimumClearance": 6.40416,
+      "minimumSpeed": 71.57553,
+      "length": 222.3751,
+      "departures": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "seed": 150001,
+      "profile": "boost",
+      "module": "tunnel",
+      "sha256": "d0b19559a4d49b4815d171619862b12103217607ea9a3c20d0af7d7a6b9c8f04",
+      "glbBytes": 84952,
+      "buildMs": 5.756,
+      "buildCpuMs": 0,
+      "inspectMs": 345.01,
+      "inspectCpuMs": 31,
+      "exportMs": 13.68,
+      "renderTriangles": 2608,
+      "collisionTriangles": 1528,
+      "heapUsed": 28657768,
+      "level": "motion-verified",
+      "reasons": [],
+      "minimumClearance": 6.5,
+      "minimumSpeed": 102,
+      "length": 220.29069,
+      "departures": [
+        true,
+        true,
+        true
+      ]
+    }
+  ]
+}

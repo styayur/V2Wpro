@@ -22,6 +22,34 @@ export function kineticProfile(name) {
     forwardAcceleration:26, departureSeconds:1, departurePitchRadians:0.065};
 }
 
+// Neutral LB release carries the incoming tangent. Reserve half a second
+// of travel and a half-metre measurement margin before the hull can meet
+// a rising deck. For y = H sin²(pi z/L), |y''| <= 2 pi² H/L².
+export function departureRelief(id,scale,profile,revision) {
+  if (!revision || !["sky-arch","bowl"].includes(id)) return 1;
+  const margin=profile.clearance-profile.hullRadius-0.5;
+  const travel=0.55*profile.speed;
+  const curvature=2*Math.max(0.01,margin)/travel**2;
+  const heightLimit=curvature*chunkSize**2/(2*Math.PI**2);
+  return Math.min(1,heightLimit/((id==="sky-arch" ? 38 : 18)*scale));
+}
+
+export function helicalReturn(id,profile,revision) {
+  if (revision<2 || id!=="helix") return 0;
+  // The descending strand formerly intercepted a pilot who left the first
+  // quarter-turn along its incoming tangent. Bend the return out to the side
+  // of that corridor, preserving both sockets and the complete climbing loop.
+  return 2*(16+profile.clearance+profile.hullRadius);
+}
+
+export function flightModuleLibrary(name="boost",revision=2) {
+  const profile=kineticProfile(name);
+  if (![0,1,2].includes(revision)) throw Error("Unknown generation rule revision");
+  return {format:"kinetic-module-library-1",units:"metres",axes:"right-handed-y-up",chunkSize,
+    ruleRevision:revision,profile,modules:moduleIds.map(id=>designModule(id,1,
+      departureRelief(id,1,profile,revision),helicalReturn(id,profile,revision)))};
+}
+
 function validateRecipe(recipe, seed) {
   if (!uint32(seed)) throw Error("Invalid uint32 kinetic seed");
   validateKineticRecipe(recipe);
@@ -31,6 +59,18 @@ function slab(z0,z1) {
   const rows=[{t:0,center:[0,0,z0],...identityFrame},{t:1,center:[0,0,z1],...identityFrame}];
   return {id:"apron",section:[[-16,0],[16,0],[16,-1.6],[-16,-1.6]],closedSection:true,
     stations:rows,collisionStations:rows,shells:[]};
+}
+
+function junctionDeck(delta) {
+  const deck=slab(0,delta[2]);
+  function stations(tolerance) {
+    // The quintic port blend has |f''| < 6. Bound the chord deviation
+    // independently for the skin and collider, including the height blend.
+    const count=Math.max(2,Math.ceil(delta[2]/18),
+      Math.ceil(Math.sqrt(6*Math.hypot(delta[0],delta[1])/(8*tolerance))));
+    return Array.from({length:count+1},(_,i)=>({t:i/count,center:[0,0,i*delta[2]/count],...identityFrame}));
+  }
+  return {...deck,stations:stations(0.055),collisionStations:stations(0.16)};
 }
 
 // Boundary identity is a function of the world and the shared coordinates.
@@ -49,6 +89,25 @@ export function planKineticRegion(recipe,seed) {
       {id:"runout",from:{id:"exit",point:[0,0,220]},to:{id:"end",point:[0,0,360]},module:"apron"}];
   }
   const edges=[];
+  if (recipe.ruleRevision>=2) {
+    const col=2*recipe.regionX, base=6*recipe.regionZ;
+    const port=(x,z)=>{
+      const p=boundary(seed,x,z);
+      p.point[1]=38+18*deriveSeed(seed,"junction-level",z)/0xffffffff;
+      return p;
+    };
+    for (const [offset,span,side] of [[0,2,0],[2,1,0],[3,2,1],[5,1,1]]) {
+      const z=base+offset;
+      function join(fromX,toX) {
+        const from=port(fromX,z),to=port(toX,z+span);
+        const module=span===2 ? "junction-deck" : moduleIds[deriveSeed(seed,"module",fromX,z)%moduleIds.length];
+        edges.push({id:from.id+"-to-"+to.id,from,to,module});
+      }
+      join(col,col);join(col+1,col+1);
+      if (span===2) join(col+side,col+1-side);
+    }
+    return edges;
+  }
   const col=2*recipe.regionX, row=3*recipe.regionZ;
   function connect(x,z,dx,module) {
     const from=boundary(seed,x,z), to=boundary(seed,x+dx,z+1);
@@ -83,6 +142,20 @@ export function makeKineticWorld(module,seed,profile="cruise",ruleRevision=0,mod
     extensions:{kineticRecipe:recipe,flightEntry:{version:1,position:entry,toward:[entry[0],entry[1],entry[2]+20]}}};
 }
 
+// A seed or region edit moves the ports. Refresh the study's derived entry
+// and survey markers while preserving author-edited productions and evidence.
+export function refreshKineticPorts(world) {
+  const recipe=world.extensions?.kineticRecipe;
+  if (!recipe) return world;
+  const plan=planKineticRegion(recipe,world.seed);
+  const start=plan[0].from.point, end=plan.at(-1).to.point;
+  const entry=[start[0],start[1]+10,start[2]+8];
+  const positions={approach:entry,survey:[end[0],end[1]+90,end[2]]};
+  return {...world,topology:{...world.topology,nodes:world.topology.nodes.map(node=>
+    Object.hasOwn(positions,node.id) ? {...node,position:positions[node.id]} : node)},
+    extensions:{...world.extensions,flightEntry:{version:1,position:entry,toward:[entry[0],entry[1],entry[2]+20]}}};
+}
+
 export function compileKineticWorld(world, realization) {
   const recipe=world.extensions?.kineticRecipe;
   if (!recipe) return null;
@@ -97,16 +170,19 @@ export function compileKineticWorld(world, realization) {
     const delta=end.map((n,i)=>n-start[i]);
     let module;
     if (link.module === "apron") module=slab(0,delta[2]);
+    else if (link.module === "junction-deck") module=junctionDeck(delta);
     else {
       const scale=recipe.relief*(0.91+0.12*deriveSeed(world.seed,link.id,"shape")/0xffffffff);
       const key=link.module+"/"+scale;
-      if (!modules.has(key)) modules.set(key,designModule(link.module,scale));
+      if (!modules.has(key)) modules.set(key,designModule(link.module,scale,
+        departureRelief(link.module,scale,profile,recipe.ruleRevision),
+        helicalReturn(link.module,profile,recipe.ruleRevision)));
       module=modules.get(key);
     }
     function place(p,t) {
       // Blend the port offset with zero endpoint slope. All stored ring
       // coordinates are metres in a common, right-handed frame.
-      const f=flatten(t);
+      const f=link.module==="junction-deck" ? t**3*(10-15*t+6*t*t) : flatten(t);
       return [start[0]+p[0]+delta[0]*f,start[1]+p[1]+delta[1]*f,start[2]+p[2]];
     }
     for (const [i,part] of [module,...module.shells].entries()) {

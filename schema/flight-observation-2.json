@@ -1,0 +1,19 @@
+{
+  "$schema":"http://json-schema.org/draft-07/schema#",
+  "$id":"flight-observation-2.json",
+  "title":"Skimmer player observation of a finite imported world",
+  "type":"object",
+  "required":["recording","format","sha256","world","imported","replayed","build","binary","fixedHz","trace","errors","outcome","experiment","returnedToBuiltin"],
+  "properties":{
+    "format":{"const":"flight-diagnostic-2"},"sha256":{"$ref":"flight-replay-2.json#/definitions/hash"},
+    "world":{"$ref":"flight-replay-2.json#/properties/world"},
+    "imported":{"$ref":"flight-replay-2.json#/definitions/identity"},
+    "replayed":{"anyOf":[{"type":"null"},{"$ref":"flight-replay-2.json#/definitions/identity"}]},
+    "build":{"type":"object","required":["sourceCommit"],"properties":{"sourceCommit":{"anyOf":[{"type":"null"},{"type":"string","pattern":"^[0-9a-f]{40}$"}]},"dirty":{"type":"boolean"}}},
+    "binary":{"anyOf":[{"type":"null"},{"$ref":"flight-replay-2.json#/properties/binary"}]},
+    "recording":{"type":"object","required":["kind","truncated"],"properties":{"kind":{"const":"player"},"truncated":{"type":"boolean"}}},
+    "experiment":{"type":"null"},"fixedHz":{"const":120},"outcome":{"const":"player-observation"},
+    "returnedToBuiltin":{"const":false},"errors":{"type":"array","maxItems":0},
+    "trace":{"allOf":[{"$ref":"flight-replay-2.json#/properties/trace"},{"maxItems":1801,"type":"array"}]}
+  }
+}

@@ -1,4 +1,5 @@
 import { validate } from "./validate.js";
+import { refreshKineticPorts } from "./kinetic-world.js";
 
 import { boundDocument, inspectRoutes, realize } from "./morph.js";
 
@@ -214,7 +215,7 @@ export function revise(review, patch) {
 
 export function variant(world, seed) {
   requireValue(Number.isSafeInteger(seed), "Expected an integer seed");
-  return checkWorld({ ...structuredClone(world), seed });
+  return checkWorld(refreshKineticPorts({ ...structuredClone(world), seed }));
 }
 
 export function evidenceReport(world) {
